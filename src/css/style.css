@@ -3,6 +3,12 @@ a, .nav-link{
     color: #fff;
 }
 
+.nav-link:focus{
+    pointer-events: none;
+    background-color: rgb(231, 177, 52) !important;
+    color:#fff;
+}
+
 h1, h2{
     color:#000;
 }
