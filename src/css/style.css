@@ -9,8 +9,8 @@ a, .nav-link{
     color:#fff;
 }
 
-h1, h2{
-    color:#000;
+section a {
+    color: #000;
 }
 
 .bi-person-circle{
