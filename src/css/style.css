@@ -1,3 +1,4 @@
+/* Mobile */
 a, .nav-link{
     text-decoration: none;
     color: #fff;
@@ -39,4 +40,18 @@ section h2 {
 
 aside a {
     color: #000;
+/* Desktop */
+@media screen and (min-width: 768px) {
+    #logoMobile, .dividerClass, .bi-bell-fill{
+        display: none;
+    }
+    #logoDesktop{
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #logoDesktop{
+        display: none;
+    }
 }

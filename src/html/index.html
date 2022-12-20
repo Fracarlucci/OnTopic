@@ -14,14 +14,14 @@
         <header class="bg-dark py-2">
 
             <!-- Logo -->
-            <div class="text-center">
+            <div id="logoMobile" class="text-center">
                 <a text href="#"><img src="../../doc/img/OnTopic_logo.png" alt="OnTopic"/></a>
             </div>
 
             <!-- Divider -->
             <div class="d-flex justify-content-center col-12">
-                <hr class=" dividerClass text-light" width="70%" />
-            </div>
+                <hr class="dividerClass text-light" width="70%" />
+            </div>  
 
             <!-- Menu -->
             <div class="container">
@@ -29,8 +29,13 @@
                     <nav>   
                         <ul class="nav nav-pills" role="tablist">
                             <!-- Bell icon -->
-                            <div class="d-flex justify-content-start col-3">
+                            <div id="bell" class="d-flex justify-content-start col-3">
                                 <li>
+                                    <!-- Logo Desktop-->
+                                    <div id="logoDesktop" class="text-left">
+                                        <a text href="#"><img src="../../doc/img/OnTopic_logo.png" alt="OnTopic"/></a>
+                                    </div>
+                                    
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
                                             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
@@ -39,15 +44,15 @@
                                 </li>
                             </div>
 
-                            <!-- Link    -->
-                            <div class="d-flex justify-content-center col-6">
+                            <!-- Link -->
+                            <div id="link" class="d-flex justify-content-center col-6">
                                 <li class="nav-item mx-1"><a class="nav-link" data-bs-toggle="pill" href="#">Home</a></li>
                                 <li class="nav-item mx-1"><a class="nav-link" data-bs-toggle="pill" href="#">Tema</a></li>
                                 <li class="nav-item mx-1"><a class="nav-link" data-bs-toggle="pill" href="#">Cerca</a></li>
                             </div>
                             
                             <!-- Profile icon -->
-                            <div class="d-flex justify-content-end col-3">
+                            <div id="icon" class="d-flex justify-content-end col-3">
                                 <li>
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
