@@ -1,3 +1,16 @@
+a, .nav-link{
+    text-decoration: none;
+    color: #fff;
+}
+
+h1, h2{
+    color:#000;
+}
+
+.bi-person-circle{
+    color:#000;
+}
+
 a:hover{
     color: rgb(231, 177, 52) !important;
 }
