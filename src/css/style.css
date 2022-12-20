@@ -5,3 +5,7 @@ a:hover{
 body header img {
     width: 25%;
 }
+
+a {
+    text-decoration: none;
+}
