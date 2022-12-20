@@ -40,9 +40,10 @@ section h2 {
 
 aside a {
     color: #000;
+}
 /* Desktop */
 @media screen and (min-width: 768px) {
-    #logoMobile, .dividerClass, .bi-bell-fill{
+    #logoMobile, .dividerClass, #bell{
         display: none;
     }
     #logoDesktop{
@@ -52,6 +53,9 @@ aside a {
 
 @media screen and (max-width: 768px) {
     #logoDesktop{
+        display: none;
+    }
+    aside{
         display: none;
     }
 }
