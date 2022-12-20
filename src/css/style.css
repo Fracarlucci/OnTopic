@@ -36,3 +36,7 @@ section h2 {
     position: relative;
     top: 10%;
 }
+
+aside a {
+    color: #000;
+}
