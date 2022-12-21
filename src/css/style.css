@@ -41,6 +41,7 @@ section h2 {
 aside a {
     color: #000;
 }
+
 /* Desktop */
 @media screen and (min-width: 768px) {
     #logoMobile, .dividerClass, #bell{
@@ -49,10 +50,16 @@ aside a {
     #logoDesktop{
         width: 600px;
     }
+    #userName{
+        color: rgb(231, 177, 52) !important;
+    }
 }
 
 @media screen and (max-width: 768px) {
     #logoDesktop{
+        display: none;
+    }
+    #userName{
         display: none;
     }
     aside{
