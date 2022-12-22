@@ -53,6 +53,9 @@ aside a {
     #userName{
         color: rgb(231, 177, 52) !important;
     }
+    .addIcon{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -63,6 +66,12 @@ aside a {
         display: none;
     }
     aside{
+        display: none;
+    }
+    #sharePost{
+        display: none;
+    }
+    #addPostDesktop{
         display: none;
     }
 }
