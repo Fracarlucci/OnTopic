@@ -36,7 +36,7 @@ create table NOTIFICA (
      id int not null auto_increment,
      Tipo varchar(255) not null,
      Testo varchar(255) not null,
-     idPost int not null,
+     idPost int,
      idUtenteInvio int not null,
      idUtenteRiceve int not null,
      constraint IDNOTIFICA primary key (id));
