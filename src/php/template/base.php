@@ -56,9 +56,13 @@
 
                             <!-- Link -->
                             <div id="link" class="d-flex justify-content-center col-6">
-                                <li class="nav-item mx-1"><a class="nav-link" data-bs-toggle="pill" href="#">Home</a></li>
-                                <li class="nav-item mx-1"><a class="nav-link" data-bs-toggle="pill" href="#">Tema</a></li>
-                                <li class="nav-item mx-1"><a class="nav-link" data-bs-toggle="pill" href="#">Cerca</a></li>
+                                <nav>
+                                    <ul class="menu">
+                                        <li class="menuButtonSelected nav-item mx-1"><a href="#">Home</a></li>
+                                        <li class="menuButton nav-item mx-1"><a href="#">Tema</a></li>
+                                        <li class="menuButton nav-item mx-1"><a href="#">Cerca</a></li>
+                                    </ul>
+                                </nav>
                             </div>
                             
                             <!-- Profile icon -->
@@ -91,7 +95,7 @@
                             </svg>
                             <h2>Notifiche</h2>
                         </a>
-                        <div class="bg-light border border-dark px-2 py-3 my-1">
+                        <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
                             <ul>
                                 <?php foreach($templateParams["notifiche"] as $notifica): ?>
                                     <li>
@@ -125,13 +129,15 @@
                             <h2>Amici</h2>
                         </a>
                         <div class="bg-light border border-dark px-2 py-3 my-1">
-                            <ul>
-                                <?php foreach($templateParams["amici"] as $amico): ?>
-                                    <li>    
-                                        <a href="linkamico"><?php echo $amico["username"]; ?></a>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
+                            <nav>
+                                <ul>
+                                    <?php foreach($templateParams["amici"] as $amico): ?>
+                                        <li class="friends">    
+                                            <a href="linkamico"><?php echo $amico["username"]; ?></a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </nav>
                         </div>
                     </aside>
                 </div>
@@ -139,26 +145,22 @@
             </div>
         </div>
         <footer class="bg-dark py-2">
-            <!-- Add icon -->
+            <!-- Add post -->
             <div class="text-center addIcon">
                 <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle" id="addPost" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                     </svg>
                 </a>
             </div>
-            <div class="d-flex justify-content-end">
-                <div class="form-group col-2 ">
-                    <input type="email" class="form-control" id="sharePost" aria-describedby="emailHelp" placeholder="Condividi un post!">
+            <div class="row justify-content-end">
+                <div class="col-3">
                 </div>
-                <div id="addPostDesktop">
-                    <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 20 20">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                        </svg>
-                    </a>
+                <div class="col-6">
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                    <button type="button" id="addButtonDesktop" class="btn btn-outline-light" href="#">Condividi un post!</button>
                 </div>
             </div>
         </footer>
