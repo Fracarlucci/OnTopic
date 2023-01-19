@@ -29,7 +29,7 @@
                     <nav>   
                         <ul class="nav nav-pills" role="tablist">
                             <!-- Bell icon -->
-                            <div class="d-flex justify-content-start col-3">
+                            <div class="d-flex align-items-center col-3">
                                 <li>
                                     <!-- Logo Desktop-->
                                     <div id="logoDesktop" class="text-left">
@@ -46,9 +46,13 @@
 
                             <!-- Link -->
                             <div id="link" class="d-flex justify-content-center col-6">
-                                <li class="nav-item mx-1"><a class="nav-link" data-bs-toggle="pill" href="#">Home</a></li>
-                                <li class="nav-item mx-1"><a class="nav-link" data-bs-toggle="pill" href="#">Tema</a></li>
-                                <li class="nav-item mx-1"><a class="nav-link" data-bs-toggle="pill" href="#">Cerca</a></li>
+                                <nav>
+                                    <ul class="menu">
+                                        <li class="menuButtonSelected nav-item mx-1"><a href="#">Home</a></li>
+                                        <li class="menuButton nav-item mx-1"><a href="#">Tema</a></li>
+                                        <li class="menuButton nav-item mx-1"><a href="#">Cerca</a></li>
+                                    </ul>
+                                </nav>
                             </div>
                             
                             <!-- Profile icon -->
@@ -80,19 +84,20 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
                                 <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
                             </svg>
-                            <h2>Notifiche</h2>
+                        Notifiche
                         </a>
-                        <div class="bg-light border border-dark px-2 py-3 my-1">
-                            <ul>
-                                <li><a href="#">Pinocchio ha iniziato a seguirti</a></li>
-                            </ul>
+                        <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
+                            <nav>
+                                <ul>
+                                    <li width="100%" class="friends"><a href="#">Pinocchio ha iniziato a seguirti</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </aside>
                 </div>
-
                 <div class="col-md-6 col-sm-12">
                     <main>
-                        <section class="bg-light border border-dark my-4 px-4 py-3">
+                        <section class="bg-light border border-dark my-4 px-4 py-3 rounded">
                             <header>
                                 <div class="d-flex flex-row">
                                     <!-- User icon -->
@@ -147,7 +152,7 @@
                                 </div>
                             </footer>
                         </section>
-                        <section class="bg-light border border-dark my-4 px-4 py-3">
+                        <section class="bg-light border border-dark my-4 px-4 py-3 rounded">
                             <header>
                                 <div class="d-flex flex-row">
                                     <!-- User icon -->
@@ -211,14 +216,16 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
                                 <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
                             </svg>
-                            <h2>Amici</h2>
+                        Amici
                         </a>
-                        <div class="bg-light border border-dark px-2 py-3 my-1">
-                            <ul>
-                                <li><a href="#">Pinocchio</a></li>
-                                <li> <a href="#">Francesco</a></li>
-                                <li><a href="#">Bob</a></li>
-                            </ul>
+                        <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
+                            <nav>
+                                <ul>
+                                    <li class="friends"><a href="#">Pinocchio</a></li>
+                                    <li class="friends"><a href="#">Francesco</a></li>
+                                    <li class="friends"><a href="#">Bob</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </aside>
                 </div>
@@ -227,28 +234,25 @@
         </div>
 
         <footer class="bg-dark py-2">
-            <!-- Add icon -->
+            <!-- Add post -->
             <div class="text-center addIcon">
                 <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle" id="addPost" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                     </svg>
                 </a>
             </div>
-            <div class="d-flex justify-content-end">
-                <div class="form-group col-2 ">
-                    <input type="email" class="form-control" id="sharePost" aria-describedby="emailHelp" placeholder="Condividi un post!">
+            <div class="row justify-content-end">
+                <div class="col-3">
                 </div>
-                <div id="addPostDesktop">
-                    <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 20 20">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                        </svg>
-                    </a>
+                <div class="col-6">
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                    <button type="button" id="addButtonDesktop" class="btn btn-outline-light" href="#">Condividi un post!</button>
                 </div>
             </div>
         </footer>
+
     </body>
 </html>

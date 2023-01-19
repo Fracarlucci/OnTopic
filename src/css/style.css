@@ -1,13 +1,6 @@
-/* Mobile */
-a, .nav-link{
+a{
     text-decoration: none;
     color: #fff;
-}
-
-.nav-link:focus{
-    pointer-events: none;
-    background-color: rgb(231, 177, 52) !important;
-    color:#fff;
 }
 
 section a {
@@ -18,8 +11,62 @@ section a {
     color:#000;
 }
 
+nav ul{
+    list-style: none;
+}
+
+nav li{
+    list-style: none;
+}
+
+nav>ul>li.menuButtonSelected{
+    display: inline-block;
+    width: 100px;
+    padding: 10px;  
+    text-align: center;
+    background-color: rgb(231, 177, 52); 
+    border-radius: 5px;
+}
+
+nav>ul>li{
+    display: inline-block;
+    width: 100px;
+    padding: 10px;  
+    text-align: center;
+    background-color: dark; 
+    border-radius: 5px;
+}
+
+nav>ul>li.menuButton:hover{
+    display: inline-block;
+    width: 100px;
+    padding: 10px;  
+    text-align: center;
+    background-color: rgb(231, 177, 52); 
+    border-radius: 5px;
+}
+
+.friends{
+    width: 100%;
+    text-align: left;
+}
+
+.friends:hover{
+    background-color: rgb(227, 227, 227);
+}
+
+ul{
+  margin:0;
+  padding: 0;
+}
+
+
 a:hover{
-    color: rgb(231, 177, 52) !important;
+    color: inherit;
+}
+
+#logoDesktop:hover, #logoMobile:hover, #bell:hover, #icon:hover, #icon:hover, #addPost:hover{
+    color: rgb(231, 177, 52);
 }
 
 body header img {
@@ -42,7 +89,6 @@ aside a {
     color: #000;
 }
 
-/* Desktop */
 @media screen and (min-width: 768px) {
     #logoMobile, .dividerClass, #bell{
         display: none;
@@ -55,6 +101,9 @@ aside a {
     }
     .addIcon{
         display: none;
+    }
+    #addButtonDesktop {
+        width: 80%;
     }
 }
 
@@ -71,7 +120,7 @@ aside a {
     #sharePost{
         display: none;
     }
-    #addPostDesktop{
+    #addButtonDesktop{
         display: none;
     }
 }
