@@ -34,7 +34,7 @@
                         </a>
                     </div>
                 </div>
-                <p>Data e ora</p>
+                <p><?php echo $post["dataora"]; ?></p>
             </header>
             <article><?php echo $post["testo"]; ?></article>
             <footer class="my-1">
