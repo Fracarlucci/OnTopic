@@ -57,14 +57,23 @@ body>footer {
     width: 100%;
 }
 
-section h1, h2 {
+/* section h1, h2 {
     position: relative;
     top: 10%;
-}
+} */
 
 aside a {
     color: #000;
 }
+
+.topic{
+    text-align: right;
+}
+
+#calendar{
+    align-items: center;
+}
+
 
 @media screen and (min-width: 768px) {
     #logoMobile, .dividerClass, #bell{
@@ -86,6 +95,8 @@ aside a {
     #notificationBell, #friendIcon{
         display: inline-block;
         text-align: left;
+        width: 30px;
+        height: 40px;
         margin-left: 5%;
     }
     nav>ul>li.menuButtonSelected, nav>ul>li.menuButton:hover{
@@ -98,6 +109,9 @@ aside a {
         text-align: center;
         background-color: dark; 
         border-radius: 5px;
+    }
+    h2{
+        margin: 0%;
     }
 }
 
@@ -130,11 +144,13 @@ aside a {
     #link{
         text-align: center;
     }
-    
+
 }
 
+/*
 @media screen and (min-width: 768px) {
     h1, h2 {
         font-size: 2.5vw;
     }
 }
+*/
