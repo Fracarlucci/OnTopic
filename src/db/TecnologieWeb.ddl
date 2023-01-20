@@ -43,18 +43,18 @@ create table NOTIFICA (
 
 create table POST (
      id int not null auto_increment,
-     DataOra datetime not null,
+     DataOra timestamp not null,
      Testo varchar(255),
      Immagine varchar(255),
-     MiPiace int not null,
-     Commenti int not null,
-     Segnalazioni int not null,
-     Abilitato char not null,
+     MiPiace int default 0 not null,
+     Commenti int default 0 not null,
+     Segnalazioni int default 0 not null,
+     Abilitato boolean default true not null,
      idTema int not null,
      idUtente int not null,
      constraint IDPost primary key (id));
 
-create table Segui (
+create table SEGUI (
      id int not null auto_increment,
      idSeguito int not null,
      idSeguace int not null,
@@ -75,8 +75,8 @@ create table UTENTE (
      Password varchar(255) not null,
      Sale varchar(255) not null,
      ImgProfilo varchar(255),
-     Seguiti int not null,
-     Seguaci int not null,
+     Seguiti int default 0 not null,
+     Seguaci int default 0 not null,
      constraint IDUser primary key (id),
      constraint IDUser_1 unique (Username));
 

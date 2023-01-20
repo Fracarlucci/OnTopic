@@ -1,5 +1,5 @@
 <?php foreach($templateParams["amici"] as $amico):
-    $templateParams["posts"] = $dbh->getPostsByUserId($amico["id"]);
+    $templateParams["posts"] = $dbh->getPostsById($amico["id"]);
     foreach($templateParams["posts"] as $post): ?>
         <section class="bg-light border border-dark my-4 px-4 py-3 rounded">
             <header>
