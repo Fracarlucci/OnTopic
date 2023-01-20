@@ -75,7 +75,7 @@
                                     </a>
                                     <!-- UserName Desktop -->
                                     <div id="userName" class="d-flex align-items-center">
-                                        <a id="userName" href="#">UserName</a>
+                                        <a id="userName" href="#"><?php echo $templateParams["utente"][0]["username"]; ?></a>
                                     </div>
                                 </li>
                             </div>
