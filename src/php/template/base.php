@@ -58,9 +58,9 @@
                                 <div id="link" class="d-flex justify-content-center col-6">
                                     <nav>
                                         <ul class="menu">
-                                            <li class="menuButtonSelected mx-1 col"><a href="#">Home</a></li>
-                                            <li class="menuButton mx-1 col"><a href="#">Tema</a></li>
-                                            <li class="menuButton mx-1 col"><a href="#">Cerca</a></li>
+                                            <li class="menuButtonSelected mx-1 col"><a href="index.php">Home</a></li>
+                                            <li class="menuButton mx-1 col"><a href="tema.php">Tema</a></li>
+                                            <li class="menuButton mx-1 col"><a href="cerca.php">Cerca</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -90,7 +90,7 @@
                     <aside class="m-2 px-2 py-3">
                         <!-- Bell icon -->
                         <a href="#">
-                            <div id="notificationBell" class="col-1">
+                            <div id="notificationBell" class="align-items-center col-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 21 21">
                                     <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
                                 </svg>
