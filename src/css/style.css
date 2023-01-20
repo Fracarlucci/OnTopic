@@ -19,33 +19,6 @@ nav li{
     list-style: none;
 }
 
-nav>ul>li.menuButtonSelected{
-    display: inline-block;
-    width: 100px;
-    padding: 10px;  
-    text-align: center;
-    background-color: rgb(231, 177, 52); 
-    border-radius: 5px;
-}
-
-nav>ul>li{
-    display: inline-block;
-    width: 100px;
-    padding: 10px;  
-    text-align: center;
-    background-color: dark; 
-    border-radius: 5px;
-}
-
-nav>ul>li.menuButton:hover{
-    display: inline-block;
-    width: 100px;
-    padding: 10px;  
-    text-align: center;
-    background-color: rgb(231, 177, 52); 
-    border-radius: 5px;
-}
-
 .friends{
     width: 100%;
     text-align: left;
@@ -80,6 +53,10 @@ body>footer {
     width: 100%;
 }
 
+.menu{
+    width: 100%;
+}
+
 section h1, h2 {
     position: relative;
     top: 10%;
@@ -103,12 +80,24 @@ aside a {
         display: none;
     }
     #addButtonDesktop {
+        display: inline-block;
         width: 80%;
     }
     #notificationBell, #friendIcon{
         display: inline-block;
         text-align: left;
         margin-left: 5%;
+    }
+    nav>ul>li.menuButtonSelected, nav>ul>li.menuButton:hover{
+        background-color: rgb(231, 177, 52); 
+    }
+    nav>ul>li{
+        display: inline-block;
+        width: 100px;
+        padding: 10px;  
+        text-align: center;
+        background-color: dark; 
+        border-radius: 5px;
     }
 }
 
@@ -128,6 +117,20 @@ aside a {
     #addButtonDesktop{
         display: none;
     }
+    nav>ul>li.menuButtonSelected, nav>ul>li.menuButton:hover{
+        background-color: rgb(231, 177, 52); 
+    }
+    nav>ul>li{
+        display: inline-block;
+        padding: 5px;  
+        text-align: center;
+        background-color: dark; 
+        border-radius: 5px;
+    }
+    #link{
+        text-align: center;
+    }
+    
 }
 
 @media screen and (min-width: 768px) {

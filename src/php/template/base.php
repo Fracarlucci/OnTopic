@@ -55,15 +55,15 @@
                             </div>
 
                             <!-- Link -->
-                            <div id="link" class="d-flex justify-content-center col-6">
-                                <nav>
-                                    <ul class="menu">
-                                        <li class="menuButtonSelected nav-item mx-1"><a href="#">Home</a></li>
-                                        <li class="menuButton nav-item mx-1"><a href="#">Tema</a></li>
-                                        <li class="menuButton nav-item mx-1"><a href="#">Cerca</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                                <div id="link" class="d-flex justify-content-center col-6">
+                                    <nav>
+                                        <ul class="menu">
+                                            <li class="menuButtonSelected mx-1 col"><a href="#">Home</a></li>
+                                            <li class="menuButton mx-1 col"><a href="#">Tema</a></li>
+                                            <li class="menuButton mx-1 col"><a href="#">Cerca</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
                             
                             <!-- Profile icon -->
                             <div id="icon" class="d-flex justify-content-end col-3">
@@ -167,11 +167,11 @@
                 </a>
             </div>
             <div class="row justify-content-end">
-                <div class="col-3">
+                <div class="col">
                 </div>
-                <div class="col-6">
+                <div class="col">
                 </div>
-                <div class="col-3 d-flex justify-content-center">
+                <div class="col d-flex justify-content-center">
                     <button type="button" id="addButtonDesktop" class="btn btn-outline-light" href="#">Condividi un post!</button>
                 </div>
             </div>
