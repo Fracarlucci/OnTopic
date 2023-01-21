@@ -5,7 +5,7 @@
             <header>
                 <div class="d-flex flex-row">
                     <!-- User icon -->
-                    <div class="d-flex justify-content-center col-1 prova">
+                    <div class="d-flex col-1 prova" id="userIcon">
                         <a href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -14,7 +14,7 @@
                         </a>
                     </div>
                     <!-- Username -->
-                    <div class="d-flex justify-content-center col-3 prova">
+                    <div class="d-flex col-3 prova">
                         <a href="#">
                             <h3><?php echo $post["username"]; ?></h3>
                         </a>
@@ -22,7 +22,7 @@
                     <!-- Theme -->
                     <div class="d-flex justify-content-center col-4">
                         <a href="#">
-                            <h2><?php echo $post["nome"]; ?></h2>
+                            <h3 id="tema"><?php echo $post["nome"]; ?></h3>
                         </a>
                     </div>
                     <!-- Dots icon -->

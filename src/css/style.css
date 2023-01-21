@@ -57,13 +57,32 @@ body>footer {
     width: 100%;
 }
 
-/* section h1, h2 {
-    position: relative;
-    top: 10%;
+h2 {
+    display: inline-block;
+    text-align: left;
+    font-size: 120%;
+    margin: 0;
+}
+
+#userIcon {
+    margin-right: 0.5em;
+}
+
+/* #username {
+    padding-left: 5%;
+    margin-left: 5%;
 } */
+
+#tema {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
 aside a {
     color: #000;
+}
+
+aside>a {
+    padding-left: 3%;
 }
 
 .topic{
@@ -92,13 +111,6 @@ aside a {
         display: inline-block;
         width: 80%;
     }
-    #notificationBell, #friendIcon{
-        display: inline-block;
-        text-align: left;
-        width: 30px;
-        height: 40px;
-        margin-left: 5%;
-    }
     nav>ul>li.menuButtonSelected, nav>ul>li.menuButton:hover{
         background-color: rgb(231, 177, 52); 
     }
@@ -109,9 +121,6 @@ aside a {
         text-align: center;
         background-color: dark; 
         border-radius: 5px;
-    }
-    h2{
-        margin: 0%;
     }
 }
 
