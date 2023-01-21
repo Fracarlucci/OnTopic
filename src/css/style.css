@@ -33,12 +33,11 @@ ul{
   padding: 0;
 }
 
-
 a:hover{
     color: inherit;
 }
 
-#logoDesktop:hover, #logoMobile:hover, #bell:hover, #icon:hover, #icon:hover, #addPost:hover{
+#logoDesktop:hover, #logoMobile:hover, #bell:hover, #profileIcon:hover, #profileIcon:hover, #addPost:hover{
     color: rgb(231, 177, 52);
 }
 
@@ -46,11 +45,22 @@ body header img {
     width: 25%;
 }
 
+body>header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 body>footer {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     left: 0;
     width: 100%;
+}
+
+#addButtonDesktop {
+    margin: 0% 3%;
 }
 
 .menu{
@@ -67,11 +77,6 @@ h2 {
 #userIcon {
     margin-right: 0.5em;
 }
-
-/* #username {
-    padding-left: 5%;
-    margin-left: 5%;
-} */
 
 #tema {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -109,7 +114,7 @@ aside>a {
     }
     #addButtonDesktop {
         display: inline-block;
-        width: 80%;
+        width: 100%;
     }
     nav>ul>li.menuButtonSelected, nav>ul>li.menuButton:hover{
         background-color: rgb(231, 177, 52); 
@@ -155,11 +160,3 @@ aside>a {
     }
 
 }
-
-/*
-@media screen and (min-width: 768px) {
-    h1, h2 {
-        font-size: 2.5vw;
-    }
-}
-*/

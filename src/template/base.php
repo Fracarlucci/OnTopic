@@ -20,7 +20,7 @@
         endif;
         ?>
     </head>
-    <body class="bg-secondary bg-gradient">
+    <body class="bg-secondary">
         <header class="bg-dark py-2">
 
             <!-- Logo -->
@@ -38,14 +38,13 @@
                 <div class="row">
                     <nav>   
                         <ul class="nav nav-pills" role="tablist">
-                            <!-- Bell icon -->
                             <div class="d-flex align-items-center col-3">
                                 <li>
                                     <!-- Logo Desktop-->
                                     <div id="logoDesktop" class="text-left">
-                                        <a text href="#"><img src="../../doc/img/OnTopic_logo.png" alt="OnTopic"/></a>
+                                        <a text href="#"><img src="./img/OnTopic_logo.png" alt="OnTopic"/></a>
                                     </div>
-                                    
+                                    <!-- Bell icon -->
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-bell-fill" id="bell" viewBox="0 0 16 16">
                                             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
@@ -66,17 +65,17 @@
                                 </div>
                             
                             <!-- Profile icon -->
-                            <div id="icon" class="d-flex justify-content-end col-3">
+                            <div id="profileIcon" class="d-flex justify-content-end col-3">
                                 <li class="d-flex align-items-center">
+                                    <!-- UserName Desktop -->
+                                    <div id="userName" class="d-flex align-items-center">
+                                        <a id="userName" href="#"><?php echo $templateParams["utente"][0]["username"]; ?></a>
+                                    </div>
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
                                         </svg>
                                     </a>
-                                    <!-- UserName Desktop -->
-                                    <div id="userName" class="d-flex align-items-center">
-                                        <a id="userName" href="#"><?php echo $templateParams["utente"][0]["username"]; ?></a>
-                                    </div>
                                 </li>
                             </div>
                         </ul>
@@ -145,7 +144,7 @@
                         </div>
                     </aside>
                 </div>
-                <div class="p-5"></div>
+                <!-- <div class="p-5"></div> -->
             </div>
         </div>
         <footer class="bg-dark py-2">
@@ -158,13 +157,12 @@
                     </svg>
                 </a>
             </div>
-            <div class="row justify-content-end">
-                <div class="col">
-                </div>
-                <div class="col">
-                </div>
-                <div class="col d-flex justify-content-center">
-                    <button type="button" id="addButtonDesktop" class="btn btn-outline-light" href="#">Condividi un post!</button>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-9"></div>
+                    <div class="col-3 d-flex justify-content-center">
+                        <button type="button" id="addButtonDesktop" class="btn btn-outline-light" href="#">Condividi un post!</button>
+                    </div>
                 </div>
             </div>
         </footer>
