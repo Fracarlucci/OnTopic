@@ -34,7 +34,7 @@
             </div>  
 
             <!-- Menu -->
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <nav>   
                         <ul class="nav nav-pills" role="tablist">
