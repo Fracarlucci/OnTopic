@@ -57,9 +57,9 @@
                                 <div id="link" class="d-flex justify-content-center col-6">
                                     <nav>
                                         <ul class="menu">
-                                            <li class="menuButtonSelected mx-1 col"><a href="index.php">Home</a></li>
-                                            <li class="menuButton mx-1 col"><a href="tema.php">Tema</a></li>
-                                            <li class="menuButton mx-1 col"><a href="cerca.php">Cerca</a></li>
+                                            <a href="index.php"><li class="menuButtonSelected col">Home</li></a>
+                                            <a href="tema.php"><li class="menuButton col">Tema</li></a>
+                                            <a href="cerca.php"><li class="menuButton col">Cerca</li></a>
                                         </ul>
                                     </nav>
                                 </div>
