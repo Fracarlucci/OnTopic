@@ -6,10 +6,17 @@
 
         <title><?php echo $templateParams["titolo"]; ?></title>
 
+        <!-- Font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
+        <!-- Custom Style -->
+        <link rel="stylesheet" href="./components/login-modal/login-modal.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
         <?php
         if(isset($templateParams["js"])):
             foreach($templateParams["js"] as $script):
@@ -20,12 +27,12 @@
         endif;
         ?>
     </head>
-    <body class="bg-secondary bg-gradient">
+    <body class="bg-secondary">
         <header class="bg-dark py-2">
 
             <!-- Logo -->
             <div id="logoMobile" class="text-center">
-                <a text href="#"><img src="../../img/OnTopic_logo.png" alt="OnTopic"/></a>
+                <a text href="#"><img src="./img/OnTopic_logo.png" alt="OnTopic"/></a>
             </div>
 
             <!-- Divider -->
@@ -34,18 +41,17 @@
             </div>  
 
             <!-- Menu -->
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <nav>   
                         <ul class="nav nav-pills" role="tablist">
-                            <!-- Bell icon -->
                             <div class="d-flex align-items-center col-3">
                                 <li>
                                     <!-- Logo Desktop-->
                                     <div id="logoDesktop" class="text-left">
-                                        <a text href="#"><img src="../../doc/img/OnTopic_logo.png" alt="OnTopic"/></a>
+                                        <a text href="#"><img src="./img/OnTopic_logo.png" alt="OnTopic"/></a>
                                     </div>
-                                    
+                                    <!-- Bell icon -->
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-bell-fill" id="bell" viewBox="0 0 16 16">
                                             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
@@ -58,27 +64,31 @@
                                 <div id="link" class="d-flex justify-content-center col-6">
                                     <nav>
                                         <ul class="menu">
-                                            <li class="menuButton mx-1 col"><a href="index.php">Home</a></li>
-                                            <li class="menuButton mx-1 col"><a href="tema.php">Tema</a></li>
-                                            <li class="menuButton mx-1 col"><a href="cerca.php">Cerca</a></li>
+                                            <a href="index.php"><li class="menuButtonSelected col">Home</li></a>
+                                            <a href="tema.php"><li class="menuButton col">Tema</li></a>
+                                            <a href="cerca.php"><li class="menuButton col">Cerca</li></a>
                                         </ul>
                                     </nav>
                                 </div>
                             
                             <!-- Profile icon -->
-                            <div id="icon" class="d-flex justify-content-end col-3">
+                            <div id="profileIcon" class="d-flex justify-content-end col-3">
                                 <li class="d-flex align-items-center">
+                                    <!-- UserName Desktop -->
+                                    <div id="userName" class="d-flex align-items-center">
+                                        <a id="userName" href="#"><?php echo $templateParams["utente"][0]["username"]; ?></a>
+                                    </div>
                                     <a href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
                                         </svg>
                                     </a>
-                                    <!-- UserName Desktop -->
-                                    <div id="userName" class="d-flex align-items-center">
-                                        <a id="userName" href="#"><?php echo $templateParams["utente"][0]["username"]; ?></a>
-                                    </div>
                                 </li>
                             </div>
+                            <!-- Login Button -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login-modal">
+                                Login
+                            </button>
                         </ul>
                     </nav>
                 </div>
@@ -90,14 +100,10 @@
                     <aside class="m-2 px-2 py-3">
                         <!-- Bell icon -->
                         <a href="#">
-                            <div id="notificationBell" class="align-items-center col-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 21 21">
-                                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
-                                </svg>
-                            </div>
-                            <div id="notificationBell" class="col-5">
-                                <h2>Notifiche</h2>
-                            </div> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 21 21">
+                                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                            </svg>
+                            <h2>Notifiche</h2>
                         </a>
                         <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
                             <nav>
@@ -131,14 +137,10 @@
                     <aside class="m-2 px-2 py-3">
                         <!-- Friends icon -->
                         <a href="#">
-                            <div id="notificationBell" class="col-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 21 21">
-                                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
-                                </svg>
-                            </div>
-                            <div id="friendIcon" class="col-5">
-                                <h2>Amici</h2>
-                            </div> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 21 21">
+                                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                            </svg>
+                            <h2>Amici</h2>
                         </a>
                         <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
                             <nav>
@@ -153,9 +155,11 @@
                         </div>
                     </aside>
                 </div>
-                <div class="p-5"></div>
+                <!-- <div class="p-5"></div> -->
             </div>
         </div>
+        <!-- Login Modal Include -->
+        <?php require_once("./components/login-modal/login-modal.php") ?>
         <footer class="bg-dark py-2">
             <!-- Add post -->
             <div class="text-center addIcon">
@@ -166,13 +170,12 @@
                     </svg>
                 </a>
             </div>
-            <div class="row justify-content-end">
-                <div class="col">
-                </div>
-                <div class="col">
-                </div>
-                <div class="col d-flex justify-content-center">
-                    <button type="button" id="addButtonDesktop" class="btn btn-outline-light" href="#">Condividi un post!</button>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-9"></div>
+                    <div class="col-3 d-flex justify-content-center">
+                        <button type="button" id="addButtonDesktop" class="btn btn-outline-light" href="#">Condividi un post!</button>
+                    </div>
                 </div>
             </div>
         </footer>

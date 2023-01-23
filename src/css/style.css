@@ -33,12 +33,11 @@ ul{
   padding: 0;
 }
 
-
 a:hover{
     color: inherit;
 }
 
-#logoDesktop:hover, #logoMobile:hover, #bell:hover, #icon:hover, #icon:hover, #addPost:hover{
+#logoDesktop:hover, #logoMobile:hover, #bell:hover, #profileIcon:hover, #profileIcon:hover, #addPost:hover{
     color: rgb(231, 177, 52);
 }
 
@@ -46,31 +45,76 @@ body header img {
     width: 25%;
 }
 
+body>header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 body>footer {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     left: 0;
     width: 100%;
+}
+
+#addButtonDesktop {
+    margin: 0% 3%;
 }
 
 .menu{
     width: 100%;
 }
 
+h2 {
+    display: inline-block;
+    text-align: left;
+    font-size: 120%;
+    margin: 0;
+}
 
-/* section h1, h2 {
-    position: relative;
-    top: 10%;
-} */
+#userIcon {
+    margin-right: 0.5em;
+}
+
+#tema, p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header p {
+    font-size: 80%;
+}
+
+footer p {
+    font-family: 'Robota', sans-serif;
+    margin: 0%;
+    padding: 0%;
+}
 
 aside a {
     color: #000;
+}
+
+aside>a {
+    padding-left: 3%;
 }
 
 .topic{
     text-align: right;
 }
 
+#calendar{
+    align-items: center;
+}
+
+#heart:hover {
+    color: red;
+}
+
+#comment:hover {
+    color: rgb(100, 100, 100);
+}
 
 @media screen and (min-width: 768px) {
     #logoMobile, .dividerClass, #bell{
@@ -87,28 +131,19 @@ aside a {
     }
     #addButtonDesktop {
         display: inline-block;
-        width: 80%;
+        width: 100%;
     }
-    #notificationBell, #friendIcon{
-        display: inline-block;
-        text-align: left;
-        width: 30px;
-        height: 40px;
-        margin-left: 5%;
+    nav>ul>a>li.menuButtonSelected, nav>ul>a>li.menuButton:hover{
+        background-color: rgb(231, 177, 52);
+        color: #fff;
     }
-    nav>ul>li.menuButtonSelected, nav>ul>li.menuButton:hover{
-        background-color: rgb(231, 177, 52); 
-    }
-    nav>ul>li{
+    nav>ul>a>li{
         display: inline-block;
         width: 100px;
         padding: 10px;  
         text-align: center;
         background-color: dark; 
         border-radius: 5px;
-    }
-    h2{
-        margin: 0%;
     }
 }
 
@@ -128,10 +163,11 @@ aside a {
     #addButtonDesktop{
         display: none;
     }
-    nav>ul>li.menuButtonSelected, nav>ul>li.menuButton:hover{
-        background-color: rgb(231, 177, 52); 
+    nav>ul>a>li.menuButtonSelected, nav>ul>a>li.menuButton:hover{
+        background-color: rgb(231, 177, 52);
+        color: #fff;
     }
-    nav>ul>li{
+    nav>ul>a>li{
         display: inline-block;
         padding: 5px;  
         text-align: center;
