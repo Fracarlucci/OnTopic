@@ -8,7 +8,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-4">
-                            <h3 class="profileHead">Post: <?php echo $templateParams["posts"][0]["totale"]; ?></h3>
+                            <h3 class="profileHead">Post: <?php echo count($templateParams["posts"]); ?></h3>
                         </div>
                         <div class="col-5">
                             <a href="#">
