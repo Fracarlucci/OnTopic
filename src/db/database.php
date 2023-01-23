@@ -127,6 +127,58 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+ 
+    /* restituisce tutti i post del tema del giorno */
+    public function getPostsbyTheme($theme, $n=-1){
+        $query = "
+            SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
+            FROM post p INNER JOIN utente u ON p.idUtente = u.id INNER JOIN tema t ON p.idTema = t.id 
+            WHERE t.id = ?
+        ";
+        if($n > 0){
+            $query .= " LIMIT ?";
+        }
+        $stmt = $this->db->prepare($query);
+        if($n > 0){
+            $stmt->bind_param('i',$n);
+        }
+        $stmt->bind_param('s',$theme);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    /* restituisce il tema del giorno */
+    public function getThemeOfTheDay($idTheme){
+        $query = "
+            SELECT id, data, nome
+            FROM tema
+            WHERE tema.id=?
+        ";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idTheme);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    /* restituisce i dati del giorno passato come parametro */
+    public function getDays($currentDay){
+            $query = "
+                SELECT day, day_name, month_name
+                FROM time_dimension
+                WHERE time_dimension.day=?
+            ";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('i',$currentDay);
+            $stmt->execute();
+            $result = $stmt->get_result();
+    
+            return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 
     public function insertPost($testo, $immagine, $tema, $utente){
         $query = "INSERT INTO post (testo, immagine, idTema, idUtente) VALUES (?, ?, ?, ?)";

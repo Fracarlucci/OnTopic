@@ -6,10 +6,17 @@
 
         <title><?php echo $templateParams["titolo"]; ?></title>
 
+        <!-- Font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <!-- Bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
+        <!-- Custom Style -->
+        <link rel="stylesheet" href="./components/login-modal/login-modal.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
         <?php
         if(isset($templateParams["js"])):
             foreach($templateParams["js"] as $script):
@@ -76,6 +83,10 @@
                                     </a>
                                 </li>
                             </div>
+                            <!-- Login Button -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login-modal">
+                                Login
+                            </button>
                         </ul>
                     </nav>
                 </div>
@@ -128,6 +139,8 @@
                 endif; ?>
             </div>
         </div>
+        <!-- Login Modal Include -->
+        <?php require_once("./components/login-modal/login-modal.php") ?>
         <footer class="bg-dark py-2">
             <!-- Add post -->
             <div class="text-center addIcon">
