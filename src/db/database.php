@@ -15,7 +15,7 @@ class DatabaseHelper{
 
     public function getUserById($userId) {
         $query = "
-            SELECT username, imgProfilo 
+            SELECT username, imgProfilo, nome, cognome
             FROM utente
             WHERE id = ?
         ";
@@ -73,13 +73,43 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getSeguitiById($userId) {
+        $query = "
+            SELECT u.id, u.username
+            FROM segui s INNER JOIN utente u ON s.idSeguito = u.id
+            WHERE u.id = ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getSeguaciById($userId) {
+        $query = "
+            SELECT u.id, u.username
+            FROM segui s INNER JOIN utente u ON s.idSeguace = u.id
+            WHERE s.idSeguito = ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     /**
      * Post CRUD
      */
 
     public function getPostsbyId($userId, $n=-1){
         $query = "
-            SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
+            SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti, COUNT(*) as totale
             FROM post p INNER JOIN utente u ON p.idUtente = u.id INNER JOIN tema t ON p.idTema = t.id 
             WHERE abilitato = 1
             AND u.id = ?
