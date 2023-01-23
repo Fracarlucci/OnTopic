@@ -7,8 +7,8 @@
         <title><?php echo $templateParams["titolo"]; ?></title>
 
         <!-- Bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
         <!-- Javascript -->
         <?php
         if(isset($templateParams["js"])):
@@ -58,7 +58,7 @@
                                 <div id="link" class="d-flex justify-content-center col-6">
                                     <nav>
                                         <ul class="menu">
-                                            <li class="menuButtonSelected mx-1 col"><a href="index.php">Home</a></li>
+                                            <li class="menuButton mx-1 col"><a href="index.php">Home</a></li>
                                             <li class="menuButton mx-1 col"><a href="tema.php">Tema</a></li>
                                             <li class="menuButton mx-1 col"><a href="cerca.php">Cerca</a></li>
                                         </ul>
@@ -126,7 +126,7 @@
                         endif; ?>
                     </main>
                 
-                </div>
+                </div> 
                 <div class="col-3">
                     <aside class="m-2 px-2 py-3">
                         <!-- Friends icon -->
