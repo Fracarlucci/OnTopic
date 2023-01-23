@@ -238,15 +238,34 @@ class DatabaseHelper{
      * Login
      */
 
-    public function checkLogin($username, $password){
-        $query = "SELECT idautore, username, nome FROM autore WHERE attivo=1 AND username = ? AND password = ?";
+    public function checkLogin($username){
+        $query = "SELECT id, username, password, sale FROM utente WHERE username = ? LIMIT 1";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ss',$username, $password);
+        $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
-    }    
+    }   
+    
+    public function insertLoginAttempt($userId, $time){
+        $query = "INSERT INTO login_attempts (user_id, time) VALUES (?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('is', $userId, $time);
+        $stmt->execute();
+
+        return $stmt->insert_id;
+    }   
+
+    public function getLoginAttempts($userId, $timeThd){
+        $query = "SELECT time FROM login_attempts WHERE user_id = ? AND time > ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii', $userId, $timeThd);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
 }
 ?>
