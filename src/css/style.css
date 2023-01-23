@@ -78,8 +78,18 @@ h2 {
     margin-right: 0.5em;
 }
 
-#tema {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+#tema, p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header p {
+    font-size: 80%;
+}
+
+footer p {
+    font-family: 'Robota', sans-serif;
+    margin: 0%;
+    padding: 0%;
 }
 
 aside a {
@@ -98,6 +108,13 @@ aside>a {
     align-items: center;
 }
 
+#heart:hover {
+    color: red;
+}
+
+#comment:hover {
+    color: rgb(100, 100, 100);
+}
 
 @media screen and (min-width: 768px) {
     #logoMobile, .dividerClass, #bell{
