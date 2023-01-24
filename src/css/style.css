@@ -19,13 +19,16 @@ nav li{
     list-style: none;
 }
 
-.friends{
+.friends, .notification{
     width: 100%;
+    padding: 2%;
+    margin: 0% 2% 0%, 2%;
     text-align: left;
 }
 
-.friends:hover{
+.friends:hover, .notification:hover{
     background-color: rgb(227, 227, 227);
+    border-radius: 5px;
 }
 
 ul{
@@ -35,6 +38,16 @@ ul{
 
 a:hover{
     color: inherit;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    margin-top: auto;
 }
 
 #logoDesktop:hover, #logoMobile:hover, #bell:hover, #profileIcon:hover, #profileIcon:hover, #addPost:hover{
@@ -202,14 +215,6 @@ aside>a {
         text-align: center;
     }
 }
-
-/*
-@media screen and (min-width: 768px) {
-    h1, h2 {
-        font-size: 2.5vw;
-    }
-}
-*/
 
 /* calendar slider */
 .wrapper{
