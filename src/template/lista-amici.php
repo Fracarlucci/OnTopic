@@ -9,12 +9,22 @@
         </a>
         <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
             <nav>
-                <ul>
-                    <?php foreach($templateParams["amici"] as $amico): ?>
-                        <li class="friends">    
-                            <a href="linkamico"><?php echo $amico["username"]; ?></a>
-                        </li>
-                    <?php endforeach; ?>
+                <ul class="friends">
+                    
+                <?php  include_once './bootstrap.php'; 
+                    include_once './utils/functions.php';
+                    if(login_check($dbh->db)):?>
+                        <?php foreach($templateParams["amici"] as $amico): ?>
+                            <li>    
+                                <a href="linkamico"><?php echo $amico["username"]; ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <li>
+                            Iscriviti per vedere tutti i tuoi amici!
+                        </li>   
+                    <?php endif; ?>
+
                 </ul>
             </nav>
         </div>

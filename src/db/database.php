@@ -1,6 +1,6 @@
 <?php
 class DatabaseHelper{
-    private $db;
+    public $db;
 
     public function __construct($servername, $username, $password, $dbname, $port){
         $this->db = new mysqli($servername, $username, $password, $dbname, $port);
