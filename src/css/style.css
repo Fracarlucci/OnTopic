@@ -109,6 +109,12 @@ footer p {
     padding: 0%;
 }
 
+#loginButton{
+    background-color: rgb(231, 177, 52);
+    border: none;
+
+}
+
 aside a {
     color: #000;
 }
@@ -179,9 +185,6 @@ aside>a {
         background-color: dark; 
         border-radius: 5px;
     }
-    /* #profilePic {
-        width: 10em;
-    } */
 }
 
 @media screen and (max-width: 768px) {
