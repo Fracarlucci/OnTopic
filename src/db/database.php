@@ -353,10 +353,10 @@ class DatabaseHelper{
      * Register
      */
 
-    public function insertUser($name, $surname, $username, $email, $password, $salt) {
-        $query = "INSERT INTO utente (nome, cognome, username, email, password, sale) VALUES (?, ?, ?, ?, ?, ?)";
+    public function insertUser($name, $surname, $username, $email, $password, $salt, $image) {
+        $query = "INSERT INTO utente (nome, cognome, username, email, password, sale, imgProfilo) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssssss', $name, $surname, $username, $email, $password, $salt);
+        $stmt->bind_param('sssssss', $name, $surname, $username, $email, $password, $salt, $image);
         $stmt->execute();
 
         return $stmt->insert_id;

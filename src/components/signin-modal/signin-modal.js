@@ -17,14 +17,24 @@ function signin(name, surname, username, email, password) {
     formData.append('email', email);
     formData.append('password', password);
 
-    console.log(formData)
+    const formDataImage = new FormData();
+    formDataImage.append("image", document.querySelector("#signin-input-image").files[0])
 
-    axios.post('./api/signin.php', formData).then(response => {
-        console.log(response);
-        if (response.data["signinEseguito"]) {
-            alert("signed in")
-        } else {
+    axios.post('./api/uploadImage.php', formDataImage).then(response => {
+        if (!response.data["uploadEseguito"]) {
             document.querySelector("#signin-form > p").innerText = response.data["erroreSignin"];
+        } else {
+            formData.append('image', response.data["fileName"]);
+            axios.post('./api/signin.php', formData).then(response => {
+                console.log(response);
+                if (response.data["signinEseguito"]) {
+                    alert("signed in")
+                } else {
+                    document.querySelector("#signin-form > p").innerText = response.data["erroreSignin"];
+                }
+            });
         }
     });
+
+    
 }

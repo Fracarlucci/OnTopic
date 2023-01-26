@@ -29,6 +29,10 @@
 						<label for="signin-input-password" class="form-label">Password</label>
 						<input type="password" class="form-control" id="signin-input-password" required>
 					</div>
+					<div class="mb-3">
+						<label for="signin-input-image" class="form-label">Immagine Profilo</label>
+						<input type="file" class="form-control" id="signin-input-image" required>
+					</div>
 					<button type="submit" class="btn btn-primary">Registrati</button>
 					<p></p>
 				</form>
