@@ -131,8 +131,23 @@ aside>a {
     align-items: center;
 }
 
-#heart:hover {
+.heart:hover {
     color: red;
+    animation-name: mi_piace;
+    animation-duration: 1s;
+}
+
+@keyframes mi_piace {
+    from {color: inherit;}
+    to {color: red;}
+}
+
+.liked {
+    color: red;
+}
+
+.liked:hover {
+    animation: none;
 }
 
 #comment:hover {
