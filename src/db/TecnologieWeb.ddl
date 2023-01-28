@@ -43,7 +43,7 @@ create table NOTIFICA (
 
 create table POST (
      id int not null auto_increment,
-     DataOra timestamp not null,
+     DataOra timestamp default CURRENT_TIMESTAMP not null,
      Testo varchar(255),
      Immagine varchar(255),
      MiPiace int default 0 not null,
