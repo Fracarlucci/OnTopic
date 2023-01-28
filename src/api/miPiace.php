@@ -11,9 +11,10 @@
 
     if($remove){
         $dbh->decrementLikesById($idPost);
-    }
-    else {
+        $dbh->removeLike($idPost, 1);
+    } else {
         $dbh->incrementLikesById($idPost);
+        $dbh->insertLike($idPost, 1);
     }
     $result["likes"] = $dbh->getLikesByPostId($idPost);
 
