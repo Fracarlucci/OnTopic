@@ -43,13 +43,13 @@
                 </svg>
             </div>
             <!-- Heart icon -->
-            <div class="heart mx-1">
+            <div class="heart mx-1" data-postid=<?php echo $post["id"]; ?>>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                 </svg>
             </div>
             <div class="mx-1 mt-1">
-                <p id="like"><?php echo $post["mipiace"]; ?></p>
+                <p id="like" data-postid=<?php echo $post["id"]; ?>><?php echo $post["mipiace"]; ?></p>
             </div>
         </div>
     </footer>

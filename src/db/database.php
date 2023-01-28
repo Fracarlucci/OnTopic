@@ -109,7 +109,7 @@ class DatabaseHelper{
 
     public function getPostsbyId($userId, $n=-1){
         $query = "
-            SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
+            SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.id, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
             FROM post p INNER JOIN utente u ON p.idUtente = u.id INNER JOIN tema t ON p.idTema = t.id 
             WHERE abilitato = 1
             AND u.id = ?
@@ -272,9 +272,9 @@ class DatabaseHelper{
 
     public function getLikesByPostId($idPost){
         $query = "
-            SELECT u.id, u.username, u.imgProfilo
-            FROM mi_piace m INNER JOIN utente u ON m.idUtente = u.id
-            WHERE m.idPost = ?
+            SELECT mipiace
+            FROM post
+            WHERE id = ?
         ";
 
         $stmt = $this->db->prepare($query);
