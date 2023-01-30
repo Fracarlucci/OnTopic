@@ -131,8 +131,23 @@ aside>a {
     align-items: center;
 }
 
-#heart:hover {
+.heart:hover {
     color: red;
+    animation-name: mi_piace;
+    animation-duration: 1s;
+}
+
+@keyframes mi_piace {
+    from {color: inherit;}
+    to {color: red;}
+}
+
+.liked {
+    color: red;
+}
+
+.liked:hover {
+    animation: none;
 }
 
 #comment:hover {
@@ -154,6 +169,28 @@ aside>a {
 #profileName {
     color: #000;
     margin: 5% 0;
+}
+
+#searchBar {
+    width: 100%;
+    display: inline-block;
+    border-radius: 5px;
+    border: 0;
+    margin: 0;
+}
+
+#searchButton {
+    display: inline-block;
+    background-color: inherit;
+    border: none;
+    border-radius: 100%;
+    color: #fff;
+    padding: 5% 15% 10%;
+    margin: 2%;
+}
+
+#searchButton:hover {
+    color: rgb(231, 177, 52);
 }
 
 @media screen and (min-width: 768px) {

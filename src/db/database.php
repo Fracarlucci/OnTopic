@@ -109,7 +109,7 @@ class DatabaseHelper{
 
     public function getPostsbyId($userId, $n=-1){
         $query = "
-            SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
+            SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.id, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
             FROM post p INNER JOIN utente u ON p.idUtente = u.id INNER JOIN tema t ON p.idTema = t.id 
             WHERE abilitato = 1
             AND u.id = ?
@@ -131,7 +131,7 @@ class DatabaseHelper{
     /* restituisce tutti i post del tema del giorno */
     public function getPostsbyTheme($theme, $n=-1){
         $query = "
-            SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
+            SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.id, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
             FROM post p INNER JOIN utente u ON p.idUtente = u.id INNER JOIN tema t ON p.idTema = t.id 
             WHERE t.id = ?
         ";
@@ -272,11 +272,26 @@ class DatabaseHelper{
      * Likes CRUD
      */
 
+    public function getLikesByPostIdAndUserId($idPost, $idUtente){
+        $query = "
+            SELECT *
+            FROM mi_piace
+            WHERE idPost = ? AND idUtente = ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii',$idPost, $idUtente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getLikesByPostId($idPost){
         $query = "
-            SELECT u.id, u.username, u.imgProfilo
-            FROM mi_piace m INNER JOIN utente u ON m.idUtente = u.id
-            WHERE m.idPost = ?
+            SELECT mipiace
+            FROM post
+            WHERE id = ?
         ";
 
         $stmt = $this->db->prepare($query);
@@ -289,6 +304,15 @@ class DatabaseHelper{
 
     public function insertLike($idPost, $idUtente){
         $query = "INSERT INTO mi_piace (idPost, idUtente) VALUES (?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii',$idPost, $idUtente);
+        $stmt->execute();
+        
+        return $stmt->insert_id;
+    }
+
+    public function removeLike($idPost, $idUtente){
+        $query = "DELETE FROM mi_piace WHERE idPost = ? AND idUtente = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ii',$idPost, $idUtente);
         $stmt->execute();
@@ -349,6 +373,19 @@ class DatabaseHelper{
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    /**
+     * Register
+     */
+
+    public function insertUser($name, $surname, $username, $email, $password, $salt, $image) {
+        $query = "INSERT INTO utente (nome, cognome, username, email, password, sale, imgProfilo) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sssssss', $name, $surname, $username, $email, $password, $salt, $image);
+        $stmt->execute();
+
+        return $stmt->insert_id;
     }
 
 }

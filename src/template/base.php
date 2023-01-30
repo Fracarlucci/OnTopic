@@ -13,17 +13,19 @@
         <link rel="stylesheet" href="css/style.css">
         <!-- Custom Style -->
         <link rel="stylesheet" href="./components/login-modal/login-modal.css">
+        <link rel="stylesheet" href="./components/signin-modal/signin-modal.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Javascript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="./components/login-modal/login-modal.js" defer></script>
+        <script src="./components/signin-modal/signin-modal.js" defer></script>
         <?php
         if(isset($templateParams["js"])):
             foreach($templateParams["js"] as $script):
         ?>
-            <script src="<?php echo $script; ?>"></script>
+            <script defer src="<?php echo $script; ?>"></script>
         <?php
             endforeach;
         endif;
@@ -157,6 +159,8 @@
         </div>
         <!-- Login Modal Include -->
         <?php require_once("./components/login-modal/login-modal.php") ?>
+        <!-- SignIn Modal Include-->
+        <?php require_once("./components/signin-modal/signin-modal.php") ?>
         <footer class="bg-dark py-2">
 
             <?php if(login_check($dbh->db)): ?>
