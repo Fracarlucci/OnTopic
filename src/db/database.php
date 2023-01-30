@@ -28,6 +28,21 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function searchByUsername($username) {
+        $query = "
+            SELECT id, username, nome, cognome, imgProfilo
+            FROM utente
+            WHERE username LIKE ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getUsersByUsername($slug) {
         $query = "
             SELECT id, username, imgProfilo 
