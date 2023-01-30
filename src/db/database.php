@@ -179,15 +179,17 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    /* restituisce i dati del giorno passato come parametro */
-    public function getDays($currentDay){
+    /* restituisce i dati del giorno e mese passati come parametro */
+    public function getDays($currentDay, $currentMonth, $currentYear){
             $query = "
                 SELECT day, day_name, month_name
                 FROM time_dimension
-                WHERE time_dimension.day=?
+                WHERE time_dimension.day=? 
+                AND time_dimension.month=?
+                AND time_dimension.year=?
             ";
             $stmt = $this->db->prepare($query);
-            $stmt->bind_param('i',$currentDay);
+            $stmt->bind_param('iii',$currentDay,$currentMonth,$currentYear);
             $stmt->execute();
             $result = $stmt->get_result();
     
