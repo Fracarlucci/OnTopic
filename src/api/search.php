@@ -4,7 +4,7 @@
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
 
     $input = $_POST["input"];
-    $result["user"] = $dbh->searchByUsername($input);
+    $result["user"] = $dbh->searchUser($input);
 
     if(empty($result["user"])){
         $result["user"] = false;

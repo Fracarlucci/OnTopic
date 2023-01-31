@@ -1,7 +1,7 @@
-INSERT INTO UTENTE (Nome, Cognome, Username, Email, Password, Sale)
-    VALUES  ('Francesco', 'Carlucci', 'Ciccio', 'francesco.carlucci6@studio.unibo.it', 'password', ''),
-            ('Dilaver', 'Shtini', 'Veri', 'dilaver.shtini@studio.unibo.it', 'password', ''),
-            ('Daniele', 'Pancottini', 'Dani', 'daniele.pancottini@studio.unibo.it', 'password', '');
+INSERT INTO UTENTE (Nome, Cognome, Username, Email, Password)
+    VALUES  ('Francesco', 'Carlucci', 'Ciccio', 'francesco.carlucci6@studio.unibo.it', 'password'),
+            ('Dilaver', 'Shtini', 'Veri', 'dilaver.shtini@studio.unibo.it', 'password'),
+            ('Daniele', 'Pancottini', 'Dani', 'daniele.pancottini@studio.unibo.it', 'password');
 
 INSERT INTO TEMA (Data, Nome)
     VALUES  ('2022-01-20', 'Rap'),

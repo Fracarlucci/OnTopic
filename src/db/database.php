@@ -28,15 +28,17 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function searchByUsername($username) {
+    public function searchUser($input) {
         $query = "
             SELECT id, username, nome, cognome, imgProfilo
             FROM utente
-            WHERE username LIKE ?
+            WHERE username LIKE CONCAT(?, '%')
+            OR nome LIKE CONCAT(?, '%')
+            OR cognome LIKE CONCAT(?, '%')
         ";
 
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('s',$username);
+        $stmt->bind_param('sss',$input,$input,$input);
         $stmt->execute();
         $result = $stmt->get_result();
 
