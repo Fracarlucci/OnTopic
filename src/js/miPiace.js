@@ -6,7 +6,6 @@ heart.forEach(element => {
         formData.append('postId', postId);
     
         axios.post('./api/checkMiPiace.php', formData).then(response => {
-            console.log(response.data["isLiked"]);
             if(response.data["isLiked"] == true){
                 if(!element.classList.contains("liked")){
                     element.classList.add("liked");

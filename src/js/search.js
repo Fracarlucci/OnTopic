@@ -5,8 +5,6 @@ function cerca(form) {
     formData.append('input', input);
 
     axios.post('./api/search.php', formData).then(response => {
-        console.log(response);
-        console.log(response.data["user"]);
         if(response.data["user"] == false) {
             document.querySelector(".result").innerHTML = "Nessun risultato";
         } else {
