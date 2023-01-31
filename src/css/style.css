@@ -19,7 +19,7 @@ nav li{
     list-style: none;
 }
 
-.friends, .notification{
+.friends, .notification {
     width: 100%;
     padding: 2%;
     margin: 0% 2% 0%, 2%;
@@ -129,6 +129,11 @@ aside>a {
 
 #calendar{
     align-items: center;
+}
+
+section img {
+    margin-bottom: 2%;
+    border-radius: 2%;
 }
 
 .heart:hover {

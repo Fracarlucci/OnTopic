@@ -33,6 +33,9 @@
         </div>
         <p><?php echo $post["dataora"]; ?></p>
     </header>
+    <?php if(isset($post["immagine"])): ?>
+        <img src="<?php echo $post["immagine"]; ?>" class="img-fluid" alt="Post image">
+    <?php endif; ?>
     <article><?php echo $post["testo"]; ?></article>
     <footer class="my-1">
         <div class="d-flex justify-content-end">
