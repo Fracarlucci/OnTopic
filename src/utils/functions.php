@@ -153,4 +153,11 @@
         }
         return array($result, $msg);
     }
+
+    function deleteFileIfExists($basePath, $fileName) {
+        $fullPath = $basePath . $fileName;
+        if (file_exists($fullPath)) {
+            unlink($fullPath);
+        }
+    }
 ?>
