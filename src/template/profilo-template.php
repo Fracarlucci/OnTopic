@@ -19,12 +19,12 @@
                         </div>
                         <div class="col-4 align-self-center">
                             <a href="#">
-                                <h3 class="profileHead">Seguaci <span id="nSeguaci"><?php echo count($templateParams["seguaci"]); ?></span></h3>
+                                <button class="profileHead">Seguaci <span id="nSeguaci"><?php echo count($templateParams["seguaci"]); ?></span></button>
                             </a>
                         </div>
                         <div class="col-4 align-self-center">
                             <a href="#">
-                                <h3 class="profileHead">Seguiti <span><?php echo count($templateParams["seguiti"]); ?></span></h3>
+                                <button class="profileHead">Seguiti <span><?php echo count($templateParams["seguiti"]); ?></span></button>
                             </a>
                         </div>
                     </div>

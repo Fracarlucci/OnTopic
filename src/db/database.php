@@ -93,8 +93,8 @@ class DatabaseHelper{
     public function getSeguitiById($userId) {
         $query = "
             SELECT u.id, u.username
-            FROM segui s INNER JOIN utente u ON s.idSeguace = u.id
-            WHERE u.id = ?
+            FROM segui s INNER JOIN utente u ON s.idSeguito = u.id
+            WHERE s.idSeguace = ?
         ";
 
         $stmt = $this->db->prepare($query);

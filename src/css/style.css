@@ -1,3 +1,11 @@
+button {
+    font-weight: 500;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: inherit;
+}
+
 a{
     text-decoration: none;
     color: #fff;
@@ -146,7 +154,7 @@ section img {
 }
 
 @keyframes mi_piace {
-    from {color: inherit;}
+    from {color: black;}
     to {color: red;}
 }
 

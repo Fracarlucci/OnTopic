@@ -12,23 +12,22 @@ heart.forEach(element => {
                 }
             }
         });
-
-    element.addEventListener("click", function(event){
-        const postId = event.currentTarget.dataset.postid;
+    });
+    
+    function miPiace(button, postId){
         const formData = new FormData();
         formData.append('postId', postId);
 
-        if(element.classList.contains("liked")){
-            element.classList.remove("liked");
+        if(button.classList.contains("liked")){
+            button.classList.remove("liked");
             formData.append('remove', true);
             like(formData, postId);
         }
-        else if(!element.classList.contains("liked")){
-            element.classList.add("liked");
+        else if(!button.classList.contains("liked")){
+            button.classList.add("liked");
             like(formData, postId);
         }
-    })
-});
+    }
 
 function like(formData, postId) {
     axios.post('./api/miPiace.php', formData).then(response => {
