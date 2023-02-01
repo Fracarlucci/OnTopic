@@ -1,36 +1,39 @@
 
 document.querySelector("#signin-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-    let name = document.querySelector("#signin-input-name").value;
-    let surname = document.querySelector("#signin-input-surname").value;
-    let username = document.querySelector("#signin-input-username").value;
-    let email = document.querySelector("#signin-input-email").value;
-    let password = document.querySelector("#signin-input-password").value;
-    signin(name, surname, username, email, password);
+    event.preventDefault()
+    signin()
+    event.target.reset()
 });
 
-function signin(name, surname, username, email, password) {
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('surname', surname);
-    formData.append('username', username);
-    formData.append('email', email);
-    formData.append('password', password);
+function signin() {
 
-    const formDataImage = new FormData();
+    //form data for user post req
+    const formDataUser = new FormData()
+    formDataUser.append('name', document.querySelector("#signin-input-name").value)
+    formDataUser.append('surname', document.querySelector("#signin-input-surname").value)
+    formDataUser.append('username', document.querySelector("#signin-input-username").value)
+    formDataUser.append('email', document.querySelector("#signin-input-email").value)
+    formDataUser.append('password', document.querySelector("#signin-input-password").value)
+
+    //form data for upload image req
+    const formDataImage = new FormData()
     formDataImage.append("image", document.querySelector("#signin-input-image").files[0])
 
-    axios.post('./api/uploadImage.php', formDataImage).then(response => {
-        if (!response.data["uploadEseguito"]) {
-            document.querySelector("#signin-form > p").innerText = response.data["erroreSignin"];
+    //make post req to upload image, if ok send post req to signin endpoint
+    axios.post('./api/uploadImage.php', formDataImage).then(responseUpload => {
+        if (!responseUpload.data["uploadEseguito"]) {
+            document.querySelector("#signin-form > p").innerText = responseUpload.data["erroreUpload"]
         } else {
-            formData.append('image', response.data["fileName"]);
-            axios.post('./api/signin.php', formData).then(response => {
-                console.log(response);
-                if (response.data["signinEseguito"]) {
+            formDataUser.append('image', responseUpload.data["fileName"])
+            axios.post('./api/signin.php', formDataUser).then(responseSignin => {
+                if (responseSignin.data["signinEseguito"]) {
                     alert("signed in")
                 } else {
-                    document.querySelector("#signin-form > p").innerText = response.data["erroreSignin"];
+                    //delete user image and view error
+                    const formDataDelete = new FormData()
+                    formDataDelete.append("image", responseUpload.data["fileName"])
+                    axios.post('./api/deleteUserImage.php', formDataDelete)
+                    document.querySelector("#signin-form > p").innerText = responseSignin.data["erroreSignin"]
                 }
             });
         }
