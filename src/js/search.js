@@ -22,7 +22,7 @@ function cerca(form) {
                     const span = document.createElement("span");
                     const row =" " + element.nome + " " + element.cognome;
 
-                    a.setAttribute("href", "profile.php?user=" + element.username);
+                    a.setAttribute("href", "profilo.php?user=" + element.username);
                     span.appendChild(document.createTextNode(element.username));
                     li.appendChild(span);
                     li.appendChild(document.createTextNode(row));

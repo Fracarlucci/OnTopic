@@ -1,25 +1,42 @@
 <div class="container my-2">
     <header>
         <div class="row">
-            <div class="col-3">
-                <img id="profilePic" src=<?php echo $templateParams["utente"][0]["imgProfilo"]; ?> alt="profile image"/>
+            <div class="col-2">
+                <?php if(isset($templateParams["utente"][0]["imgProfilo"])): ?>
+                    <img id="profilePic" src=<?php echo $templateParams["utente"][0]["imgProfilo"]; ?> alt="profile image"/>
+                <?php else: ?>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="130%" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
+                <?php endif; ?>
             </div>
-            <div class="col-9 px-2">
+            <div class="col-10 px-2">
                 <div class="container">
                     <div class="row">
-                        <div class="col-4">
-                            <h3 class="profileHead">Post: <?php echo count($templateParams["posts"]); ?></h3>
+                        <div class="col-4 align-self-center">
+                            <h3 class="profileHead">Post <span><?php echo count($templateParams["posts"]); ?></span></h3>
                         </div>
-                        <div class="col-5">
+                        <div class="col-4 align-self-center">
                             <a href="#">
-                                <h3 class="profileHead">Amici: <?php echo count($templateParams["amici"]); ?></h3>
+                                <h3 class="profileHead">Seguaci <span id="nSeguaci"><?php echo count($templateParams["seguaci"]); ?></span></h3>
+                            </a>
+                        </div>
+                        <div class="col-4 align-self-center">
+                            <a href="#">
+                                <h3 class="profileHead">Seguiti <span><?php echo count($templateParams["seguiti"]); ?></span></h3>
                             </a>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-6 mb-1">
                             <h1 id="profileName"><?php echo $templateParams["utente"][0]["username"]; ?></h1>
                         </div>
+                        <?php #if($templateParams["utente"] != $_GET["username"]): ?>
+                            <div class="col-6 align-self-center">
+                                <button id="seguiButton" type="button" onclick="segui(this)">Segui</button>
+                            </div>
+                        <?php #endif; ?>
                     </div>
                     <div class="row">
                         <div class="col-12">

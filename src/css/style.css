@@ -19,14 +19,14 @@ nav li{
     list-style: none;
 }
 
-.friends, .notification {
+.follow, .notification {
     width: 100%;
     padding: 2%;
     margin: 0% 2% 0%, 2%;
     text-align: left;
 }
 
-.friends:hover, .notification:hover, #result li:hover  {
+.follow:hover, .notification:hover, #result li:hover  {
     background-color: rgb(227, 227, 227);
     border-radius: 5px;
 }
@@ -109,10 +109,13 @@ footer p {
     padding: 0%;
 }
 
-#loginButton{
+#loginButton {
     background-color: rgb(231, 177, 52);
     border: none;
+}
 
+#loginButton:hover {
+    background-color: rgb(255, 179, 0);
 }
 
 aside a {
@@ -166,7 +169,7 @@ section img {
 }
 
 .profileHead {
-    font-size: 120%;
+    font-size: 97%;
     color: #000;
     margin: 5% 0;
 }
@@ -176,9 +179,21 @@ section img {
     margin: 5% 0;
 }
 
+#seguiButton {
+    background-color: rgb(231, 177, 52);
+    color: white;
+    border: none;
+    padding: 3% 15%;
+    border-radius: 5px;
+}
+
+#seguiButton:hover {
+    background-color: rgb(255, 179, 0);
+}
+
+
 #searchBar {
     width: 100%;
-    display: inline-block;
     border-radius: 5px;
     border: 0;
     margin: 0;
@@ -206,13 +221,8 @@ section img {
     color: #000;
 }
 
-#result>a>li>span {
-    font-weight: bold;
-    font-size: 100%;
-}
-
 span {
-    display: inline-block;
+    font-weight: bold;
 }
 
 @media screen and (min-width: 768px) {
@@ -233,8 +243,7 @@ span {
         width: 100%;
     }
     nav>ul>a>li.menuButtonSelected, nav>ul>a>li.menuButton:hover{
-        background-color: rgb(231, 177, 52);
-        color: #fff;
+        background-color: rgb(255, 179, 0);
     }
     nav>ul>a>li{
         display: inline-block;
@@ -263,8 +272,7 @@ span {
         display: none;
     }
     nav>ul>a>li.menuButtonSelected, nav>ul>a>li.menuButton:hover{
-        background-color: rgb(231, 177, 52);
-        color: #fff;
+        background-color: rgb(255, 179, 0);
     }
     nav>ul>a>li{
         display: inline-block;

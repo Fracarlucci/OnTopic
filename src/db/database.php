@@ -93,7 +93,7 @@ class DatabaseHelper{
     public function getSeguitiById($userId) {
         $query = "
             SELECT u.id, u.username
-            FROM segui s INNER JOIN utente u ON s.idSeguito = u.id
+            FROM segui s INNER JOIN utente u ON s.idSeguace = u.id
             WHERE u.id = ?
         ";
 
@@ -118,6 +118,43 @@ class DatabaseHelper{
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function checkFollow($userId, $followedId) {
+        $query = "
+            SELECT *
+            FROM segui
+            WHERE idSeguace = ? AND idSeguito = ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii',$userId,$followedId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function followUser($userId, $followedId) {
+        $query = "
+            INSERT INTO segui (idSeguace, idSeguito)
+            VALUES (?, ?)
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii',$userId,$followedId);
+        $stmt->execute();
+    }
+
+    public function unfollowUser($userId, $followedId) {
+        $query = "
+            DELETE FROM segui
+            WHERE idSeguace = ? AND idSeguito = ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii',$userId,$followedId);
+        $stmt->execute();
     }
 
     /**
