@@ -84,6 +84,10 @@ h1 {
     padding: 0%;
 }
 
+.noPost {
+    text-align: center;
+}
+
 h2 {
     display: inline-block;
     text-align: left;
@@ -124,7 +128,7 @@ aside>a {
 }
 
 .topic{
-    text-align: right;
+    text-align: center;
 }
 
 #calendar{

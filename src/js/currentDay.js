@@ -49,7 +49,7 @@ xhr4.onreadystatechange = function(){
         }else{
             prevTwoDay-=2;
         }
-        xhr41.open(method, url+"?currentDay="+prevTwoDay+"&currentMonth="+prevMonth2+"&currentYear="+prevYear2, true);
+        xhr41.open(method, url2+"?currentDay="+prevTwoDay+"&currentMonth="+prevMonth2+"&currentYear="+prevYear2, true);
         xhr41.send();
         // fine primo giorno    
 
