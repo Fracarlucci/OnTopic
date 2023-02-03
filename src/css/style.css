@@ -34,7 +34,7 @@ nav li{
     text-align: left;
 }
 
-.follow:hover, .notification:hover, #result li:hover  {
+.follow:hover, .notification:hover, #result li:hover, #usersList li:hover {
     background-color: rgb(227, 227, 227);
     border-radius: 5px;
 }
@@ -225,7 +225,7 @@ section img {
     display: none;
 }
 
-#result>a>li {
+#result>a>li, #usersList>a>li {
     color: #000;
 }
 

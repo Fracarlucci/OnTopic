@@ -92,7 +92,7 @@ class DatabaseHelper{
 
     public function getSeguitiById($userId) {
         $query = "
-            SELECT u.id, u.username
+            SELECT u.id, u.username, u.nome, u.cognome
             FROM segui s INNER JOIN utente u ON s.idSeguito = u.id
             WHERE s.idSeguace = ?
         ";
@@ -107,7 +107,7 @@ class DatabaseHelper{
 
     public function getSeguaciById($userId) {
         $query = "
-            SELECT u.id, u.username
+            SELECT u.id, u.username, u.nome, u.cognome
             FROM segui s INNER JOIN utente u ON s.idSeguace = u.id
             WHERE s.idSeguito = ?
         ";
