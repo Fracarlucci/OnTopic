@@ -131,7 +131,9 @@
                                         <?php endforeach; ?>
                                     <?php else: ?>
                                         <li>
-                                            Iscriviti per ricevere tutte le notifiche!
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#signin-modal">
+                                                Iscriviti per ricevere tutte le notifiche!
+                                            </a>
                                         </li>    
                                     <?php endif; ?>
 
@@ -164,7 +166,11 @@
                                             <li><a href="linkseguito"><?php echo $seguito["username"]; ?></a></li>
                                         <?php endforeach;
                                     } else {?>
-                                        <li>Iscriviti per vedere tutti i tuoi amici!</li>   
+                                        <li>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#signin-modal">
+                                                Iscriviti per vedere tutti i tuoi amici!
+                                            </a>    
+                                        </li>   
                                     <?php } ?>
                                 </ul>
                             </nav>
