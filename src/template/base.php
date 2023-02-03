@@ -161,17 +161,17 @@
                         <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
                             <nav>
                                 <ul class="follow">
-                                    <?php if(login_check($dbh->db)) {
-                                        foreach($templateParams["seguti"] as $seguito): ?>
+                                    <?php if(login_check($dbh->db)): ?>
+                                        <?php foreach($templateParams["seguiti"] as $seguito): ?>
                                             <li><a href="linkseguito"><?php echo $seguito["username"]; ?></a></li>
-                                        <?php endforeach;
-                                    } else {?>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
                                         <li>
                                             <a href="#" data-bs-toggle="modal" data-bs-target="#signin-modal">
                                                 Iscriviti per vedere tutti i tuoi amici!
                                             </a>    
                                         </li>   
-                                    <?php } ?>
+                                    <?php endif; ?>
                                 </ul>
                             </nav>
                         </div>

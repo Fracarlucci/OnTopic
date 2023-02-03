@@ -27,7 +27,8 @@ function signin() {
             formDataUser.append('image', responseUpload.data["fileName"])
             axios.post('./api/signin.php', formDataUser).then(responseSignin => {
                 if (responseSignin.data["signinEseguito"]) {
-                    alert("signed in")
+                    document.querySelector("#signin-form > p").innerText = "Registrazione eseguita con seuccesso!"
+                    setTimeout(() => document.location.href = "", 2000);
                 } else {
                     //delete user image and view error
                     const formDataDelete = new FormData()
