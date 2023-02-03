@@ -92,6 +92,10 @@ h1 {
     padding: 0%;
 }
 
+.noPost {
+    text-align: center;
+}
+
 h2 {
     display: inline-block;
     text-align: left;
@@ -135,7 +139,7 @@ aside>a {
 }
 
 .topic{
-    text-align: right;
+    text-align: center;
 }
 
 #calendar{
@@ -303,6 +307,7 @@ span {
 
 .btn-left, .btn-right{
     border-radius: 20px;
+    background-color: #fff;
 }
 
 .btn-left:active, .btn-right:active {
@@ -327,8 +332,15 @@ span {
     width: 19%;
 }
 
-.slide{
+.currentSlide{
+    border-radius: 10%;
+    background-color:rgb(255, 179, 0);
+
+}
+
+.slide, .currentSlide{
     display: inline-block;
     cursor: pointer;
     text-align: center;
 }
+

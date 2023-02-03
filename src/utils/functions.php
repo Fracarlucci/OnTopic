@@ -76,7 +76,7 @@
             $login_string = $_SESSION['login_string'];
             $username = $_SESSION['username'];     
             $user_browser = $_SERVER['HTTP_USER_AGENT']; // reperisce la stringa 'user-agent' dell'utente.
-            if ($stmt = $mysqli->prepare("SELECT password FROM members WHERE id = ? LIMIT 1")) { 
+            if ($stmt = $mysqli->prepare("SELECT password FROM utente WHERE id = ? LIMIT 1")) { 
                 $stmt->bind_param('i', $userId); // esegue il bind del parametro '$userId'.
                 $stmt->execute(); // Esegue la query creata.
                 $stmt->store_result();
@@ -159,5 +159,22 @@
         if (file_exists($fullPath)) {
             unlink($fullPath);
         }
+    }
+
+    function sendNotificationEmail($from, $to, $type) {
+
+        $messages = [
+            "follow" => "L'utente <strong>" . $from . "</strong> ha iniziato a seguirti",
+            "like" => "L'utente <strong>" . $from . "</strong> ha messo mi piace ad un tuo post",
+            "comment" => "L'utente <strong>" . $from . "</strong> ha commentato un tuo post"
+        ];
+
+        $subject = 'Hai una nuova notifica su OnTopic';
+        $headers = 'From: ontopic@info.com' . "\r\n" .
+                    'Reply-To: ontopic@info.com' . "\r\n" .
+                    'X-Mailer: PHP/' . phpversion();
+
+        mail($to, $subject, $messages[$type], $headers);
+
     }
 ?>

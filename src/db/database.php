@@ -187,7 +187,7 @@ class DatabaseHelper{
         $query = "
             SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.id, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
             FROM post p INNER JOIN utente u ON p.idUtente = u.id INNER JOIN tema t ON p.idTema = t.id 
-            WHERE t.id = ?
+            WHERE t.nome = ?
         ";
         if($n > 0){
             $query .= " LIMIT ?";
@@ -203,15 +203,15 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    /* restituisce il tema del giorno */
-    public function getThemeOfTheDay($idTheme){
+    /* restituisce il tema del giorno passato come parametro*/
+    public function getThemeOfTheDay($date){
         $query = "
-            SELECT id, data, nome
+            SELECT nome
             FROM tema
-            WHERE tema.id=?
+            WHERE tema.Data = ?
         ";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$idTheme);
+        $stmt->bind_param('s',$date);
         $stmt->execute();
         $result = $stmt->get_result();
 

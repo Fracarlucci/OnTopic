@@ -3,6 +3,12 @@ const xhr2 = new XMLHttpRequest();
 const xhr3 = new XMLHttpRequest();
 const method = "GET";
 const url = "./api/daysCalculator.php";
+
+// var -> variabili globali, let -> locali
+var date = new Date();
+var dateFormat = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate()
+document.cookie = "date= "+dateFormat;
+
 let currentDay = new Date().getDate();
 let currentYear = new Date().getFullYear();
 let currentMonth = new Date().getMonth();
@@ -20,13 +26,16 @@ function scrollDaysLeft(){
             currentYear--;
             currentMonth=12;
             currentDay=31;
+            document.cookie = "date= "+currentYear+"-"+currentMonth+"-"+currentDay;
         }else{
             currentMonth--;
             lastDateOTM = new Date(currentYear, currentMonth, 0).getDate();
             currentDay = lastDateOTM;
+            document.cookie = "date= "+currentYear+"-"+currentMonth+"-"+currentDay;
         }
     }else{
         currentDay--;
+        document.cookie = "date= "+currentYear+"-"+currentMonth+"-"+currentDay;
     }
     xhr.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
@@ -89,12 +98,11 @@ function scrollDaysLeft(){
             }
             xhr3.open(method, url+"?currentDay="+prevTwoDay+"&currentMonth="+prevMonth2+"&currentYear="+prevYear2, true);
             xhr3.send();
-
         }
-    }
+    }   
     xhr.open(method, url+"?currentDay="+currentDay+"&currentMonth="+currentMonth+"&currentYear="+currentYear, true);
-    xhr.send(); 
-}
+    xhr.send();
+} 
 
 function scrollDaysRigth(){
     if(currentDay==lastDateOTM){
@@ -102,13 +110,16 @@ function scrollDaysRigth(){
             currentYear++;
             currentDay=1;
             currentMonth=1;
+            document.cookie = "date= "+currentYear+"-"+currentMonth+"-"+currentDay;
         }else{
             currentDay=1;
             currentMonth++;
             lastDateOTM = new Date(currentYear, currentMonth, 0).getDate();
+            document.cookie = "date= "+currentYear+"-"+currentMonth+"-"+currentDay;
         }
     }else{
         currentDay++;
+        document.cookie = "date= "+currentYear+"-"+currentMonth+"-"+currentDay;
     }
     xhr.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
