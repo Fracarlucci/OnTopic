@@ -40,7 +40,7 @@
                     </div>
                 </li>
                 <li class="linkDay">
-                    <div class="slide w-100">
+                    <div class="currentSlide w-100">
                         <span id="textCalendar3">
                             <small>
                                 <?php
