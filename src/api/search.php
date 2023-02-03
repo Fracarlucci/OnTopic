@@ -4,10 +4,10 @@
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
 
     $input = $_POST["input"];
-    $result["user"] = $dbh->searchUser($input);
+    $result = $dbh->searchUser($input);
 
-    if(empty($result["user"])){
-        $result["user"] = false;
+    if(empty($result)){
+        $result = false;
     }
 
     header('Content-Type: application/json');
