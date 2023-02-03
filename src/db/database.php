@@ -28,15 +28,17 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function searchByUsername($username) {
+    public function searchUser($input) {
         $query = "
             SELECT id, username, nome, cognome, imgProfilo
             FROM utente
-            WHERE username LIKE ?
+            WHERE username LIKE CONCAT(?, '%')
+            OR nome LIKE CONCAT(?, '%')
+            OR cognome LIKE CONCAT(?, '%')
         ";
 
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('s',$username);
+        $stmt->bind_param('sss',$input,$input,$input);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -92,7 +94,7 @@ class DatabaseHelper{
         $query = "
             SELECT u.id, u.username
             FROM segui s INNER JOIN utente u ON s.idSeguito = u.id
-            WHERE u.id = ?
+            WHERE s.idSeguace = ?
         ";
 
         $stmt = $this->db->prepare($query);
@@ -116,6 +118,43 @@ class DatabaseHelper{
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function checkFollow($userId, $followedId) {
+        $query = "
+            SELECT *
+            FROM segui
+            WHERE idSeguace = ? AND idSeguito = ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii',$userId,$followedId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function followUser($userId, $followedId) {
+        $query = "
+            INSERT INTO segui (idSeguace, idSeguito)
+            VALUES (?, ?)
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii',$userId,$followedId);
+        $stmt->execute();
+    }
+
+    public function unfollowUser($userId, $followedId) {
+        $query = "
+            DELETE FROM segui
+            WHERE idSeguace = ? AND idSeguito = ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii',$userId,$followedId);
+        $stmt->execute();
     }
 
     /**

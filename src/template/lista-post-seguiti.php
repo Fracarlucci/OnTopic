@@ -1,5 +1,5 @@
-<?php foreach($templateParams["amici"] as $amico):
-    $templateParams["posts"] = $dbh->getPostsById($amico["id"]);
+<?php foreach($templateParams["seguiti"] as $seguito):
+    $templateParams["posts"] = $dbh->getPostsById($seguito["id"]);
     foreach($templateParams["posts"] as $post):
         require($templateParams["post"]);    
     endforeach;

@@ -1,3 +1,11 @@
+button {
+    font-weight: 500;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: inherit;
+}
+
 a{
     text-decoration: none;
     color: #fff;
@@ -11,7 +19,7 @@ section a {
     color:#000;
 }
 
-nav ul{
+ul{
     list-style: none;
 }
 
@@ -19,14 +27,14 @@ nav li{
     list-style: none;
 }
 
-.friends, .notification{
+.follow, .notification {
     width: 100%;
     padding: 2%;
     margin: 0% 2% 0%, 2%;
     text-align: left;
 }
 
-.friends:hover, .notification:hover{
+.follow:hover, .notification:hover, #result li:hover  {
     background-color: rgb(227, 227, 227);
     border-radius: 5px;
 }
@@ -113,10 +121,13 @@ footer p {
     padding: 0%;
 }
 
-#loginButton{
+#loginButton {
     background-color: rgb(231, 177, 52);
     border: none;
+}
 
+#loginButton:hover {
+    background-color: rgb(255, 179, 0);
 }
 
 aside a {
@@ -135,6 +146,11 @@ aside>a {
     align-items: center;
 }
 
+section img {
+    margin-bottom: 2%;
+    border-radius: 2%;
+}
+
 .heart:hover {
     color: red;
     animation-name: mi_piace;
@@ -142,7 +158,7 @@ aside>a {
 }
 
 @keyframes mi_piace {
-    from {color: inherit;}
+    from {color: black;}
     to {color: red;}
 }
 
@@ -165,7 +181,7 @@ aside>a {
 }
 
 .profileHead {
-    font-size: 120%;
+    font-size: 97%;
     color: #000;
     margin: 5% 0;
 }
@@ -175,9 +191,21 @@ aside>a {
     margin: 5% 0;
 }
 
+#seguiButton {
+    background-color: rgb(231, 177, 52);
+    color: white;
+    border: none;
+    padding: 3% 15%;
+    border-radius: 5px;
+}
+
+#seguiButton:hover {
+    background-color: rgb(255, 179, 0);
+}
+
+
 #searchBar {
     width: 100%;
-    display: inline-block;
     border-radius: 5px;
     border: 0;
     margin: 0;
@@ -195,6 +223,18 @@ aside>a {
 
 #searchButton:hover {
     color: rgb(231, 177, 52);
+}
+
+#result-container {
+    display: none;
+}
+
+#result>a>li {
+    color: #000;
+}
+
+span {
+    font-weight: bold;
 }
 
 @media screen and (min-width: 768px) {
@@ -215,8 +255,7 @@ aside>a {
         width: 100%;
     }
     nav>ul>a>li.menuButtonSelected, nav>ul>a>li.menuButton:hover{
-        background-color: rgb(231, 177, 52);
-        color: #fff;
+        background-color: rgb(255, 179, 0);
     }
     nav>ul>a>li{
         display: inline-block;
@@ -245,8 +284,7 @@ aside>a {
         display: none;
     }
     nav>ul>a>li.menuButtonSelected, nav>ul>a>li.menuButton:hover{
-        background-color: rgb(231, 177, 52);
-        color: #fff;
+        background-color: rgb(255, 179, 0);
     }
     nav>ul>a>li{
         display: inline-block;

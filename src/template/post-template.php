@@ -4,10 +4,14 @@
             <!-- User icon -->
             <div class="d-flex col-1 prova" id="userIcon">
                 <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                    </svg>
+                    <?php if(isset($templateParams["utente"][0]["imgProfilo"])): ?>
+                        <img id="profilePic" src=<?php echo $templateParams["utente"][0]["imgProfilo"]; ?> alt="profile image"/>
+                    <?php else: ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                        </svg>
+                    <?php endif; ?>
                 </a>
             </div>
             <!-- Username -->
@@ -33,6 +37,9 @@
         </div>
         <p><?php echo $post["dataora"]; ?></p>
     </header>
+    <?php if(isset($post["immagine"])): ?>
+        <img src="<?php echo $post["immagine"]; ?>" class="img-fluid" alt="Post image">
+    <?php endif; ?>
     <article><?php echo $post["testo"]; ?></article>
     <footer class="my-1">
         <div class="d-flex justify-content-end">
@@ -43,10 +50,12 @@
                 </svg>
             </div>
             <!-- Heart icon -->
-            <div class="heart mx-1" data-postid=<?php echo $post["id"]; ?>>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                </svg>
+            <div class="mx-1">
+                <button class="heart" type="button" onclick="miPiace(this, '<?php echo $post['id']; ?>')" data-postid=<?php echo $post["id"]; ?>>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                    </svg>
+                </button>
             </div>
             <div class="mx-1 mt-1">
                 <p id="like" data-postid=<?php echo $post["id"]; ?>><?php echo $post["mipiace"]; ?></p>
