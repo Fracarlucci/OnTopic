@@ -174,7 +174,15 @@
                     'Reply-To: ontopic@info.com' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
 
-        mail($to, $subject, $messages[$type], $headers);
+        $success = mail($to, $subject, $messages[$type], $headers);
+
+        if($success){
+            echo "Message accepted";
+        }
+        else
+        {
+            echo "Error: Message not accepted";
+        }
 
     }
 ?>
