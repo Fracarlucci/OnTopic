@@ -15,7 +15,14 @@ function createList(ul, response) {
             a.setAttribute("href", "profilo.php?user=" + element.username);
             span.appendChild(document.createTextNode(element.username));
             li.appendChild(span);
-            li.appendChild(document.createTextNode(row));
+
+            if(element.testo != null) {
+                li.appendChild(document.createTextNode(" " + element.dataOra));
+                const p = li.appendChild(document.createElement("p"));
+                p.appendChild(document.createTextNode(element.testo));
+            } else {
+               li.appendChild(document.createTextNode(row));
+            }
             a.appendChild(li);
             ul.appendChild(a);
         });

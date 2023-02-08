@@ -21,7 +21,7 @@ use ONTOPIC;
 
 create table COMMENTO (
      id int not null auto_increment,
-     DataOra datetime not null,
+     DataOra timestamp default CURRENT_TIMESTAMP not null,
      Testo varchar(255),
      Immagine varchar(255),
      idUtente int not null,

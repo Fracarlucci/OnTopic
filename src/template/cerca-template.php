@@ -12,8 +12,7 @@
                 </button>
             </div>
         </div>
-        <div id="display">
-        </div>
+        <div id="display"></div>
     </form>
     <div class="row my-2">
         <div class="d-flex col-11">

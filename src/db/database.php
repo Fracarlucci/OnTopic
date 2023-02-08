@@ -298,10 +298,10 @@ class DatabaseHelper{
      * Comments CRUD
      */
 
-    public function insertComment($testo, $immagine, $post, $utente){
-        $query = "INSERT INTO commento (testo, immagine, idUtente, idPost) VALUES (?, ?, ?, ?)";
+    public function insertComment($testo, $post, $utente){
+        $query = "INSERT INTO commento (testo, idUtente, idPost) VALUES (?, ?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssii',$testo, $immagine, $utente, $post);
+        $stmt->bind_param('sii',$testo, $utente, $post);
         $stmt->execute();
         
         return $stmt->insert_id;

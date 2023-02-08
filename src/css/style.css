@@ -34,7 +34,7 @@ nav li{
     text-align: left;
 }
 
-.follow:hover, .notification:hover, #result li:hover, #usersList li:hover {
+.follow:hover, .notification:hover, #result li:hover, #usersList li:hover, #commentsList li:hover {
     background-color: rgb(227, 227, 227);
     border-radius: 5px;
 }
@@ -151,6 +151,17 @@ section img {
     border-radius: 2%;
 }
 
+.comment:hover {
+    color: rgb(88, 88, 88);
+    animation-name: commento;
+    animation-duration: 1s;
+}
+
+@keyframes commento {
+    from {color: black;}
+    to {color: rgb(88, 88, 88);}
+}
+
 .heart:hover {
     color: red;
     animation-name: mi_piace;
@@ -191,7 +202,7 @@ section img {
     margin: 5% 0;
 }
 
-#seguiButton {
+#seguiButton, #sendComment {
     background-color: rgb(231, 177, 52);
     color: white;
     border: none;
@@ -199,10 +210,13 @@ section img {
     border-radius: 5px;
 }
 
-#seguiButton:hover {
+#seguiButton:hover, #sendComment:hover {
     background-color: rgb(255, 179, 0);
 }
 
+#commentText {
+    border-radius: 5px;
+}
 
 #searchBar {
     width: 100%;
@@ -229,12 +243,20 @@ section img {
     display: none;
 }
 
-#result>a>li, #usersList>a>li {
+#result>a>li, #usersList>a>li, #commentsList>a>li {
     color: #000;
 }
 
 span {
     font-weight: bold;
+}
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 60vh;
+    overflow-y: auto;
 }
 
 @media screen and (min-width: 768px) {

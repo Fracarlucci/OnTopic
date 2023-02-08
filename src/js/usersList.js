@@ -1,4 +1,4 @@
-function getList(listType) {
+function getUsersList(listType) {
     let username = window.location.pathname;
     username = username.split("=").pop();
     username = "Ciccio";
