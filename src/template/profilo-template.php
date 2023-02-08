@@ -18,7 +18,6 @@
                             <h3 class="profileHead">Post <span><?php echo count($templateParams["posts"]); ?></span></h3>
                         </div>
                         <div class="col-4 align-self-center">
-                            <!-- Button trigger modal -->
                             <button class="profileHead" type="button" data-bs-toggle="modal" data-bs-target="#usersList-modal" onclick="getList('Seguaci')">
                                 Seguaci <span id="nSeguaci"><?php echo count($templateParams["seguaci"]); ?></span>
                             </button>

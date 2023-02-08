@@ -7,6 +7,6 @@ $templateParams["posts"] = $dbh->getPostsbyId(1);
 $templateParams["seguaci"] = $dbh->getSeguaciById(1);
 array_push($templateParams["js"], "js/follow.js", "js/usersList.js");
 
-require_once './components/seguaci-modal/usersList-modal.php';
+require_once './components/usersList-modal/usersList-modal.php';
 require 'template/base.php';
 ?>
