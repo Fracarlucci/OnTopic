@@ -298,6 +298,28 @@ span {
     }
 }
 
+@media screen and (max-width: 1028px){
+    #slide_1, #slide_5{
+        display: none;
+    }
+    #day1, #day5{
+        display: none;
+    }
+    #slide_2, #slide_3, #slide_4{
+        text-align: center;
+    }
+    #slides{
+        align-self: center;
+    }
+    #day2, #day3, #day4{
+        width: 30%;
+    }
+    #prevDay, #nextDay{
+        width: 5%;
+    }
+
+}
+
 /* calendar slider */
 .wrapper{
     display: flex;
