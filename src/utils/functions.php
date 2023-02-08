@@ -162,7 +162,6 @@
     }
 
     function sendNotificationEmail($from, $to, $type) {
-
         $messages = [
             "follow" => "L'utente <strong>" . $from . "</strong> ha iniziato a seguirti",
             "like" => "L'utente <strong>" . $from . "</strong> ha messo mi piace ad un tuo post",
@@ -172,17 +171,9 @@
         $subject = 'Hai una nuova notifica su OnTopic';
         $headers = 'From: ontopic@info.com' . "\r\n" .
                     'Reply-To: ontopic@info.com' . "\r\n" .
+                    'Content-Type: text/html' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
 
-        $success = mail($to, $subject, $messages[$type], $headers);
-
-        if($success){
-            echo "Message accepted";
-        }
-        else
-        {
-            echo "Error: Message not accepted";
-        }
-
+        return  mail($to, $subject, $messages[$type], $headers);
     }
 ?>

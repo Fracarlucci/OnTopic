@@ -15,7 +15,7 @@ class DatabaseHelper{
 
     public function getUserById($userId) {
         $query = "
-            SELECT username, imgProfilo, nome, cognome
+            SELECT username, imgProfilo, nome, cognome, email
             FROM utente
             WHERE id = ?
         ";
@@ -406,8 +406,6 @@ class DatabaseHelper{
         $stmt->bind_param('ssiii', $type, $text, $post, $sender, $receiver);
         $stmt->execute();
 
-        print($this->db->error);
-        
         return $stmt->insert_id;
     }
     

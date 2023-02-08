@@ -120,8 +120,8 @@
 
                                     <?php if(login_check($dbh->db)): ?>
                                         <?php foreach($templateParams["notifiche"] as $notifica): ?>
-                                            <li>
-                                                <?php if(isset($notifica["postId"])): ?>
+                                            <li class="mb-2">
+                                                <?php if(isset($notifica["postId"]) && $notifica["postId"]): ?>
                                                     <a href="postlink">
                                                 <?php else: ?>
                                                     <a href="userlink">
