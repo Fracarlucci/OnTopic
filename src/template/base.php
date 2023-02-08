@@ -185,7 +185,7 @@
         <?php require_once("./components/signin-modal/signin-modal.php") ?>
         <footer class="bg-dark py-2">
 
-            <?php if(login_check($dbh->db)): ?>
+            <?php //if(login_check($dbh->db)): ?>
                 <!-- Add post -->
                 <div class="text-center addIcon">
                     <a href="#">
@@ -199,12 +199,12 @@
                     <div class="row">
                         <div class="col-9"></div>
                         <div class="col-3 d-flex justify-content-center">
-                            <button type="button" id="addButtonDesktop" class="btn btn-outline-light" href="#">Condividi un post!</button>
+                            <button type="button" id="addButtonDesktop" class="btn btn-outline-light"><a href="aggiunta-post.php">Condividi un post!</a></button>
                         </div>
                     </div>
                 </div>
-            <?php else: ?>
-                <div class="text-center addIcon">
+            <?php //else: ?>
+                <!--<div class="text-center addIcon">
                     <button type="button" class="btn btn-outline-light" href="#">Iscriviti per pubblicare un tuo pensiero!</button>
                 </div>
                 <div class="container-fluid">
@@ -214,8 +214,8 @@
                             <button type="button" id="addButtonDesktop" class="btn btn-outline-light" href="#">Iscriviti per pubblicare i tuoi pensieri!</button>
                         </div>
                     </div>
-                </div>
-            <?php endif; ?>
+                </div>-->
+            <?php //endif; ?>
         </footer>
     </body>
 </html>
