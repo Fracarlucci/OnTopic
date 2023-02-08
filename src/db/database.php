@@ -395,6 +395,21 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    /**
+     * Notification CRUD
+     */
+
+    public function insertNotification($type, $text, $post, $sender, $receiver) {
+        $query = "INSERT INTO notifica (tipo, testo, idPost, idUtenteInvio, idUtenteRiceve) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssiii', $type, $text, $post, $sender, $receiver);
+        $stmt->execute();
+
+        print($this->db->error);
+        
+        return $stmt->insert_id;
+    }
     
     /**
      * Login
