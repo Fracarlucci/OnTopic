@@ -14,7 +14,9 @@ if ($templateParams["isAuth"]) {
     $templateParams["utente"] = $dbh->getUserById($userId);
 }
 
-$templateParams["js"] = array("js/miPiace.js", "js/commentsList.js", "js/insertComment.js", "components/comments-modal/comments-modal.js", "utils/functions.js", "js/search.js");
+$templateParams["js"] = array("js/miPiace.js", "js/commentsList.js", "js/insertComment.js",
+    "components/comments-modal/comments-modal.js", "components/postSettings-modal/postSettings-modal.js", "utils/functions.js", "js/search.js");
 
 require_once './components/comments-modal/comments-modal.php';
+require_once './components/postSettings-modal/postSettings-modal.php';
 ?>

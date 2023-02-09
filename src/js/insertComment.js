@@ -11,4 +11,4 @@ document.getElementById("commentForm").addEventListener("submit", event => {
     });
 
     document.getElementById("commentForm").reset()
-})
+});
