@@ -11,15 +11,15 @@
             </div>
             <div class="modal-footer">
                 <div class="container">
-                    <form id="commentForm" class="m-0" onSubmit="return false;">
+                    <form action="#" id="commentForm" class="m-0">
                         <div class="row">
                             <div class="d-flex col-10 justify-content p-0">
-                                <input class="w-100" type="text" id="commentText" placeholder="Scrivi un commento..." onkeypress="inserisciCommento(this.form)"/>
-                            </div>
-                            <div class="d-flex col-2 justify-content-center p-0">
-                                <button id="sendComment" type="button" onclick="inserisciCommento(this, this.form)">Invia</button>
+                                <input class="w-100" type="text" id="commentText" placeholder="Scrivi un commento..." required/>
                             </div>
                             <input type="hidden" id="postHidden" value=""/>
+                            <div class="d-flex col-2 justify-content-center p-0">
+                                <button id="sendComment" type="submit">Invia</button>
+                            </div>
                         </div>
                     </form>
                 </div>
