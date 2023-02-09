@@ -1,7 +1,7 @@
 <div class="container my-2">
     <header>
         <div class="row">
-            <div class="col-2">
+            <div class="col-3">
                 <?php if(isset($templateParams["utenteProfilo"][0]["imgProfilo"])): ?>
                     <img id="profilePic" src="./img/<?php echo $templateParams["utenteProfilo"][0]["imgProfilo"]; ?>" alt="profile image"/>
                 <?php else: ?>
@@ -11,7 +11,7 @@
                     </svg>
                 <?php endif; ?>
             </div>
-            <div class="col-10 px-2">
+            <div class="col-9 px-2">
                 <div class="container">
                     <div class="row">
                         <div class="col-4 align-self-center">

@@ -27,7 +27,7 @@
                 </a>
             </div>
             <!-- Dots icon -->
-            <?php if($templateParams["isAuth"] && $post["userId"] == $_SESSION["user_id"]): ?>
+            <?php if($templateParams["isAuth"] && $post["userId"] == $loggedUserId): ?>
                 <div class="d-flex justify-content-end col-4">
                     <button class="dots mb-3" type="button" data-bs-toggle="modal" data-bs-target="#postSettings-modal" data-postid=<?php echo $post["id"]; ?>>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
