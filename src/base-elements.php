@@ -8,10 +8,10 @@ $templateParams["isAuth"] = login_check($dbh->db);
 $templateParams["post"] = "post-template.php";
 
 if ($templateParams["isAuth"]) {
-    $userId = $_SESSION["user_id"];
-    $templateParams["notifiche"] = $dbh->getNotificationsById($userId);
-    $templateParams["seguiti"] = $dbh->getSeguitiById($userId);
-    $templateParams["utente"] = $dbh->getUserById($userId);
+    $loggedUserId = $_SESSION["user_id"];
+    $templateParams["notifiche"] = $dbh->getNotificationsById($loggedUserId);
+    $templateParams["seguiti"] = $dbh->getSeguitiById($loggedUserId);
+    $templateParams["utente"] = $dbh->getUserById($loggedUserId);
 }
 
 $templateParams["js"] = array("js/miPiace.js", "js/commentsList.js", "js/insertComment.js",
