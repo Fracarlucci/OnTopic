@@ -186,7 +186,7 @@ section img {
 }
 
 #profilePic {
-    width: 17vw;
+    width: 100%;
     border-radius: 100%;
     border: 1px solid black;
 }
