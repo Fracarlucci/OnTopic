@@ -3,7 +3,9 @@
     include_once './utils/functions.php';
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
     
+    sec_session_start();
     $templateParams["isAuth"] = login_check($dbh->db);
+    
     $templateParams["post"] = "./template/post-template.php";
 
     if(isset($_COOKIE['date'])) {
