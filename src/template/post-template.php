@@ -3,8 +3,8 @@
         <div class="d-flex flex-row">
             <!-- User icon -->
             <div class="d-flex col-1 prova" id="userIcon">
-                <a href="#">
-                    <?php if(isset($templateParams["utente"][0]["imgProfilo"])): ?>
+                <a href="profilo.php?id=<?php echo $templateParams["utente"][0]["id"] ?>">
+                    <?php if(isset($post["imgProfilo"])): ?>
                         <img id="profilePic" src=<?php echo $templateParams["utente"][0]["imgProfilo"]; ?> alt="profile image"/>
                     <?php else: ?>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
