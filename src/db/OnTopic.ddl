@@ -75,8 +75,6 @@ create table UTENTE (
      Password varchar(255) not null,
      Sale varchar(255) not null,
      ImgProfilo varchar(255),
-     Seguiti int default 0 not null,
-     Seguaci int default 0 not null,
      constraint IDUser primary key (id),
      constraint IDUser_1 unique (Username));
 
