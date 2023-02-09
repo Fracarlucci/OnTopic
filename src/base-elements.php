@@ -15,7 +15,7 @@ if ($templateParams["isAuth"]) {
 }
 
 $templateParams["js"] = array("js/miPiace.js", "js/commentsList.js", "js/insertComment.js",
-    "components/comments-modal/comments-modal.js", "components/postSettings-modal/postSettings-modal.js", "utils/functions.js", "js/search.js");
+    "components/comments-modal/comments-modal.js", "components/postSettings-modal/postSettings-modal.js", "js/deletePost.js", "utils/functions.js");
 
 require_once './components/comments-modal/comments-modal.php';
 require_once './components/postSettings-modal/postSettings-modal.php';
