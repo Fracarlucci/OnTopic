@@ -15,5 +15,5 @@
     // Cancella la sessione.
     session_destroy();
 
-    header('Location: ./');
+    header('Location: ../index.php');
 ?>

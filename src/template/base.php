@@ -75,17 +75,25 @@
                                     </nav>
                                 </div>
                             
-                            <?php  include_once './bootstrap.php'; 
-                                    include_once './utils/functions.php';
-                                    if(login_check($dbh->db)): ?>
-                                        <!-- Profile icon -->
+                            <?php 
+                                    if($templateParams["isAuth"]): ?>
+                                        <!-- Profile icon and logout -->
                                         <div id="profileIcon" class="d-flex justify-content-end col-3">
                                             <li class="d-flex align-items-center">
                                                 <!-- UserName Desktop -->
                                                 <a id="userName" href="profilo.php"><?php echo $templateParams["utente"][0]["username"]; ?></a>
-                                                <a href="profilo.php">
+                                                <a href="profilo.php" style="margin-left: 5px">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="d-flex align-items-center" style="margin-left: 50px">
+                                                <a id="logout-button "href="api/logout.php">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
+                                                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                                        <polyline points="16 17 21 12 16 7"></polyline>
+                                                        <line x1="21" y1="12" x2="9" y2="12"></line>
                                                     </svg>
                                                 </a>
                                             </li>
@@ -118,7 +126,7 @@
                             <nav>
                                 <ul class="notification">
 
-                                    <?php if(login_check($dbh->db)): ?>
+                                    <?php if($templateParams["isAuth"]): ?>
                                         <?php foreach($templateParams["notifiche"] as $notifica): ?>
                                             <li class="mb-2">
                                                 <?php if(isset($notifica["postId"]) && $notifica["postId"]): ?>
@@ -161,7 +169,7 @@
                         <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
                             <nav>
                                 <ul class="follow">
-                                    <?php if(login_check($dbh->db)): ?>
+                                    <?php if($templateParams["isAuth"]): ?>
                                         <?php foreach($templateParams["seguiti"] as $seguito): ?>
                                             <li><a href="linkseguito"><?php echo $seguito["username"]; ?></a></li>
                                         <?php endforeach; ?>
@@ -185,7 +193,7 @@
         <?php require_once("./components/signin-modal/signin-modal.php") ?>
         <footer class="bg-dark py-2">
 
-            <?php //if(login_check($dbh->db)): ?>
+            <?php //if($templateParams["isAuth"]): ?>
                 <!-- Add post -->
                 <div class="text-center addIcon">
                     <a href="#">
