@@ -81,8 +81,10 @@
                                         <div id="profileIcon" class="d-flex justify-content-end col-3">
                                             <li class="d-flex align-items-center">
                                                 <!-- UserName Desktop -->
-                                                <a id="userName" href="profilo.php"><?php echo $templateParams["utente"][0]["username"]; ?></a>
-                                                <a href="profilo.php" style="margin-left: 5px">
+                                                <a href="profilo.php?id=<?php echo $templateParams["utente"][0]["id"] ?>">
+                                                    <span id="userName">
+                                                        <?php echo $templateParams["utente"][0]["username"]; ?>
+                                                    </span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
                                                     </svg>
