@@ -5,6 +5,7 @@ $userId = $_GET["id"];
 
 $templateParams["titolo"] = "OnTopic - Profilo";
 $templateParams["contenuto"] = "profilo-template.php";
+$templateParams["utenteProfilo"] = $dbh->getUserById($userId);
 $templateParams["posts"] = $dbh->getPostsbyId($userId);
 $templateParams["seguaci"] = $dbh->getSeguaciById($userId);
 array_push($templateParams["js"], "js/follow.js", "js/usersList.js");
