@@ -80,6 +80,11 @@ create table UTENTE (
      constraint IDUser primary key (id),
      constraint IDUser_1 unique (Username));
 
+CREATE TABLE login_attempts (
+  user_id INT(11) NOT NULL,
+  time VARCHAR(30) NOT NULL 
+)
+
 
 -- Constraints Section
 -- ___________________ 
