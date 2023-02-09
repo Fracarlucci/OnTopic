@@ -12,7 +12,7 @@ function createList(ul, response) {
             const span = document.createElement("span");
             const row =" " + element.nome + " " + element.cognome;
 
-            a.setAttribute("href", "profilo.php?user=" + element.username);
+            a.setAttribute("href", "profilo.php?id=" + element.id);
             span.appendChild(document.createTextNode(element.username));
             li.appendChild(span);
 
