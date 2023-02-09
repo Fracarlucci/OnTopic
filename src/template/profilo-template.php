@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-2">
                 <?php if(isset($templateParams["utenteProfilo"][0]["imgProfilo"])): ?>
-                    <img id="profilePic" src=<?php echo $templateParams["utenteProfilo"][0]["imgProfilo"]; ?> alt="profile image"/>
+                    <img id="profilePic" src="./img/<?php echo $templateParams["utenteProfilo"][0]["imgProfilo"]; ?>" alt="profile image"/>
                 <?php else: ?>
                     <svg xmlns="http://www.w3.org/2000/svg" width="130%" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
