@@ -1,12 +1,12 @@
 <!-- Modal -->
 <div class="modal fade" id="comments-modal" role="dialog" aria-labelledby="comments" aria-hidden="true">
-    <div class="modal-dialog" role="document"> <!-- modal-dialog-centered -->
+    <div class="modal-dialog modal-dialog-comment" role="document"> <!-- modal-dialog-centered -->
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Commenti</h5>
 				<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body modal-body-comment">
                 <ul id="commentsList"></ul>
             </div>
             <div class="modal-footer">
