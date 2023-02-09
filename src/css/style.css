@@ -251,10 +251,10 @@ span {
     font-weight: bold;
 }
 
-.modal-dialog{
+.modal-dialog-comment{
     overflow-y: initial !important
 }
-.modal-body{
+.modal-body-comment{
     height: 60vh;
     overflow-y: auto;
 }
