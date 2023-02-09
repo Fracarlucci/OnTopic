@@ -1,5 +1,5 @@
 <div class="container my-2 py-2">
-    <form action="#" id="search">
+    <form action="#" id="searchForm">
         <div class="row">
             <div class="d-flex justify-content-center col-11">
                 <input type="text" id="searchBar" placeholder="Cerca..." required/>

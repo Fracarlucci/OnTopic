@@ -1,4 +1,4 @@
-document.getElementById("search").addEventListener("submit", event => {
+document.getElementById("searchForm").addEventListener("submit", event => {
     event.preventDefault()
     const formData = new FormData();
     formData.append('input', document.getElementById("searchBar").value)
