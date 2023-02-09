@@ -1,11 +1,19 @@
 <?php
 require_once 'bootstrap.php';
 
+//check user auth
+$templateParams["isAuth"] = login_check($dbh->db);
+
 //Base Template
 $templateParams["post"] = "post-template.php";
-$templateParams["notifiche"] = $dbh->getNotificationsById(4);
-$templateParams["seguiti"] = $dbh->getSeguitiById(1);
-$templateParams["utente"] = $dbh->getUserById(1);
+
+if ($templateParams["isAuth"]) {
+    $userId = $_SESSION["user_id"];
+    $templateParams["notifiche"] = $dbh->getNotificationsById($userId);
+    $templateParams["seguiti"] = $dbh->getSeguitiById($userId);
+    $templateParams["utente"] = $dbh->getUserById($userId);
+}
+
 $templateParams["js"] = array("js/miPiace.js", "js/commentsList.js", "js/insertComment.js", "components/comments-modal/comments-modal.js", "utils/functions.js", "js/search.js");
 
 require_once './components/comments-modal/comments-modal.php';

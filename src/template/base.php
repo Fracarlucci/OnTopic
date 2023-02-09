@@ -77,7 +77,7 @@
                             
                             <?php  include_once './bootstrap.php'; 
                                     include_once './utils/functions.php';
-                                    if(login_check($dbh->db)): ?>
+                                    if($templateParams["isAuth"]): ?>
                                         <!-- Profile icon -->
                                         <div id="profileIcon" class="d-flex justify-content-end col-3">
                                             <li class="d-flex align-items-center">
@@ -118,7 +118,7 @@
                             <nav>
                                 <ul class="notification">
 
-                                    <?php if(login_check($dbh->db)): ?>
+                                    <?php if($templateParams["isAuth"]): ?>
                                         <?php foreach($templateParams["notifiche"] as $notifica): ?>
                                             <li class="mb-2">
                                                 <?php if(isset($notifica["postId"]) && $notifica["postId"]): ?>
@@ -161,7 +161,7 @@
                         <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
                             <nav>
                                 <ul class="follow">
-                                    <?php if(login_check($dbh->db)): ?>
+                                    <?php if($templateParams["isAuth"]): ?>
                                         <?php foreach($templateParams["seguiti"] as $seguito): ?>
                                             <li><a href="linkseguito"><?php echo $seguito["username"]; ?></a></li>
                                         <?php endforeach; ?>
@@ -185,7 +185,7 @@
         <?php require_once("./components/signin-modal/signin-modal.php") ?>
         <footer class="bg-dark py-2">
 
-            <?php //if(login_check($dbh->db)): ?>
+            <?php //if($templateParams["isAuth"]): ?>
                 <!-- Add post -->
                 <div class="text-center addIcon">
                     <a href="#">
