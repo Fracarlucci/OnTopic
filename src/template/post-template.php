@@ -27,13 +27,22 @@
                 </a>
             </div>
             <!-- Dots icon -->
-            <div class="d-flex justify-content-end col-4">
+            <?php if($templateParams["isAuth"] && $post["userId"] == $_SESSION["user_id"]): ?>
+                <div class="d-flex justify-content-end col-4">
+                    <button class="dots mb-3" type="button" data-bs-toggle="modal" data-bs-target="#postSettings-modal" data-postid=<?php echo $post["id"]; ?>>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            <?php endif; ?>
+            <!-- <div class="d-flex justify-content-end col-4">
                 <button class="dots mb-3" type="button" data-bs-toggle="modal" data-bs-target="#postSettings-modal" data-postid=<?php echo $post["id"]; ?>>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                         <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                     </svg>
                 </button>
-            </div>
+            </div> -->
         </div>
         <p><?php echo $post["dataora"]; ?></p>
     </header>
