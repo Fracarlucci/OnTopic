@@ -41,6 +41,7 @@
         <img src="<?php echo $post["immagine"]; ?>" class="img-fluid" alt="Post image">
     <?php endif; ?>
     <article><?php echo $post["testo"]; ?></article>
+    <?php if($templateParams["isAuth"]): ?>
     <footer class="my-1">
         <div class="d-flex justify-content-end">
             <!-- Comment icon -->
@@ -64,4 +65,5 @@
             </div>
         </div>
     </footer>
+    <?php endif; ?>
 </section>
