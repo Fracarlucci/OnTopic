@@ -202,6 +202,11 @@ section img {
     margin: 5% 0;
 }
 
+.modal-backgroud {
+    background-color: inherit;
+    border: none;
+}
+
 #seguiButton, #sendComment, .modalButton {
     background-color: rgb(231, 177, 52);
     color: white;

@@ -6,7 +6,6 @@ function elimina() {
         formData.append('postId', postId)
 
         axios.post('./api/deletePost.php', formData).then(response => {
-            // alert("Post eliminato");
             location.reload();
         });
     }
