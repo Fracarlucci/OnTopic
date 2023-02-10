@@ -14,7 +14,7 @@ if ($templateParams["isAuth"]) {
     $templateParams["utente"] = $dbh->getUserById($loggedUserId);
 }
 
-$templateParams["js"] = array("js/miPiace.js", "js/commentsList.js", "js/insertComment.js",
+$templateParams["js"] = array("js/notificationsHandle.js", "js/miPiace.js", "js/commentsList.js", "js/insertComment.js",
     "components/comments-modal/comments-modal.js", "components/postSettings-modal/postSettings-modal.js", "js/postSettings.js", "utils/functions.js");
 
 require_once './components/comments-modal/comments-modal.php';
