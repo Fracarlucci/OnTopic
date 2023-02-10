@@ -132,11 +132,11 @@
                                         <?php foreach($templateParams["notifiche"] as $notifica): ?>
                                             <li class="mb-2">
                                                 <?php if(isset($notifica["postId"]) && $notifica["postId"]): ?>
-                                                    <a href="postlink">
+                                                    <a href="#">
                                                 <?php else: ?>
-                                                    <a href="userlink">
+                                                    <a href="profilo.php?id=<?php echo $notifica["userId"] ?>">
                                                 <?php endif; ?>
-                                                <?php echo $notifica["username"], $notifica["testo"]; ?></a>
+                                                <?php echo $notifica["testo"]; ?></a>
                                             </li>
                                         <?php endforeach; ?>
                                     <?php else: ?>

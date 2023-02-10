@@ -36,6 +36,15 @@ function follow(formData, button, msg) {
     const seguaci = document.getElementById("nSeguaci");
 
     axios.post('./api/follow.php', formData).then(response => {
+
+        //send notification
+        let notificationFormData = new FormData();
+        notificationFormData.append("type", "follow")
+        notificationFormData.append("sender", response.data.userId)
+        notificationFormData.append("receiver", userIdToFollow)
+        axios.post('./api/sendNotification.php', notificationFormData)
+
+        //update seguaci counter
         const nSeguaci = response.data["seguaci"];
         button.innerHTML = msg;
         seguaci.innerHTML = nSeguaci;
