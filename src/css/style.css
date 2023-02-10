@@ -27,14 +27,19 @@ nav li{
     list-style: none;
 }
 
-.follow>a>li, .notification>a>li {
+li>p {
+    margin: 0;
+    padding: 0;
+}
+
+.follow li, .notification li, #result li, #usersList li, #commentsList li {
     width: 100%;
     padding: 2%;
     margin: 0% 2% 0%, 2%;
     text-align: left;
 }
 
-.follow>a>li:hover, .notification>a>li:hover, #result li:hover, #usersList li:hover, #commentsList li:hover {
+.follow li:hover, .notification li:hover, #result li:hover, #usersList li:hover, #commentsList li:hover {
     background-color: rgb(227, 227, 227);
     border-radius: 5px;
 }
