@@ -1,6 +1,11 @@
 <?php
 require_once 'base-elements.php';
 
+//redirect if not auth
+if(!$templateParams["isAuth"]){
+    header('Location: index.php');
+}
+
 $currentUserId = $_GET["id"];
 
 $templateParams["titolo"] = "OnTopic - Profilo";
