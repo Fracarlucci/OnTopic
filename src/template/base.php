@@ -172,7 +172,7 @@
                             <nav>
                                 <ul class="follow">
                                     <?php if($templateParams["isAuth"]): ?>
-                                        <?php foreach($templateParams["seguiti"] as $seguito): ?>
+                                        <?php foreach($templateParams["loggedUserSeguiti"] as $seguito): ?>
                                             <li><a href="profilo.php?id=<?php echo $seguito["id"] ?>"><?php echo $seguito["username"]; ?></a></li>
                                         <?php endforeach; ?>
                                     <?php else: ?>

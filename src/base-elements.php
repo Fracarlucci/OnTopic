@@ -10,7 +10,7 @@ $templateParams["post"] = "post-template.php";
 if ($templateParams["isAuth"]) {
     $loggedUserId = $_SESSION["user_id"];
     $templateParams["notifiche"] = $dbh->getNotificationsById($loggedUserId);
-    $templateParams["seguiti"] = $dbh->getSeguitiById($loggedUserId);
+    $templateParams["loggedUserSeguiti"] = $dbh->getSeguitiById($loggedUserId);
     $templateParams["utente"] = $dbh->getUserById($loggedUserId);
 }
 

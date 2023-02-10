@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-4 align-self-center">
                             <button class="profileHead" type="button" data-bs-toggle="modal" data-bs-target="#usersList-modal" onclick="getUsersList('Seguiti')">
-                                Seguiti <span><?php echo count($templateParams["seguiti"]); ?></span>
+                                Seguiti <span id="nSeguiti"><?php echo count($templateParams["seguiti"]); ?></span>
                             </button>
                         </div>
                     </div>
