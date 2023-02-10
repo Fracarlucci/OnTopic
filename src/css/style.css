@@ -27,14 +27,14 @@ nav li{
     list-style: none;
 }
 
-.follow, .notification {
+.follow>a>li, .notification>a>li {
     width: 100%;
     padding: 2%;
     margin: 0% 2% 0%, 2%;
     text-align: left;
 }
 
-.follow:hover, .notification:hover, #result li:hover, #usersList li:hover, #commentsList li:hover {
+.follow>a>li:hover, .notification>a>li:hover, #result li:hover, #usersList li:hover, #commentsList li:hover {
     background-color: rgb(227, 227, 227);
     border-radius: 5px;
 }
@@ -97,10 +97,16 @@ h1 {
 }
 
 h2 {
+    color: #000;
     display: inline-block;
     text-align: left;
     font-size: 120%;
     margin: 0;
+}
+
+aside>svg {
+    margin-left: 3%;
+    color: #000;
 }
 
 #userIcon {
@@ -132,10 +138,6 @@ footer p {
 
 aside a {
     color: #000;
-}
-
-aside>a {
-    padding-left: 3%;
 }
 
 .topic{
