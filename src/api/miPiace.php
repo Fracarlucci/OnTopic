@@ -1,5 +1,8 @@
 <?php 
     include '../db/database.php';
+    include "../utils/functions.php";
+
+    sec_session_start();
 
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
 
@@ -11,10 +14,10 @@
 
     if($remove){
         $dbh->decrementLikesById($idPost);
-        $dbh->removeLike($idPost, 1);
+        $dbh->removeLike($idPost, $_SESSION["user_id"]);
     } else {
         $dbh->incrementLikesById($idPost);
-        $dbh->insertLike($idPost, 1);
+        $dbh->insertLike($idPost, $_SESSION["user_id"]);
     }
     $result["likes"] = $dbh->getLikesByPostId($idPost);
 
