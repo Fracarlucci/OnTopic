@@ -1,12 +1,12 @@
 function getUsersList(listType) {
-    let username = window.location.pathname;
-    username = username.split("=").pop();
-    username = "Ciccio";
+    //get user id to follow by query param
+    const params = new URLSearchParams(window.location.search)
+    userId = params.get("id")
 
     document.getElementById("list-type").innerHTML = listType;
 
     const formData = new FormData();
-    formData.append('username', username);
+    formData.append('userId', userId);
     formData.append('listType', listType);
 
     axios.post('./api/usersList.php', formData).then(response => {
