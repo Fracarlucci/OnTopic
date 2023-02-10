@@ -130,12 +130,23 @@
                                     <?php if($templateParams["isAuth"]): ?>
                                         <?php foreach($templateParams["notifiche"] as $notifica): ?>
                                             <li class="mb-2">
-                                                <?php if(isset($notifica["postId"]) && $notifica["postId"]): ?>
-                                                    <a href="#">
-                                                <?php else: ?>
-                                                    <a href="profilo.php?id=<?php echo $notifica["userId"] ?>">
-                                                <?php endif; ?>
-                                                <?php echo $notifica["testo"]; ?></a>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-11">
+                                                            <?php if(isset($notifica["postId"]) && $notifica["postId"]): ?>
+                                                                <a href="#">
+                                                            <?php else: ?>
+                                                                <a href="profilo.php?id=<?php echo $notifica["userId"] ?>">
+                                                            <?php endif; ?>
+                                                            <?php echo $notifica["testo"]; ?></a>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <a href="#" notificationId="<?php echo $notifica["notificationId"] ?>" id="deleteNotificationImg">
+                                                                <img src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png" alt="Delete Notification" width="20px" height="20px" />
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </li>
                                         <?php endforeach; ?>
                                     <?php else: ?>

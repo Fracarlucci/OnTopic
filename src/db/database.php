@@ -77,9 +77,9 @@ class DatabaseHelper{
 
     public function getNotificationsById($userId) {
         $query = "
-            SELECT n.tipo, n.testo, p.id as postId, ui.username, ui.id as userId
+            SELECT n.id as notificationId, n.tipo, n.testo, p.id as postId, ui.username, ui.id as userId
             FROM notifica n LEFT JOIN post p ON p.id = n.idPost INNER JOIN utente ui ON ui.id = n.idUtenteInvio
-            WHERE n.idUtenteRiceve = ?
+            WHERE n.idUtenteRiceve = ? AND n.abilitato = 1
         ";
 
         $stmt = $this->db->prepare($query);
@@ -423,6 +423,15 @@ class DatabaseHelper{
         $stmt->execute();
 
         return $stmt->insert_id;
+    }
+
+    public function deleteNotificationById($idNotification){
+        $query = "UPDATE notifica SET abilitato = 0 WHERE id = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idNotification);
+        $stmt->execute();
+        var_dump($stmt->error);
+        return true;
     }
     
     /**
