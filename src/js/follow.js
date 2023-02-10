@@ -40,7 +40,7 @@ function follow(formData, button, msg) {
         //send notification
         let notificationFormData = new FormData();
         notificationFormData.append("type", "follow")
-        notificationFormData.append("sender", response.data.userId)
+        notificationFormData.append("sender", response.data.senderId)
         notificationFormData.append("receiver", userIdToFollow)
         axios.post('./api/sendNotification.php', notificationFormData)
 

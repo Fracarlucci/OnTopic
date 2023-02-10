@@ -20,6 +20,8 @@
         $dbh->insertLike($idPost, $_SESSION["user_id"]);
     }
     $result["likes"] = $dbh->getLikesByPostId($idPost);
+    $result["senderId"] = $_SESSION["user_id"];
+    $result["receiverId"] = $dbh->getPostById($idPost)[0]["userId"];
 
     header('Content-Type: application/json');
     echo json_encode($result);
