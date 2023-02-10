@@ -15,7 +15,7 @@ class DatabaseHelper{
 
     public function getUserById($userId) {
         $query = "
-            SELECT username, imgProfilo, nome, cognome, email
+            SELECT id, username, imgProfilo, nome, cognome, email
             FROM utente
             WHERE id = ?
         ";
@@ -78,7 +78,7 @@ class DatabaseHelper{
     public function getNotificationsById($userId) {
         $query = "
             SELECT n.tipo, n.testo, p.id as postId, ui.username, ui.id as userId
-            FROM notifica n INNER JOIN post p ON p.id = n.idPost INNER JOIN utente ui ON ui.id = n.idUtenteInvio
+            FROM notifica n LEFT JOIN post p ON p.id = n.idPost INNER JOIN utente ui ON ui.id = n.idUtenteInvio
             WHERE n.idUtenteRiceve = ?
         ";
 
@@ -161,9 +161,25 @@ class DatabaseHelper{
      * Post CRUD
      */
 
+    public function getPostById($postId) {
+        $query = "
+            SELECT u.id as userId, u.username, u.imgProfilo, t.id, t.nome, p.id, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
+            FROM post p INNER JOIN utente u ON p.idUtente = u.id INNER JOIN tema t ON p.idTema = t.id 
+            WHERE abilitato = 1
+            AND p.id = ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$postId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getPostsbyId($userId, $n=-1){
         $query = "
-            SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.id, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
+            SELECT u.id as userId, u.username, u.imgProfilo, t.id, t.nome, p.id, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
             FROM post p INNER JOIN utente u ON p.idUtente = u.id INNER JOIN tema t ON p.idTema = t.id 
             WHERE abilitato = 1
             AND u.id = ?
@@ -185,7 +201,7 @@ class DatabaseHelper{
     /* restituisce tutti i post del tema del giorno */
     public function getPostsbyTheme($theme, $n=-1){
         $query = "
-            SELECT u.id, u.username, u.imgProfilo, t.id, t.nome, p.id, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
+            SELECT u.id as userId, u.username, u.imgProfilo, t.id, t.nome, p.id, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
             FROM post p INNER JOIN utente u ON p.idUtente = u.id INNER JOIN tema t ON p.idTema = t.id 
             WHERE t.nome = ?
         ";

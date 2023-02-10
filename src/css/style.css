@@ -27,14 +27,14 @@ nav li{
     list-style: none;
 }
 
-.follow, .notification {
+.follow>a>li, .notification>a>li {
     width: 100%;
     padding: 2%;
     margin: 0% 2% 0%, 2%;
     text-align: left;
 }
 
-.follow:hover, .notification:hover, #result li:hover, #usersList li:hover, #commentsList li:hover {
+.follow>a>li:hover, .notification>a>li:hover, #result li:hover, #usersList li:hover, #commentsList li:hover {
     background-color: rgb(227, 227, 227);
     border-radius: 5px;
 }
@@ -97,10 +97,16 @@ h1 {
 }
 
 h2 {
+    color: #000;
     display: inline-block;
     text-align: left;
     font-size: 120%;
     margin: 0;
+}
+
+aside>svg {
+    margin-left: 3%;
+    color: #000;
 }
 
 #userIcon {
@@ -132,10 +138,6 @@ footer p {
 
 aside a {
     color: #000;
-}
-
-aside>a {
-    padding-left: 3%;
 }
 
 .topic{
@@ -186,7 +188,7 @@ section img {
 }
 
 #profilePic {
-    width: 17vw;
+    width: 100%;
     border-radius: 100%;
     border: 1px solid black;
 }
@@ -202,7 +204,12 @@ section img {
     margin: 5% 0;
 }
 
-#seguiButton, #sendComment {
+.modal-backgroud {
+    background-color: inherit;
+    border: none;
+}
+
+#seguiButton, #sendComment, .modalButton {
     background-color: rgb(231, 177, 52);
     color: white;
     border: none;
@@ -210,7 +217,7 @@ section img {
     border-radius: 5px;
 }
 
-#seguiButton:hover, #sendComment:hover {
+#seguiButton:hover, #sendComment:hover, .modalButton:hover {
     background-color: rgb(255, 179, 0);
 }
 
@@ -251,10 +258,10 @@ span {
     font-weight: bold;
 }
 
-.modal-dialog{
+.modal-dialog-comment{
     overflow-y: initial !important
 }
-.modal-body{
+.modal-body-comment{
     height: 60vh;
     overflow-y: auto;
 }

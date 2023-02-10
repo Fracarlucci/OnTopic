@@ -2,8 +2,8 @@
     <header>
         <div class="row">
             <div class="col-2">
-                <?php if(isset($templateParams["utente"][0]["imgProfilo"])): ?>
-                    <img id="profilePic" src=<?php echo $templateParams["utente"][0]["imgProfilo"]; ?> alt="profile image"/>
+                <?php if(isset($templateParams["utenteProfilo"][0]["imgProfilo"])): ?>
+                    <img id="profilePic" src="./img/<?php echo $templateParams["utenteProfilo"][0]["imgProfilo"]; ?>" alt="profile image"/>
                 <?php else: ?>
                     <svg xmlns="http://www.w3.org/2000/svg" width="130%" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -24,23 +24,23 @@
                         </div>
                         <div class="col-4 align-self-center">
                             <button class="profileHead" type="button" data-bs-toggle="modal" data-bs-target="#usersList-modal" onclick="getUsersList('Seguiti')">
-                                Seguiti <span><?php echo count($templateParams["seguiti"]); ?></span>
+                                Seguiti <span id="nSeguiti"><?php echo count($templateParams["seguiti"]); ?></span>
                             </button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-6 mb-1">
-                            <h1 id="profileName"><?php echo $templateParams["utente"][0]["username"]; ?></h1>
+                            <h1 id="profileName"><?php echo $templateParams["utenteProfilo"][0]["username"]; ?></h1>
                         </div>
-                        <?php #if($templateParams["utente"] != $_GET["username"]): ?>
+                        <?php if($templateParams["utente"][0]["id"] != $templateParams["utenteProfilo"][0]["id"]): ?>
                             <div class="col-6 align-self-center">
                                 <button id="seguiButton" type="button" onclick="segui(this)">Segui</button>
                             </div>
-                        <?php #endif; ?>
+                        <?php endif; ?>
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <h2 id="completeName"><?php echo $templateParams["utente"][0]["nome"], " ", $templateParams["utente"][0]["cognome"]; ?></h2>
+                            <h2 id="completeName"><?php echo $templateParams["utenteProfilo"][0]["nome"], " ", $templateParams["utenteProfilo"][0]["cognome"]; ?></h2>
                         </div>
                     </div>
                 </div>

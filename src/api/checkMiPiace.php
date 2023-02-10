@@ -1,12 +1,14 @@
 <?php 
     include '../db/database.php';
+    include "../utils/functions.php";
+
+    sec_session_start();
 
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
 
     $idPost = $_POST["postId"];
 
-    // if(isset($_SESSION["id"])){}
-    $liked = $dbh->getLikesByPostIdAndUserId($idPost, 1);
+    $liked = $dbh->getLikesByPostIdAndUserId($idPost, $_SESSION["user_id"]);
 
     if(empty($liked)){
         $result["isLiked"] = false;

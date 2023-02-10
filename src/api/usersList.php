@@ -3,9 +3,8 @@
 
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
 
-    $username = $_POST["username"];
+    $userId = $_POST["userId"];
     $type = $_POST["listType"];
-    $userId = $dbh->getUsersByUsername($username);
 
     if($type == "Seguaci"){
         $result = $dbh->getSeguaciById($userId);

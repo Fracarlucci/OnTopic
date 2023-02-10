@@ -1,6 +1,16 @@
 <?php
     include_once './db/database.php';
+    include_once './utils/functions.php';
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
+
+    sec_session_start();
+    $templateParams["isAuth"] = login_check($dbh->db);
+
+    //redirect if not auth
+    if(!$templateParams["isAuth"]){
+        header('Location: index.php');
+    }
+
     
     $templateParams["post"] = "./template/post-template.php";
 

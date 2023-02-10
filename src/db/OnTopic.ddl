@@ -75,10 +75,13 @@ create table UTENTE (
      Password varchar(255) not null,
      Sale varchar(255) not null,
      ImgProfilo varchar(255),
-     Seguiti int default 0 not null,
-     Seguaci int default 0 not null,
      constraint IDUser primary key (id),
      constraint IDUser_1 unique (Username));
+
+CREATE TABLE login_attempts (
+  user_id INT(11) NOT NULL,
+  time VARCHAR(30) NOT NULL 
+);
 
 
 -- Constraints Section

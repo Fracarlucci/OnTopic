@@ -3,9 +3,9 @@
         <div class="d-flex flex-row">
             <!-- User icon -->
             <div class="d-flex col-1 prova" id="userIcon">
-                <a href="#">
-                    <?php if(isset($templateParams["utente"][0]["imgProfilo"])): ?>
-                        <img id="profilePic" src=<?php echo $templateParams["utente"][0]["imgProfilo"]; ?> alt="profile image"/>
+                <a href="profilo.php?id=<?php echo $post["userId"] ?>">
+                    <?php if(isset($post["imgProfilo"])): ?>
+                        <img id="profilePic" src=<?php echo $post["imgProfilo"]; ?> alt="profile image"/>
                     <?php else: ?>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -16,7 +16,7 @@
             </div>
             <!-- Username -->
             <div class="d-flex col-3 prova">
-                <a href="#">
+                <a href="profilo.php?id=<?php echo $post["userId"] ?>">
                     <h3><?php echo $post["username"]; ?></h3>
                 </a>
             </div>
@@ -27,13 +27,15 @@
                 </a>
             </div>
             <!-- Dots icon -->
-            <div class="d-flex justify-content-end col-4">
-                <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                    </svg>
-                </button>
-            </div>
+            <?php if($templateParams["isAuth"] && $post["userId"] == $loggedUserId): ?>
+                <div class="d-flex justify-content-end col-4">
+                    <button class="dots mb-3" type="button" data-bs-toggle="modal" data-bs-target="#postSettings-modal" data-postid=<?php echo $post["id"]; ?>>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            <?php endif; ?>
         </div>
         <p><?php echo $post["dataora"]; ?></p>
     </header>
@@ -41,9 +43,11 @@
         <img src="<?php echo $post["immagine"]; ?>" class="img-fluid" alt="Post image">
     <?php endif; ?>
     <article><?php echo $post["testo"]; ?></article>
+    
     <footer class="my-1">
         <div class="d-flex justify-content-end">
             <!-- Comment icon -->
+            <?php if($templateParams["isAuth"]): ?>
             <div class="mx-1">
                 <button class="comment" type="button" data-bs-toggle="modal" data-bs-target="#comments-modal" onclick="getComments('<?php echo $post['id']; ?>')" data-postid=<?php echo $post["id"]; ?>>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
@@ -51,9 +55,10 @@
                     </svg>
                 </button>
             </div>
+            <?php endif; ?>
             <!-- Heart icon -->
             <div class="mx-1">
-                <button class="heart" type="button" onclick="miPiace(this, '<?php echo $post['id']; ?>')" data-postid=<?php echo $post["id"]; ?>>
+                <button class="heart" type="button" <?php if($templateParams["isAuth"]): ?> onclick="miPiace(this, '<?php echo $post['id']; ?>')" <?php endif; ?> data-postid=<?php echo $post["id"]; ?>>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                     </svg>

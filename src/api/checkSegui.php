@@ -1,12 +1,14 @@
 <?php 
     include '../db/database.php';
+    include "../utils/functions.php";
+
+    sec_session_start();
 
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
 
-    $username = $_POST["username"];
+    $userId = $_POST["userId"];
 
-    $userId = $dbh->getUsersByUsername($username);
-    $followed = $dbh->checkFollow(2, $userId);  // ($_SESSION["id"], $userId)
+    $followed = $dbh->checkFollow($_SESSION["user_id"], $userId);  // ($_SESSION["id"], $userId)
 
     if(empty($followed)){
         $result["followed"] = false;
