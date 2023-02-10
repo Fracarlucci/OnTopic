@@ -214,7 +214,7 @@ section img {
     border: none;
 }
 
-#seguiButton, #sendComment, .modalButton {
+#seguiButton, #sendComment, .modalButton, #updateButton {
     background-color: rgb(231, 177, 52);
     color: white;
     border: none;
@@ -222,7 +222,7 @@ section img {
     border-radius: 5px;
 }
 
-#seguiButton:hover, #sendComment:hover, .modalButton:hover {
+#seguiButton:hover, #sendComment:hover, .modalButton:hover, #updateButton:hover {
     background-color: rgb(255, 179, 0);
 }
 

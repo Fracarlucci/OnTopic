@@ -1,6 +1,6 @@
 //get user id to follow by query param
-const params = new URLSearchParams(window.location.search)
-userIdToFollow = params.get("id")
+const params = new URLSearchParams(window.location.search);
+const userIdToFollow = params.get("id");
 
 //check if user is already followed, if not follow it
 const button = document.getElementById("seguiButton");
