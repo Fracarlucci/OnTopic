@@ -77,7 +77,7 @@ class DatabaseHelper{
 
     public function getNotificationsById($userId) {
         $query = "
-            SELECT n.id as notificationId, n.tipo, n.testo, p.id as postId, ui.username, ui.id as userId
+            SELECT n.id as notificationId, n.tipo, n.testo, p.id as postId, ui.username, ui.id as userId, n.idUtenteRiceve
             FROM notifica n LEFT JOIN post p ON p.id = n.idPost INNER JOIN utente ui ON ui.id = n.idUtenteInvio
             WHERE n.idUtenteRiceve = ? AND n.abilitato = 1
         ";

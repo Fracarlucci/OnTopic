@@ -57,7 +57,7 @@
                                         <a text href="#"><img src="./img/OnTopic_logo.png" alt="OnTopic"/></a>
                                     </div>
                                     <!-- Bell icon -->
-                                    <a href="#">
+                                    <a data-bs-toggle="offcanvas" href="#notificationsDrawer" role="button" aria-controls="notificationsDrawer">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-bell-fill" id="bell" viewBox="0 0 16 16">
                                             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
                                         </svg>
@@ -126,37 +126,7 @@
                         <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
                             <nav>
                                 <ul class="notification">
-
-                                    <?php if($templateParams["isAuth"]): ?>
-                                        <?php foreach($templateParams["notifiche"] as $notifica): ?>
-                                            <li class="mb-2">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-11">
-                                                            <?php if(isset($notifica["postId"]) && $notifica["postId"]): ?>
-                                                                <a href="#">
-                                                            <?php else: ?>
-                                                                <a href="profilo.php?id=<?php echo $notifica["userId"] ?>">
-                                                            <?php endif; ?>
-                                                            <?php echo $notifica["testo"]; ?></a>
-                                                        </div>
-                                                        <div class="col-1">
-                                                            <a href="#" notificationId="<?php echo $notifica["notificationId"] ?>" class="deleteNotificationImg">
-                                                                <img src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png" alt="Delete Notification" width="20px" height="20px" />
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    <?php else: ?>
-                                        <li>
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#signin-modal">
-                                                Iscriviti per ricevere tutte le notifiche!
-                                            </a>
-                                        </li>    
-                                    <?php endif; ?>
-
+                                    <?php require("./components/notifications/notifications.php"); ?>
                                 </ul>
                             </nav>
                         </div>
@@ -201,6 +171,9 @@
         <?php require_once("./components/login-modal/login-modal.php") ?>
         <!-- SignIn Modal Include-->
         <?php require_once("./components/signin-modal/signin-modal.php") ?>
+        <!-- Notifications Drawer -->
+        <?php require_once("./components/notifications-drawer/notifications-drawer.php") ?>
+
         <footer class="bg-dark py-2">
 
             <?php //if($templateParams["isAuth"]): ?>

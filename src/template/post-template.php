@@ -1,6 +1,6 @@
 <section class="bg-light border border-dark my-4 px-4 pt-3 pb-1 rounded">
     <header>
-        <div class="d-flex flex-row">
+        <div id="post<?php echo $post['id'] ?>" class="d-flex flex-row">
             <!-- User icon -->
             <div class="d-flex col-1 prova" id="userIcon">
                 <a href="profilo.php?id=<?php echo $post["userId"] ?>">

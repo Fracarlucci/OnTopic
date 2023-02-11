@@ -11,6 +11,10 @@ a{
     color: #fff;
 }
 
+.notification a {
+    color: #000;
+}
+
 section a {
     color: #000;
 }

@@ -176,4 +176,5 @@
 
         return  mail($to, $subject, $messages[$type], $headers);
     }
+
 ?>
