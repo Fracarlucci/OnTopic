@@ -17,7 +17,8 @@ INSERT INTO TEMA (Data, Nome)
             ('2023-01-30', 'Computer'),
             ('2023-01-31', 'Libri'),
             ('2023-02-02', 'Cinema'),
-            ('2023-02-03', 'Animali domestici');
+            ('2023-02-03', 'Animali domestici'),
+            ('2023-02-11', 'Vaccini');
 
 INSERT INTO POST (Testo, idTema, idUtente)
     VALUES  ('Le rose sono rosse, le viole sono blu, rondo è il miglior rapper d\'Italia', 1, 1),

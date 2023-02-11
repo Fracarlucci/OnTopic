@@ -11,10 +11,6 @@ a{
     color: #fff;
 }
 
-.notification a {
-    color: #000;
-}
-
 section a {
     color: #000;
 }
@@ -31,19 +27,14 @@ nav li{
     list-style: none;
 }
 
-li>p {
-    margin: 0;
-    padding: 0;
-}
-
-.follow li, .notification li, #result li, #usersList li, #commentsList li {
+.follow>a>li, .notification>a>li {
     width: 100%;
     padding: 2%;
     margin: 0% 2% 0%, 2%;
     text-align: left;
 }
 
-.follow li:hover, .notification li:hover, #result li:hover, #usersList li:hover, #commentsList li:hover {
+.follow>a>li:hover, .notification>a>li:hover, #result li:hover, #usersList li:hover, #commentsList li:hover {
     background-color: rgb(227, 227, 227);
     border-radius: 5px;
 }
@@ -218,7 +209,7 @@ section img {
     border: none;
 }
 
-#seguiButton, #sendComment, .modalButton, #updateButton {
+#seguiButton, #sendComment, .modalButton {
     background-color: rgb(231, 177, 52);
     color: white;
     border: none;
@@ -226,7 +217,7 @@ section img {
     border-radius: 5px;
 }
 
-#seguiButton:hover, #sendComment:hover, .modalButton:hover, #updateButton:hover {
+#seguiButton:hover, #sendComment:hover, .modalButton:hover {
     background-color: rgb(255, 179, 0);
 }
 
@@ -407,8 +398,17 @@ span {
 /* Add post */
 .addImage{
     background: rgb(227, 227, 227);
-    height: 180px;
-    width: 200px;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+#can{
+    background: rgb(227, 227, 227);
+    height: 40%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -431,4 +431,8 @@ span {
 
 #photoElem{
     padding-top: 5%;
+}
+
+#preview{
+    position: relative;
 }

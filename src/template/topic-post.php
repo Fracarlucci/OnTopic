@@ -88,8 +88,8 @@
 <div class="d-flex justify-content-center col-12">
     <div id="topic" class="col-6 px-2 topic">
         <h1><?php 
-                if(isset($templateParams["postOTD"][0]["nome"])){
-                    echo $templateParams["postOTD"][0]["nome"];
+                if(isset($templateParams["temaDelGiorno"][0])){
+                    echo $templateParams["temaDelGiorno"][0]["nome"];
                 }else{
                     echo "";
                 }

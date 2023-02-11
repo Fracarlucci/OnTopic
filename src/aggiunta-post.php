@@ -8,7 +8,11 @@ if(!$templateParams["isAuth"]){
 
 $templateParams["titolo"] = "OnTopic - Add post";
 $templateParams["contenuto"] = "aggiungi-post.php";
-$templateParams["amici-section"] = "lista-amici.php";
+
+$currDay = date('Y-m-d');
+$templateParams["temaDelGiorno"] = $dbh->getThemeOfTheDay($currDay);
+
+$templateParams["photoPost"] = null;
 
 require 'template/base.php';
 ?>
