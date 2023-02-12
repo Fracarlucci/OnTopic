@@ -71,8 +71,10 @@
         </div>
     </section>
     <section>
-        <?php foreach($templateParams["posts"] as $post):
-            require($templateParams["post"]);
-        endforeach; ?>
+        <div id="postContainer">
+            <?php foreach($templateParams["posts"] as $post):
+                require($templateParams["post"]);
+            endforeach; ?>
+        </div>
     </section>
 </div>

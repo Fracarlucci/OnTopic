@@ -176,7 +176,7 @@
 
         <footer class="bg-dark py-2">
 
-            <?php //if($templateParams["isAuth"]): ?>
+            <?php if($templateParams["isAuth"]): ?>
                 <!-- Add post -->
                 <div class="text-center addIcon">
                     <a href="aggiunta-post.php">
@@ -194,19 +194,23 @@
                         </div>
                     </div>
                 </div>
-            <?php //else: ?>
-                <!--<div class="text-center addIcon">
+            <?php else: ?>
+                <div class="text-center addIcon">
                     <button type="button" class="btn btn-outline-light" href="#">Iscriviti per pubblicare un tuo pensiero!</button>
                 </div>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-9"></div>
                         <div class="col-3 d-flex justify-content-center">
-                            <button type="button" id="addButtonDesktop" class="btn btn-outline-light" href="#">Iscriviti per pubblicare i tuoi pensieri!</button>
+                            <button type="button" id="addButtonDesktop" class="btn btn-outline-light">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#signin-modal">
+                                    Iscriviti per pubblicare i tuoi pensieri!
+                                </a>    
+                            </button>
                         </div>
                     </div>
-                </div>-->
-            <?php //endif; ?>
+                </div>
+            <?php endif; ?>
         </footer>
     </body>
 </html>

@@ -39,6 +39,7 @@ create table NOTIFICA (
      idPost int,
      idUtenteInvio int not null,
      idUtenteRiceve int not null,
+     abilitato tinyint(1) NOT NULL DEFAULT 1,
      constraint IDNOTIFICA primary key (id));
 
 create table POST (

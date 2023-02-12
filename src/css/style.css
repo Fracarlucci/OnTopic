@@ -11,6 +11,11 @@ a{
     color: #fff;
 }
 
+#notificationsDrawer a {
+    text-decoration: none;
+    color: #000;
+}
+
 section a {
     color: #000;
 }
@@ -404,19 +409,13 @@ span {
 }
 
 /* Add post */
-.addImage{
-    background: rgb(227, 227, 227);
-    height: 40%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}   
+.post{
+    height: 30%;
+}
 
-#can{
-    background: rgb(227, 227, 227);
-    height: 40%;
-    width: 100%;
+.addImage{
+    height: 100%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -428,19 +427,28 @@ span {
     position: absolute;
 }
 
-.upload:hover .fa-plus {
+.overlay:hover .fa-plus {
     opacity: 1;
-} */
+}  */
 
-.upload:hover .fa-camera{
+.overlay:hover .fa-camera{
     opacity: 0.4;
     transition: .4s ease;
 }
 
-#photoElem{
-    padding-top: 5%;
+.fa-camera{
+    position:unset;
 }
 
 #preview{
-    position: relative;
+    position: absolute;
+    background-color:#f8f9fa;
+}
+
+@media screen and (max-width: 768px) {
+    #preview{
+        position: absolute;
+        width: 80%;
+        background-color: #f8f9fa;
+    }    
 }

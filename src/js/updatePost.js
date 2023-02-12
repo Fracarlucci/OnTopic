@@ -4,7 +4,7 @@ xhrTema = new XMLHttpRequest();
 methodPost = "GET";
 urlPost = "./api/currentPost.php";
 urlTitle = "./api/currentTopic.php";
-urlTema = "./tema-corrente.php";
+urlTema = "./api/getCurrentThemePosts.php";
 
 function updateCurrentPost(){
     xhrPost.onreadystatechange = function(){

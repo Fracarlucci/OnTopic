@@ -1,18 +1,13 @@
 <?php
-    include_once './db/database.php';
-    include_once './utils/functions.php';
+    include_once '../db/database.php';
+    include_once '../utils/functions.php';
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
 
     sec_session_start();
-    $templateParams["isAuth"] = login_check($dbh->db);
 
-    //redirect if not auth
-    if(!$templateParams["isAuth"]){
-        header('Location: index.php');
-    }
-
-    
-    $templateParams["post"] = "./template/post-template.php";
+    $loggedUserId = $_SESSION["user_id"];
+    $templateParams["isAuth"] = true;
+    $templateParams["post"] = "../template/post-template.php";
 
     if(isset($_COOKIE['date'])) {
         $date = $_COOKIE['date'];

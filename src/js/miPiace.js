@@ -1,18 +1,21 @@
-let heart = document.querySelectorAll(".heart");
 
-heart.forEach(element => {
-    const postId = element.dataset.postid;
-    const formData = new FormData();
-    formData.append('postId', postId);
+const callBackFunctionLike = () => {
+    let heart = document.querySelectorAll(".heart");
 
-    axios.post('./api/checkMiPiace.php', formData).then(response => {
-        if(response.data["isLiked"] == true){
-            if(!element.classList.contains("liked")){
-                element.classList.add("liked");
+    heart.forEach(element => {
+        const postId = element.dataset.postid;
+        const formData = new FormData();
+        formData.append('postId', postId);
+
+        axios.post('./api/checkMiPiace.php', formData).then(response => {
+            if(response.data["isLiked"] == true){
+                if(!element.classList.contains("liked")){
+                    element.classList.add("liked");
+                }
             }
-        }
+        });
     });
-});
+}
     
 function miPiace(button, postId){
     const formData = new FormData();
@@ -48,3 +51,17 @@ function like(formData, postId, isRemoved) {
         document.querySelector(likesCounter).innerHTML = nLikes;
     });
 }
+
+/**
+ * Observer to check updatePost container changes and then trigger callback 
+ */
+const postContainerLike = document.getElementById('postContainer');
+callBackFunctionLike()
+
+var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+var observerLike = new MutationObserver(callBackFunctionLike);
+observerLike.observe(postContainerLike, {
+    childList: true
+});
+
+    

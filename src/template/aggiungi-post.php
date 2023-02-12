@@ -19,16 +19,25 @@
                     </h1>
                 </div>
             </header>
+
+            <!-- Divider -->
+            <div class="d-flex justify-content-center col-12">
+                <hr class="#000" width="90%" />
+            </div>
             
-            <div id="addImage" class="addImage w-100">
-                <img id="preview" class="upload" >
-                    
-                    <i class="fa fa-camera fa-5x" aria-hidden="true"></i>
-                    <!-- <a class="overlay">
-                        <i class="fa fa-plus fa-5x" aria-hidden="true"></i>  
-                    </a> -->
-                    
-                </img>
+            <div class="post d-flex justify-content-center">
+                <div id="addImage" class="addImage">
+                    <img id="preview">
+                        <div class="overlay">
+                            <!-- <label class="upload" for="upload"> -->
+                            
+                            <i class="fa fa-camera fa-5x" aria-hidden="true"></i>
+                            <!-- <a class="overlay">
+                                <i class="fa fa-plus fa-5x" aria-hidden="true"></i>  
+                            </a>  -->
+                            <!-- </label> -->
+                        </div>
+                </div>
             </div>
 
             <div class="fil d-flex justify-content-center">
