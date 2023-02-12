@@ -1,5 +1,5 @@
 <?php
-require_once 'base-elements.php';
+require_once 'base-with-posts.php';
 
 //redirect if not auth
 if(!$templateParams["isAuth"]){
