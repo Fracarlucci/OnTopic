@@ -11,6 +11,11 @@ a{
     color: #fff;
 }
 
+#notificationsDrawer a {
+    text-decoration: none;
+    color: #000;
+}
+
 section a {
     color: #000;
 }
