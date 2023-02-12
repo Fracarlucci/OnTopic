@@ -6,8 +6,9 @@
         <header>
             <div class="container">
                 <div class="row">
-                    <div id="img" class="d-flex justify-content-center">
+                    <div id="image" class="d-flex justify-content-center">
                         <h1 id="noImg">Nessuna Immagine</h1>
+                        <img src="" id="img" alt="Post image">
                     </div>
                 </div>
                 <div class="row">

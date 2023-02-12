@@ -1,6 +1,10 @@
 const params = new URLSearchParams(window.location.search)
 const postId = params.get("postId");
+const noImgLabel = document.getElementById("noImg");
+const postImg = document.getElementById("img");
+const inputImg = document.getElementById("upload-image");
 const removeImgButton = document.getElementById("removeImgButton");
+let removeOldImg = false;
 let userId;
 
 const formData = new FormData();
@@ -9,21 +13,15 @@ formData.append('postId', postId);
 axios.post('./api/getPost.php', formData).then(response => {
     if(response != null) {
         if(response.data[0].immagine != null) {
-            document.getElementById("noImg").innerHTML = "";
-            const img = document.createElement("img");
-
+            noImgLabel.style.display = "none";
             img.setAttribute("src", "./img/" + response.data[0].immagine);
-            document.getElementById("img").appendChild(img);
+            document.getElementById("image").appendChild(img);
 
-
-            removeImgButton.addEventListener("click", event => {
-                const formData = new FormData();
-                formData.append('postId', postId);
-               
-                if(confirm("Sei sicuro di voler rimuovere l'immagine?")) {
-                    axios.post('./api/removeImage.php', formData);
-                }
+            removeImgButton.addEventListener("click", () => {
+                removeOldImg = true;
             });
+        } else {
+            postImg.style.display = "none";
         }
         userId = response.data[0].userId;
         document.getElementById("textElem").innerHTML = response.data[0].testo;
@@ -31,16 +29,31 @@ axios.post('./api/getPost.php', formData).then(response => {
 });
 
 removeImgButton.addEventListener("click", event => {
-    document.getElementById("upload-image").value = "";
+    inputImg.value = "";
+    postImg.style.display = "none";
+    noImgLabel.style.display = "block";
 });
 
+inputImg.addEventListener("change", event => {
+    postImg.style.display = "block";
+    noImgLabel.style.display = "none";
+    var output = document.getElementById('img');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+        URL.revokeObjectURL(output.src)
+    }
+});
 
-document.getElementById("updateButton").addEventListener("click", event => {
+document.getElementById("updateButton").addEventListener("click", () => {
     const formData = new FormData();
-    const newImg = document.getElementById("upload-image").files[0];
+    const newImg = inputImg.files[0];
 
     formData.append('postId', postId);
-    formData.append('testo', document.getElementById("textElem").value);
+
+    if(removeOldImg) {
+        axios.post('./api/removeImage.php', formData);
+    }
+    formData.append('testo', document.getElementById("textElem").value);               
 
     if(newImg != null) {
         const formDataImage = new FormData();
@@ -48,20 +61,20 @@ document.getElementById("updateButton").addEventListener("click", event => {
 
         axios.post('./api/uploadImage.php', formDataImage).then(responseUpload => {
             if (!responseUpload.data["uploadEseguito"]) {
-                document.getElementById("img").innerText = responseUpload.data["erroreUpload"];
+                console.log(responseUpload.data["erroreUpload"]);
             } else {
                 formData.append('immagine', responseUpload.data["fileName"]);
 
-                axios.post('./api/modificaPost.php', formData).then(response => {
+                axios.post('./api/modificaPost.php', formData).then(() => {
                     alert("Post modificato con successo!");
-                    // window.location.href = "./profilo.php?id=" + userId;
+                    window.location.href = "./profilo.php?id=" + userId;
                 });
             }
         });
     } else {
         axios.post('./api/modificaPost.php', formData).then(() => {
             alert("Post modificato con successo!");
-            // window.location.href = "./profilo.php?id=" + userId;
+            window.location.href = "./profilo.php?id=" + userId;
         });
     }
 });
