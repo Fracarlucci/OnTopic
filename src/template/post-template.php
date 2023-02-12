@@ -5,7 +5,7 @@
             <div class="d-flex col-1 prova" id="userIcon">
                 <a href="profilo.php?id=<?php echo $post["userId"] ?>">
                     <?php if(isset($post["imgProfilo"])): ?>
-                        <img id="profilePic" src=<?php echo $post["imgProfilo"]; ?> alt="profile image"/>
+                        <img id="profilePic" src="./img/<?php echo $post["imgProfilo"]; ?>" alt="profile image"/>
                     <?php else: ?>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -40,7 +40,7 @@
         <p><?php echo $post["dataora"]; ?></p>
     </header>
     <?php if(isset($post["immagine"])): ?>
-        <img src="<?php echo $post["immagine"]; ?>" class="img-fluid" alt="Post image">
+        <img src="./img/<?php echo $post["immagine"]; ?>" class="img-fluid" alt="Post image">
     <?php endif; ?>
     <article><?php echo $post["testo"]; ?></article>
     

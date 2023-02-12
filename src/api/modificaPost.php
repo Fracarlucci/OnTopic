@@ -8,12 +8,11 @@
 
     $postId = $_POST["postId"];
     $testo = $_POST["testo"];
+    
     if(isset($_POST["immagine"])) {
         $immagine = $_POST["immagine"];
+        $dbh->updatePostWithImg($postId, $testo, $immagine);
+    } else {
+        $dbh->updatePostWithoutImg($postId, $testo);
     }
-    echo "DIOPO";
-    $dbh->updatePostById($postId, $testo, $immagine);
-
-    header('Content-Type: application/json');
-    echo json_encode($result);
 ?>

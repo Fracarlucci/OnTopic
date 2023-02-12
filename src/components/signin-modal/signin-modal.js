@@ -16,8 +16,8 @@ function signin() {
     formDataUser.append('password', document.querySelector("#signin-input-password").value)
 
     //form data for upload image req
-    const formDataImage = new FormData()
-    formDataImage.append("image", document.querySelector("#signin-input-image").files[0])
+    const formDataImage = new FormData();
+    formDataImage.append("image", document.querySelector("#signin-input-image").files[0]);
 
     //make post req to upload image, if ok send post req to signin endpoint
     axios.post('./api/uploadImage.php', formDataImage).then(responseUpload => {

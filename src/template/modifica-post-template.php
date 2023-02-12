@@ -3,9 +3,21 @@
     
     <form id="modifyPostForm" method="post">
         <!-- Add image -->
-        <header class="d-flex justify-content-center" id="header">
-            <label for="upload-image" class="form-label">Immagine del post</label>
-            <input type="file" class="form-control" id="upload-image">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div id="img" class="d-flex justify-content-center">
+                        <h1 id="noImg">Nessuna Immagine</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" id="removeImgButton" class="modalButton">Rimuovi immagine</button>
+                </div>
+                <div class="row">
+                    <label for="upload-image" class="form-label">Scegli un'immagine:</label>
+                    <input type="file" class="form-control" id="upload-image">
+                </div>
+            </div>
         </header>
 
         <!-- Divider -->
@@ -24,7 +36,7 @@
         <!-- Update post -->
         <footer class="my-1">
             <div class="d-flex justify-content-center">
-                <button type="button" id="updateButton">
+                <button type="button" id="updateButton" class="modalButton">
                     Aggiorna Post
                 </button>
             </div>   

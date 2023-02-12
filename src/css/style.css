@@ -208,6 +208,14 @@ section img {
     background-color: inherit;
     border: none;
 }
+/* 
+#removeImgButton {
+    background-color: rgb(231, 177, 52);
+    color: white;
+    border: none;
+    padding: 2%;
+    border-radius: 5px;
+} */
 
 #seguiButton, #sendComment, .modalButton {
     background-color: rgb(231, 177, 52);

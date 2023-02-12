@@ -261,10 +261,26 @@ class DatabaseHelper{
         return $stmt->insert_id;
     }
 
-    public function updatePostById($idPost, $testo, $immagine){
+    public function updatePostWithImg($idPost, $testo, $immagine){
         $query = "UPDATE post SET testo = ?, immagine = ? WHERE id = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssi',$testo, $immagine, $idPost);
+        
+        return $stmt->execute();
+    }
+
+    public function updatePostWithoutImg($idPost, $testo){
+        $query = "UPDATE post SET testo = ? WHERE id = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si',$testo, $idPost);
+        
+        return $stmt->execute();
+    }
+
+    public function removePostImage($idPost){
+        $query = "UPDATE post SET immagine = NULL WHERE id = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idPost);
         
         return $stmt->execute();
     }
