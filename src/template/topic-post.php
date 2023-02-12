@@ -98,7 +98,7 @@
     </div>
 </div>
 
-<div id="updatePost">
+<div id="postContainer">
     <?php
         if(isset($templateParams["postOTD"][0])){
             foreach($templateParams["postOTD"] as $post):
