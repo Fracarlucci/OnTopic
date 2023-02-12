@@ -406,45 +406,28 @@ span {
 }
 
 /* Add post */
-.post{
-    height: 30%;
-}
-
 .addImage{
-    height: 100%;
     width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
-}   
-
-/* .fa-plus {
-    opacity: 0;
-    transition: .4s ease;
-    position: absolute;
 }
 
-.overlay:hover .fa-plus {
-    opacity: 1;
-}  */
-
-.overlay:hover .fa-camera{
+.fa-camera:hover .fa-camera{
     opacity: 0.4;
     transition: .4s ease;
 }
 
 .fa-camera{
-    position:unset;
+    position:relative;
 }
 
 #preview{
-    position: absolute;
     background-color:#f8f9fa;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 360px) {
     #preview{
-        position: absolute;
         width: 80%;
         background-color: #f8f9fa;
     }    

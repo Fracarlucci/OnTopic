@@ -1,16 +1,3 @@
-const photoElem = document.querySelector("#photoElem");
-var uploaded_image = "";
-
-// stampo l'immagine selezionata
-// photoElem.addEventListener("change", function(){
-//     const reader = new FileReader();
-//     reader.addEventListener("load", () => {
-//         uploaded_image = reader.result;
-//         document.querySelector("#addImage").style.backgroundImage = `url(${uploaded_image})`;
-//     });
-//     reader.readAsDataURL(this.files[0]);
-// }, true);
-
 function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
 
     if (arguments.length === 2) {
@@ -31,9 +18,6 @@ function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
 
     var iw = img.width,
         ih = img.height,
-        r = Math.min(w / iw, h / ih),
-        //nw = iw * r,   // new prop. width
-        //nh = ih * r,   // new prop. height
         nw = w,
         nh = h,
         cx, cy, cw, ch, ar = 1;
@@ -61,11 +45,14 @@ function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
     ctx.drawImage(img, cx, cy, cw, ch,  x, y, w, h);
 }
 
-
+//const photoElem = document.querySelector("#photoElem");
 let imgInput = document.getElementById('photoElem');
     
 imgInput.addEventListener('change', function (e) {
     if (e.target.files) {
+        var camera = document.getElementById("cameraIcon");
+        camera.style.display = "none";
+
         let imageFile = e.target.files[0];
         var reader = new FileReader();
         reader.onload = function (e) {
@@ -83,6 +70,7 @@ imgInput.addEventListener('change', function (e) {
                 // Show resized image in preview element
                 var dataurl = canvas.toDataURL(imageFile.type);
                 document.getElementById("preview").src = dataurl;
+
             }
             img.src = e.target.result;
         }
@@ -93,15 +81,32 @@ imgInput.addEventListener('change', function (e) {
 // aggiungo il post
 document.querySelector("#addPostForm").addEventListener("submit", function (event) {
     event.preventDefault()
-    addPost();
+    
+    const formData = new FormData();
+    const formDataImage = new FormData();
+
+    const topic = document.getElementById('title').innerText;
+    formData.append('tema', topic);
+    formData.append('testo', document.getElementById("textElem").value);
+    
+    img = document.getElementById("photoElem").files[0];
+    if(img != null) {
+        formDataImage.append('image', img);
+        axios.post('./api/uploadImage.php', formDataImage).then((responseUpload) => {
+            if (!responseUpload.data["uploadEseguito"]) {
+                alert("Qualcosa è andato storto :/");
+            }else{
+                formData.append('image', responseUpload.data["fileName"]);
+                axios.post('./api/addPost.php', formData).then(() => {
+                    alert("Post aggiunto con successo!");
+                });
+            }       
+        });
+    }else{
+        axios.post('./api/addPost.php', formData).then(() => {
+            alert("Post aggiunto con successo!");
+        });
+    }
+
     event.target.reset()
 });
-
-function addPost(){
-    const textPost = new FormData();
-    textPost.append('text', document.querySelector("#textElem").value)
-    
-    const imagePost = new FormData()
-    imagePost.append("image", document.querySelector("#photoElem").files[0])
-    
-}

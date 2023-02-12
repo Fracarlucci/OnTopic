@@ -428,6 +428,16 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getThemeId($topic){
+        $query = "SELECT id FROM tema WHERE nome = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $topic);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     /**
      * Notification CRUD
      */
