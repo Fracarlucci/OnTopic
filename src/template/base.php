@@ -69,9 +69,9 @@
                                 <div id="link" class="d-flex justify-content-center col-6">
                                     <nav>
                                         <ul class="menu">
-                                            <a href="index.php"><li class="menuButton col">Home</li></a>
-                                            <a href="tema.php"><li class="menuButton col">Tema</li></a>
-                                            <a href="cerca.php"><li class="menuButton col">Cerca</li></a>
+                                            <a href="index.php"><li class="menuButton <?php isActive("index.php");?> col">Home</li></a>
+                                            <a href="tema.php"><li class="menuButton <?php isActive("tema.php");?> col">Tema</li></a>
+                                            <a href="cerca.php"><li class="menuButton <?php isActive("cerca.php");?> col">Cerca</li></a>
                                         </ul>
                                     </nav>
                                 </div>

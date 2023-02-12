@@ -1,5 +1,11 @@
 <?php 
 
+    function isActive($pagename){
+        if(basename($_SERVER['PHP_SELF'])==$pagename){
+            echo "active";
+        }
+    }
+
     function sec_session_start() {
         $session_name = 'sec_session_id'; // Imposta un nome di sessione
         $secure = false; // Imposta il parametro a true se vuoi usare il protocollo 'https'.

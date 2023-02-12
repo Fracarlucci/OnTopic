@@ -93,6 +93,11 @@ body>footer {
     width: 100%;
 }
 
+.active {
+    background-color: rgb(231, 177, 52);
+    color: rgb(33, 37, 41);
+}
+
 h1 {
     padding: 0%;
 }
@@ -213,14 +218,6 @@ section img {
     background-color: inherit;
     border: none;
 }
-/* 
-#removeImgButton {
-    background-color: rgb(231, 177, 52);
-    color: white;
-    border: none;
-    padding: 2%;
-    border-radius: 5px;
-} */
 
 #seguiButton, #sendComment, .modalButton {
     background-color: rgb(231, 177, 52);

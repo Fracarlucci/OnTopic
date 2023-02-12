@@ -19,4 +19,5 @@ $templateParams["js"] = array("js/notificationsHandle.js", "js/miPiace.js", "js/
 
 require_once './components/comments-modal/comments-modal.php';
 require_once './components/postSettings-modal/postSettings-modal.php';
+require_once './utils/functions.php';
 ?>
