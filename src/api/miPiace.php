@@ -6,6 +6,11 @@
 
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
 
+    //redirect if not auth
+    if(!login_check($dbh->db)){
+        header('Location: ./../index.php');
+    }
+
     $idPost = $_POST["postId"];
     $remove = false;
     if(isset($_POST["remove"])) {
