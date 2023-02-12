@@ -24,7 +24,7 @@ function updateCurrentTitle(){
 
 function updateTema(){
     xhrTema.onreadystatechange = function(){
-        document.getElementById("updatePost").innerHTML = this.response;
+        document.getElementById("postContainer").innerHTML = this.response;
     }
     xhrTema.open(methodPost, urlTema, true);
     xhrTema.send();
