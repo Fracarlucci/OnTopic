@@ -1,74 +1,16 @@
-button {
-    font-weight: 500;
-    border: none;
-    margin: 0;
-    padding: 0;
-    background: inherit;
-}
-
-a{
-    text-decoration: none;
-    color: #fff;
-}
-
-#notificationsDrawer a {
-    text-decoration: none;
-    color: #000;
-}
-
-section a {
-    color: #000;
-}
-
-.bi-person-circle{
-    color:#000;
-}
-
-ul{
-    list-style: none;
-}
-
-nav li{
-    list-style: none;
-}
-
-.follow>a>li, .notification>a>li {
-    width: 100%;
-    padding: 2%;
-    margin: 0% 2% 0%, 2%;
-    text-align: left;
-}
-
-.follow>a>li:hover, .notification>a>li:hover, #result li:hover, #usersList li:hover, #commentsList li:hover {
-    background-color: rgb(227, 227, 227);
-    border-radius: 5px;
-}
-
-ul{
-  margin:0;
-  padding: 0;
-}
-
-a:hover{
-    color: inherit;
-}
-
+/* General css */
 body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-footer{
-    margin-top: auto;
-}
-
-#logoDesktop:hover, .logout:hover, #logoMobile:hover, #bell:hover, #profileIcon:hover, #addPost:hover{
-    color: rgb(231, 177, 52);
-}
-
 body header img {
     width: 25%;
+}
+
+header p {
+    font-size: 80%;
 }
 
 body>header {
@@ -85,8 +27,88 @@ body>footer {
     width: 100%;
 }
 
+footer p {
+    font-family: 'Robota', sans-serif;
+    margin: 0%;
+    padding: 0%;
+}
+
+footer{
+    margin-top: auto;
+}
+
+h1{
+    padding: 0%;
+}
+
+h2{
+    color: #000;
+    display: inline-block;
+    text-align: left;
+    font-size: 120%;
+    margin: 0;
+}
+
+button{
+    font-weight: 500;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: inherit;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+aside a{
+    color: #000;
+}
+
+aside>svg{
+    margin-left: 3%;
+    color: #000;
+}
+
+section a{
+    color: #000;
+}
+
+section img{
+    margin-bottom: 2%;
+    border-radius: 2%;
+}
+
+ul{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+
+nav li{
+    list-style: none;
+}
+
+span{
+    font-weight: bold;
+}
+
+#logout{
+    color: rgb(231, 177, 52) !important;
+}
+
 #addButtonDesktop {
     margin: 0% 3%;
+}
+
+#loginButton, #sendPostButton, #updateButton, #removeImgButton {
+    background-color: rgb(231, 177, 52);
+    border: none;
+}
+
+#result>a>li, #usersList>a>li, #commentsList>a>li{
+    color: #000;
 }
 
 .menu{
@@ -98,128 +120,77 @@ body>footer {
     color: rgb(33, 37, 41);
 }
 
-h1 {
-    padding: 0%;
-}
-
-.noPost {
-    text-align: center;
-}
-
-h2 {
+/* Notification css*/
+#notificationsDrawer a{
+    text-decoration: none;
     color: #000;
-    display: inline-block;
+}
+
+.follow>a>li, .notification>a>li {
+    width: 100%;
+    padding: 2%;
+    margin: 0% 2% 0%, 2%;
     text-align: left;
-    font-size: 120%;
-    margin: 0;
 }
 
-aside>svg {
-    margin-left: 3%;
-    color: #000;
-}
-
+/* Post css */
 #userIcon {
     margin-right: 0.5em;
+}
+
+#commentText{
+    border-radius: 5px;
 }
 
 #tema, p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-header p {
-    font-size: 80%;
+@keyframes commento{
+    from {color: black;}
+    to {color: rgb(88, 88, 88);}
 }
 
-footer p {
-    font-family: 'Robota', sans-serif;
-    margin: 0%;
-    padding: 0%;
+@keyframes mi_piace{
+    from {color: black;}
+    to {color: red;}
 }
 
-#loginButton, #sendPostButton, #updateButton, #removeImgButton {
-    background-color: rgb(231, 177, 52);
-    border: none;
-}
-
-#loginButton:hover, #sendPostButton:hover, #updateButton:hover, #removeImgButton:hover {
-    background-color: rgb(255, 179, 0);
-}
-
-aside a {
-    color: #000;
+.liked{
+    color: red;
 }
 
 .topic{
     text-align: center;
 }
 
-#calendar{
-    align-items: center;
+.noPost {
+    text-align: center;
 }
 
-section img {
-    margin-bottom: 2%;
-    border-radius: 2%;
-}
-
-.comment:hover {
-    color: rgb(88, 88, 88);
-    animation-name: commento;
-    animation-duration: 1s;
-}
-
-@keyframes commento {
-    from {color: black;}
-    to {color: rgb(88, 88, 88);}
-}
-
-.heart:hover {
-    color: red;
-    animation-name: mi_piace;
-    animation-duration: 1s;
-}
-
-@keyframes mi_piace {
-    from {color: black;}
-    to {color: red;}
-}
-
-.liked {
-    color: red;
-}
-
-.liked:hover {
-    animation: none;
-}
-
-#comment:hover {
-    color: rgb(100, 100, 100);
-}
-
-#profilePic {
+/* Profile css */
+#profilePic{
     width: 100%;
     border-radius: 100%;
     border: 1px solid black;
 }
 
-.profileHead {
+#profileName{
+    color: #000;
+    margin: 5% 0;
+}
+
+.profileHead{
     font-size: 97%;
     color: #000;
     margin: 5% 0;
 }
 
-#profileName {
-    color: #000;
-    margin: 5% 0;
+.bi-person-circle{
+    color:#000;
 }
 
-.modal-backgroud {
-    background-color: inherit;
-    border: none;
-}
-
-#seguiButton, #sendComment, .modalButton {
+#seguiButton, #sendComment, .modalButton{
     background-color: rgb(231, 177, 52);
     color: white;
     border: none;
@@ -227,45 +198,10 @@ section img {
     border-radius: 5px;
 }
 
-#seguiButton:hover, #sendComment:hover, .modalButton:hover {
-    background-color: rgb(255, 179, 0);
-}
-
-#commentText {
-    border-radius: 5px;
-}
-
-#searchBar {
-    width: 100%;
-    border-radius: 5px;
-    border: 0;
-    margin: 0;
-}
-
-#searchButton {
-    display: inline-block;
+/* Modal css */
+.modal-backgroud{
     background-color: inherit;
     border: none;
-    border-radius: 100%;
-    color: #fff;
-    padding: 5% 15% 10%;
-    margin: 2%;
-}
-
-#searchButton:hover {
-    color: rgb(231, 177, 52);
-}
-
-#result-container {
-    display: none;
-}
-
-#result>a>li, #usersList>a>li, #commentsList>a>li {
-    color: #000;
-}
-
-span {
-    font-weight: bold;
 }
 
 .modal-dialog-comment{
@@ -277,7 +213,42 @@ span {
     overflow-y: auto;
 }
 
-nav>ul>a>li.menuButton:hover{
+/* Search css */
+#searchBar{
+    width: 100%;
+    border-radius: 5px;
+    border: 0;
+    margin: 0;
+}
+
+#searchButton{
+    display: inline-block;
+    background-color: inherit;
+    border: none;
+    border-radius: 100%;
+    color: #fff;
+    padding: 5% 15% 10%;
+    margin: 2%;
+}
+
+#result-container{
+    display: none;
+}
+
+/* Hover css */
+a:hover{
+    color: inherit;
+}
+
+#searchButton:hover{
+    color: rgb(231, 177, 52);
+}
+
+#seguiButton:hover, #sendComment:hover, .modalButton:hover{
+    background-color: rgb(255, 179, 0);
+}
+
+#loginButton:hover, #sendPostButton:hover, #updateButton:hover, #removeImgButton:hover {
     background-color: rgb(255, 179, 0);
 }
 
@@ -285,91 +256,40 @@ nav>ul>a>li.menuButton:hover{
     color:#000;
 }
 
-#logout{
-    color: rgb(231, 177, 52) !important;
+#logoDesktop:hover, .logout:hover, #logoMobile:hover, #bell:hover, #profileIcon:hover, #addPost:hover{
+    color: rgb(231, 177, 52);
 }
 
-@media screen and (min-width: 768px) {
-    #logoMobile, .dividerClass, #bell{
-        display: none;
-    }
-    #logoDesktop{
-        width: 600px;
-    }
-    #userName{
-        color: rgb(231, 177, 52) !important;
-    }
-    .bi-plus-circle{
-        display: none;
-    }
-    #addButtonDesktop {
-        display: inline-block;
-        width: 70%;
-    }
-    nav>ul>a>li{
-        display: inline-block;
-        width: 100px;
-        padding: 10px;  
-        text-align: center;
-        background-color: dark; 
-        border-radius: 5px;
-    }
+.liked:hover{
+    animation: none;
 }
 
-@media screen and (max-width: 768px) {
-    #logoDesktop{
-        display: none;
-    }
-    #logout{
-        display: none;
-    }
-    #userName{
-        display: none;
-    }
-    aside{
-        display: none;
-    }
-    #addButtonDesktop{
-        display: none;
-    }
-    #sharePost{
-        display: none;
-    }
-    nav>ul>a>li{
-        display: inline-block;
-        padding: 5px;  
-        text-align: center;
-        background-color: dark; 
-        border-radius: 5px;
-    }
-    #link{
-        text-align: center;
-    }
+.heart:hover{
+    color: red;
+    animation-name: mi_piace;
+    animation-duration: 1s;
 }
 
-@media screen and (max-width: 1028px){
-    #slide_1, #slide_5{
-        display: none;
-    }
-    #day1, #day5{
-        display: none;
-    }
-    #slide_2, #slide_3, #slide_4{
-        text-align: center;
-    }
-    #slides{
-        align-self: center;
-    }
-    #day2, #day3, #day4{
-        width: 30%;
-    }
-    #prevDay, #nextDay{
-        width: 5%;
-    }
-
+.comment:hover{
+    color: rgb(88, 88, 88);
+    animation-name: commento;
+    animation-duration: 1s;
 }
 
-/* calendar slider */
+#comment:hover{
+    color: rgb(100, 100, 100);
+}
+
+.follow>a>li:hover, .notification>a>li:hover, #result li:hover, #usersList li:hover, #commentsList li:hover {
+    background-color: rgb(227, 227, 227);
+    border-radius: 5px;
+}
+
+nav>ul>a>li.menuButton:hover{
+    background-color: rgb(255, 179, 0);
+}
+
+/* Calendar slider css*/
 .wrapper{
     display: flex;
     background: rgb(217, 213, 205);
@@ -415,7 +335,11 @@ nav>ul>a>li.menuButton:hover{
     text-align: center;
 }
 
-/* Add post */
+/* Add post css*/
+#preview{
+    background-color:#f8f9fa;
+}
+
 .addImage{
     width: 80%;
     display: flex;
@@ -423,22 +347,88 @@ nav>ul>a>li.menuButton:hover{
     justify-content: center;
 }
 
-.fa-camera:hover .fa-camera{
-    opacity: 0.4;
-    transition: .4s ease;
-}
-
 .fa-camera{
     position:relative;
 }
 
-#preview{
-    background-color:#f8f9fa;
+/* Desktop Css */
+@media screen and (min-width: 768px) {
+    #logoMobile, .dividerClass, #bell{
+        display: none;
+    }
+    #logoDesktop{
+        width: 600px;
+    }
+    #userName{
+        color: rgb(231, 177, 52) !important;
+    }
+    #addButtonDesktop {
+        display: inline-block;
+        width: 70%;
+    }
+    .bi-plus-circle{
+        display: none;
+    }
+    nav>ul>a>li{
+        display: inline-block;
+        width: 100px;
+        padding: 10px;  
+        text-align: center;
+        background-color: dark; 
+        border-radius: 5px;
+    }
 }
 
-@media screen and (max-width: 360px) {
-    #preview{
-        width: 80%;
-        background-color: #f8f9fa;
-    }    
+/* Mobile css */
+@media screen and (max-width: 768px) {
+    #logoDesktop{
+        display: none;
+    }
+    #logout{
+        display: none;
+    }
+    #userName{
+        display: none;
+    }
+    #addButtonDesktop{
+        display: none;
+    }
+    #sharePost{
+        display: none;
+    }
+    #link{
+        text-align: center;
+    }
+    aside{
+        display: none;
+    }
+    nav>ul>a>li{
+        display: inline-block;
+        padding: 5px;  
+        text-align: center;
+        background-color: dark; 
+        border-radius: 5px;
+    }
+}
+
+/* Tablet css */
+@media screen and (max-width: 1028px){
+    #slide_1, #slide_5{
+        display: none;
+    }
+    #day1, #day5{
+        display: none;
+    }
+    #slide_2, #slide_3, #slide_4{
+        text-align: center;
+    }
+    #slides{
+        align-self: center;
+    }
+    #day2, #day3, #day4{
+        width: 30%;
+    }
+    #prevDay, #nextDay{
+        width: 5%;
+    }
 }
