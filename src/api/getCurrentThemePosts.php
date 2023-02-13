@@ -20,8 +20,10 @@
         $tema = $templateParams["temaDelGiorno"][0]["nome"];
         $templateParams["postOTD"] = $dbh->getPostsByTheme($tema);
     }
+
     $currentDay = strtotime($currDay);
     $selectedDay = strtotime($date);
+    
     if(isset($templateParams["postOTD"][0])){
         foreach($templateParams["postOTD"] as $post):
             require $templateParams["post"];
