@@ -2,6 +2,8 @@
     include '../db/database.php';
     include '../utils/functions.php';
 
+    sec_session_start();
+
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
 
     //redirect if not auth
@@ -15,11 +17,15 @@
     $nome = $_POST["nome"];
     $cognome = $_POST["cognome"];
 
+    $result["status"] = false;
+
     if(isset($_POST["immagine"])) {
         $immagine = $_POST["immagine"];
-        $dbh->updateUserWithImg($userId, $username, $email, $nome, $cognome, $immagine);
+        $result["status"] = $dbh->updateUserWithImg($userId, $username, $email, $nome, $cognome, $immagine);
     } else {
-        $dbh->updateUserWithoutImg($userId, $username, $email, $nome, $cognome);
+        $result["status"] = $dbh->updateUserWithoutImg($userId, $username, $email, $nome, $cognome);
     }
 
+    header('Content-Type: application/json');
+    echo json_encode($result);
 ?>

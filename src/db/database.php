@@ -177,7 +177,7 @@ class DatabaseHelper{
         ";
 
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssssi',$username,$nome,$cognome,$email,$imgProfilo,$userId);
+        $stmt->bind_param('ssssi',$username,$nome,$cognome,$email,$userId);
         $stmt->execute();
     }
 
