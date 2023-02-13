@@ -63,7 +63,7 @@ footer{
     margin-top: auto;
 }
 
-#logoDesktop:hover, #logoMobile:hover, #bell:hover, #profileIcon:hover, #profileIcon:hover, #addPost:hover{
+#logoDesktop:hover, .logout:hover, #logoMobile:hover, #bell:hover, #profileIcon:hover, #addPost:hover{
     color: rgb(231, 177, 52);
 }
 
@@ -276,6 +276,10 @@ span {
     overflow-y: auto;
 }
 
+#logout{
+    color: rgb(231, 177, 52) !important;
+}
+
 @media screen and (min-width: 768px) {
     #logoMobile, .dividerClass, #bell{
         display: none;
@@ -286,7 +290,7 @@ span {
     #userName{
         color: rgb(231, 177, 52) !important;
     }
-    .addIcon{
+    .bi-plus-circle{
         display: none;
     }
     #addButtonDesktop {
@@ -308,6 +312,9 @@ span {
 
 @media screen and (max-width: 768px) {
     #logoDesktop{
+        display: none;
+    }
+    #logout{
         display: none;
     }
     #userName{
