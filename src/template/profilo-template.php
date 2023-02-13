@@ -69,3 +69,5 @@
         </div>
     </section>
 </div>
+
+<?php require_once './components/usersList-modal/usersList-modal.php'; ?>

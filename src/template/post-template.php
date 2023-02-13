@@ -15,7 +15,7 @@
             </div>
             <!-- Theme -->
             <div class="d-flex justify-content-center col-4">
-                <a href="#">
+                <a href="tema.php">
                     <h3 id="tema"><?php echo $post["nome"]; ?></h3>
                 </a>
             </div>

@@ -42,7 +42,7 @@
 
             <!-- Divider -->
             <div class="d-flex justify-content-center col-12">
-                <hr class="dividerClass text-light" width="70%" />
+                <hr class="dividerClass text-light w-75" />
             </div>  
 
             <!-- Menu -->
