@@ -10,7 +10,13 @@ $currentUserId = $_GET["id"];
 
 $templateParams["titolo"] = "OnTopic - Profilo";
 $templateParams["contenuto"] = "profilo-template.php";
+
+/* Controllo se il qp è corretto*/
 $templateParams["utenteProfilo"] = $dbh->getUserById($currentUserId);
+if(!$templateParams["utenteProfilo"]) {
+    header('Location: index.php');
+}
+
 $templateParams["posts"] = $dbh->getPostsbyId($currentUserId);
 $templateParams["seguaci"] = $dbh->getSeguaciById($currentUserId);
 $templateParams["seguiti"] = $dbh->getSeguitiById($currentUserId);
