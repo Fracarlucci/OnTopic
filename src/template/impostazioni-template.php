@@ -7,11 +7,11 @@
         </header>
         <!-- Divider -->
         <div class="d-flex justify-content-center col-12">
-            <hr class="#000" width="90%" />
+            <hr class="#000 w-100" />
         </div>
         <form id="modifyPostForm" action="#" method="post">
             <div id="image" class="d-flex justify-content-center">
-                <img src="./img/<?php echo $templateParams["utente"][0]["imgProfilo"] ?>" id="img" width="20%" class="img-fluid" alt="Profile image">
+                <img src="./img/<?php echo $templateParams["utente"][0]["imgProfilo"] ?>" id="img" class="img-fluid w-25" alt="Profile image">
             </div>
             <div class="d-flex justify-content-center">
                 <label for="upload-image" class="form-label"></label>
