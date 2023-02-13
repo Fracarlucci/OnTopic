@@ -1,5 +1,6 @@
 <?php 
     include '../db/database.php';
+    include '../utils/functions.php';
 
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
 

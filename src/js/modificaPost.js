@@ -22,8 +22,10 @@ axios.post('./api/getPost.php', formData).then(response => {
             });
         } else {
             postImg.style.display = "none";
+            removeImgButton.style.display = "none";
         }
         userId = response.data[0].userId;
+        document.getElementById("title").innerHTML = response.data[0].nome;
         document.getElementById("textElem").innerHTML = response.data[0].testo;
     }
 });
@@ -31,16 +33,24 @@ axios.post('./api/getPost.php', formData).then(response => {
 removeImgButton.addEventListener("click", event => {
     inputImg.value = "";
     postImg.style.display = "none";
+    removeImgButton.style.display = "none";
     noImgLabel.style.display = "block";
 });
 
 inputImg.addEventListener("change", event => {
-    postImg.style.display = "block";
-    noImgLabel.style.display = "none";
-    var output = document.getElementById('img');
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function() {
-        URL.revokeObjectURL(output.src)
+    if(inputImg.files[0] == null) {
+        postImg.style.display = "none";
+        removeImgButton.style.display = "none";
+        noImgLabel.style.display = "block";
+    } else {
+        postImg.style.display = "block";
+        removeImgButton.style.display = "block";
+        noImgLabel.style.display = "none";
+        var output = document.getElementById('img');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+            URL.revokeObjectURL(output.src)
+        }
     }
 });
 
