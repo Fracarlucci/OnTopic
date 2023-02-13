@@ -7,7 +7,7 @@
         <title><?php echo $templateParams["titolo"]; ?></title>
 
         <!-- Font -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%7CVarela+Round">
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
@@ -37,7 +37,7 @@
 
             <!-- Logo -->
             <div id="logoMobile" class="text-center">
-                <a text href="#"><img src="./img/OnTopic_logo.png" alt="OnTopic"/></a>
+                <a href="#"><img src="./img/OnTopic_logo.png" alt="OnTopic"/></a>
             </div>
 
             <!-- Divider -->
@@ -151,7 +151,7 @@
                                 <ul class="follow">
                                     <?php if($templateParams["isAuth"]): ?>
                                         <?php foreach($templateParams["loggedUserSeguiti"] as $seguito): ?>
-                                            <a href="profilo.php?id=<?php echo $seguito["id"] ?>"><li><?php echo $seguito["username"]; ?></li></a>
+                                            <li><a href="profilo.php?id=<?php echo $seguito["id"] ?>"><?php echo $seguito["username"]; ?></a></li>
                                         <?php endforeach; ?>
                                     <?php else: ?>
                                         <li>
@@ -196,7 +196,7 @@
                         </div>
                         <!-- Logout -->
                         <div class="logout col-3 d-flex flex-row-reverse">
-                            <li class="d-flex align-items-center">
+                            <div class="d-flex align-items-center">
                                 <a href="api/logout.php">
                                     <span id="logout">Logout</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
@@ -205,7 +205,7 @@
                                         <line x1="21" y1="12" x2="9" y2="12"></line>
                                     </svg>
                                 </a>
-                            </li>
+                            </div>
                         </div>
                     </div>
                 </div>

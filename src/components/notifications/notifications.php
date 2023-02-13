@@ -15,8 +15,8 @@
                         <?php echo $notifica["testo"]; ?></a>
                     </div>
                     <div class="col-1">
-                        <a href="#" notificationId="<?php echo $notifica["notificationId"] ?>" class="deleteNotificationImg">
-                            <img src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png" alt="Delete Notification" width="20px" height="20px" />
+                        <a href="#" data-notificationId="<?php echo $notifica["notificationId"] ?>" class="deleteNotificationImg">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png" alt="Delete Notification" width="20" height="20" />
                         </a>
                     </div>
                 </div>

@@ -2,9 +2,9 @@
     <header>
         <div id="post<?php echo $post['id'] ?>" class="d-flex flex-row">
             <!-- User icon -->
-            <div class="d-flex col-1 prova" id="userIcon">
+            <div class="d-flex col-1 prova userIcon">
                 <a href="profilo.php?id=<?php echo $post["userId"] ?>">
-                    <img id="profilePic" src="./img/<?php echo $post["imgProfilo"]; ?>" alt="profile image"/>                    
+                    <img class="profilePic" src="./img/<?php echo $post["imgProfilo"]; ?>" alt="profile image"/>                    
                 </a>
             </div>
             <!-- Username -->
@@ -16,7 +16,7 @@
             <!-- Theme -->
             <div class="d-flex justify-content-center col-4">
                 <a href="tema.php">
-                    <h3 id="tema"><?php echo $post["nome"]; ?></h3>
+                    <h3 class="tema"><?php echo $post["nome"]; ?></h3>
                 </a>
             </div>
             <!-- Dots icon -->
@@ -35,7 +35,7 @@
     <?php if(isset($post["immagine"])): ?>
         <img src="./img/<?php echo $post["immagine"]; ?>" class="img-fluid" alt="Post image">
     <?php endif; ?>
-    <article><?php echo $post["testo"]; ?></article>
+    <p><?php echo $post["testo"]; ?></p>
     
     <footer class="my-1">
         <div class="d-flex justify-content-end">
@@ -57,7 +57,7 @@
                 </button>
             </div>
             <div class="mx-1">
-                <p id="like" data-postid=<?php echo $post["id"]; ?>><?php echo $post["mipiace"]; ?></p>
+                <p class="like" data-postid=<?php echo $post["id"]; ?>><?php echo $post["mipiace"]; ?></p>
             </div>
             <?php endif; ?>
         </div>

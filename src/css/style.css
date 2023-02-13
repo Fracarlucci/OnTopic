@@ -134,7 +134,7 @@ span{
 }
 
 /* Post css */
-#userIcon {
+.userIcon {
     margin-right: 0.5em;
 }
 
@@ -142,7 +142,7 @@ span{
     border-radius: 5px;
 }
 
-#tema, p {
+.tema, p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -169,7 +169,7 @@ span{
 }
 
 /* Profile css */
-#profilePic{
+.profilePic{
     width: 100%;
     border-radius: 100%;
     border: 1px solid black;

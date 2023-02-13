@@ -5,7 +5,7 @@ const onReadyCallback = () => {
             event.preventDefault()
         
             //get notification id to hide 
-            let notificationId = event.currentTarget.getAttribute("notificationId")
+            let notificationId = event.currentTarget.getAttribute("data-notificationId")
         
             //prepare body
             let formData = new FormData()
