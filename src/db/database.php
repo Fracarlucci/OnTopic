@@ -342,7 +342,7 @@ class DatabaseHelper{
 
     public function getCommentsByPostId($idPost){
         $query = "
-            SELECT c.id, c.dataOra, c.testo, c.immagine, u.username, u.imgProfilo 
+            SELECT c.id, c.dataOra, c.testo, c.immagine, u.id as userId, u.username, u.imgProfilo 
             FROM commento c INNER JOIN utente u ON c.idUtente = u.id INNER JOIN post p ON c.idPost = p.id
             WHERE p.id = ?
         ";

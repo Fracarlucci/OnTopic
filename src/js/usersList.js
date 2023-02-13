@@ -1,3 +1,11 @@
+document.getElementById("seguaci").addEventListener("click", function() {
+    getUsersList("Seguaci");
+});
+
+document.getElementById("seguiti").addEventListener("click", function() {
+    getUsersList("Seguiti");
+});
+
 function getUsersList(listType) {
     //get user id to follow by query param
     const params = new URLSearchParams(window.location.search)

@@ -16,6 +16,11 @@ axios.post('./api/checkSegui.php', formData).then(response => {
     }
 });
 
+if(button != null)
+    button.addEventListener("click", function() {
+    segui(this);
+});
+
 function segui(button) {
     if(button.classList.contains("followed")){
         button.classList.remove("followed");

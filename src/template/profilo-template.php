@@ -18,12 +18,12 @@
                             <h3 class="profileHead">Post <span><?php echo count($templateParams["posts"]); ?></span></h3>
                         </div>
                         <div class="col-4 align-self-center">
-                            <button class="profileHead" type="button" data-bs-toggle="modal" data-bs-target="#usersList-modal" onclick="getUsersList('Seguaci')">
+                            <button id="seguaci" class="profileHead" type="button" data-bs-toggle="modal" data-bs-target="#usersList-modal">
                                 Seguaci <span id="nSeguaci"><?php echo count($templateParams["seguaci"]); ?></span>
                             </button>
                         </div>
                         <div class="col-4 align-self-center">
-                            <button class="profileHead" type="button" data-bs-toggle="modal" data-bs-target="#usersList-modal" onclick="getUsersList('Seguiti')">
+                            <button id="seguiti" class="profileHead" type="button" data-bs-toggle="modal" data-bs-target="#usersList-modal">
                                 Seguiti <span id="nSeguiti"><?php echo count($templateParams["seguiti"]); ?></span>
                             </button>
                         </div>
@@ -34,7 +34,7 @@
                         </div>
                         <?php if($templateParams["utente"][0]["id"] != $templateParams["utenteProfilo"][0]["id"]): ?>
                             <div class="col-6 align-self-center">
-                                <button id="seguiButton" type="button" onclick="segui(this)">Segui</button>
+                                <button id="seguiButton" type="button">Segui</button>
                             </div>
                         <?php endif; ?>
                     </div>
