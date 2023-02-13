@@ -13,7 +13,7 @@
             <form id="modifyPostForm" action="#" method="post">
                 <div id="image" class="d-flex justify-content-center">
                     <i id="noImg" class="fa fa-camera fa-5x" aria-hidden="true"></i>
-                    <img src="" id="img" class="img-fluid" alt="Post image">
+                    <img src="" id="img" class="img-fluid" alt="Post image" width="25%" />
                 </div>
                 <div class="d-flex justify-content-center m-2">
                     <button type="button" id="removeImgButton" class="btn btn-primary">Rimuovi immagine</button>
@@ -39,9 +39,7 @@
                 <!-- Update post -->
                 <footer class="my-1">
                     <div class="d-flex justify-content-center">
-                        <button type="button" id="updateButton" class="btn btn-primary">
-                            Aggiorna Post
-                        </button>
+                        <input type="submit" id="updateButton" class="btn btn-primary" value="Aggiorna Post" />
                     </div>   
                 </footer>
             </form>
