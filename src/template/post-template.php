@@ -4,14 +4,7 @@
             <!-- User icon -->
             <div class="d-flex col-1 prova" id="userIcon">
                 <a href="profilo.php?id=<?php echo $post["userId"] ?>">
-                    <?php if(isset($post["imgProfilo"])): ?>
-                        <img id="profilePic" src="./img/<?php echo $post["imgProfilo"]; ?>" alt="profile image"/>
-                    <?php else: ?>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                        </svg>
-                    <?php endif; ?>
+                    <img id="profilePic" src="./img/<?php echo $post["imgProfilo"]; ?>" alt="profile image"/>                    
                 </a>
             </div>
             <!-- Username -->
@@ -46,8 +39,8 @@
     
     <footer class="my-1">
         <div class="d-flex justify-content-end">
-            <!-- Comment icon -->
             <?php if($templateParams["isAuth"]): ?>
+            <!-- Comment icon -->
             <div class="mx-1">
                 <button class="comment" type="button" data-bs-toggle="modal" data-bs-target="#comments-modal" data-postid=<?php echo $post["id"]; ?>>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
@@ -55,7 +48,6 @@
                     </svg>
                 </button>
             </div>
-            <?php endif; ?>
             <!-- Heart icon -->
             <div class="mx-1">
                 <button class="heart" type="button" data-postid=<?php echo $post["id"]; ?>>
@@ -67,6 +59,7 @@
             <div class="mx-1">
                 <p id="like" data-postid=<?php echo $post["id"]; ?>><?php echo $post["mipiace"]; ?></p>
             </div>
+            <?php endif; ?>
         </div>
     </footer>
 </section>

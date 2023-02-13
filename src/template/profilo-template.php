@@ -1,7 +1,7 @@
 <div class="container my-2">
     <header>
         <div class="row">
-            <div class="col-2">
+            <div class="col-2 align-self-center">
                 <?php if(isset($templateParams["utenteProfilo"][0]["imgProfilo"])): ?>
                     <img id="profilePic" src="./img/<?php echo $templateParams["utenteProfilo"][0]["imgProfilo"]; ?>" alt="profile image"/>
                 <?php else: ?>

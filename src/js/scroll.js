@@ -4,7 +4,6 @@ const xhr3 = new XMLHttpRequest();
 const method = "GET";
 const url = "./api/daysCalculator.php";
 
-// var -> variabili globali, let -> locali
 var date = new Date();
 var dateFormat = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate()
 document.cookie = "date= "+dateFormat;
@@ -20,7 +19,8 @@ currentMonth++;
 let lastDateOTM = new Date(currentYear, currentMonth, 0).getDate();
 let lastDayOTM = new Date(currentYear, currentMonth, lastDateOTM).getDate();
 
-function scrollDaysLeft(){
+let leftArrow = document.getElementById('prevDay');   
+leftArrow.addEventListener('click', function (e) { 
     if(currentDay==1) {
         if(currentMonth==1){
             currentYear--;
@@ -102,9 +102,10 @@ function scrollDaysLeft(){
     }   
     xhr.open(method, url+"?currentDay="+currentDay+"&currentMonth="+currentMonth+"&currentYear="+currentYear, true);
     xhr.send();
-} 
+});
 
-function scrollDaysRigth(){
+let rightArrow = document.getElementById('nextDay');   
+rightArrow.addEventListener('click', function (e) { 
     if(currentDay==lastDateOTM){
         if(currentMonth==12){
             currentYear++;
@@ -187,4 +188,4 @@ function scrollDaysRigth(){
     }
     xhr.open(method, url+"?currentDay="+currentDay+"&currentMonth="+currentMonth+"&currentYear="+currentYear, true);
     xhr.send();
-}
+});

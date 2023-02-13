@@ -12,10 +12,12 @@ if ($templateParams["isAuth"]) {
     $templateParams["notifiche"] = $dbh->getNotificationsById($loggedUserId);
     $templateParams["loggedUserSeguiti"] = $dbh->getSeguitiById($loggedUserId);
     $templateParams["utente"] = $dbh->getUserById($loggedUserId);
-}
 
-$templateParams["js"] = array("js/notificationsHandle.js", "js/miPiace.js", "js/commentsList.js", "js/insertComment.js",
+    $templateParams["js"] = array("js/notificationsHandle.js", "js/miPiace.js", "js/commentsList.js", "js/insertComment.js",
     "components/comments-modal/comments-modal.js", "components/postSettings-modal/postSettings-modal.js", "js/postSettings.js", "utils/functions.js");
+} else {
+    $templateParams["js"] = array("utils/functions.js");
+}
 
 require_once './components/comments-modal/comments-modal.php';
 require_once './components/postSettings-modal/postSettings-modal.php';

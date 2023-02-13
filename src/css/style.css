@@ -63,7 +63,7 @@ footer{
     margin-top: auto;
 }
 
-#logoDesktop:hover, #logoMobile:hover, #bell:hover, #profileIcon:hover, #profileIcon:hover, #addPost:hover{
+#logoDesktop:hover, .logout:hover, #logoMobile:hover, #bell:hover, #profileIcon:hover, #addPost:hover{
     color: rgb(231, 177, 52);
 }
 
@@ -271,9 +271,22 @@ span {
 .modal-dialog-comment{
     overflow-y: initial !important
 }
+
 .modal-body-comment{
     height: 60vh;
     overflow-y: auto;
+}
+
+nav>ul>a>li.menuButton:hover{
+    background-color: rgb(255, 179, 0);
+}
+
+#addButtonDesktop:hover a{
+    color:#000;
+}
+
+#logout{
+    color: rgb(231, 177, 52) !important;
 }
 
 @media screen and (min-width: 768px) {
@@ -286,15 +299,12 @@ span {
     #userName{
         color: rgb(231, 177, 52) !important;
     }
-    .addIcon{
+    .bi-plus-circle{
         display: none;
     }
     #addButtonDesktop {
         display: inline-block;
-        width: 100%;
-    }
-    nav>ul>a>li.menuButtonSelected, nav>ul>a>li.menuButton:hover{
-        background-color: rgb(255, 179, 0);
+        width: 70%;
     }
     nav>ul>a>li{
         display: inline-block;
@@ -310,6 +320,9 @@ span {
     #logoDesktop{
         display: none;
     }
+    #logout{
+        display: none;
+    }
     #userName{
         display: none;
     }
@@ -318,12 +331,6 @@ span {
     }
     #sharePost{
         display: none;
-    }
-    #addButtonDesktop{
-        display: none;
-    }
-    nav>ul>a>li.menuButtonSelected, nav>ul>a>li.menuButton:hover{
-        background-color: rgb(255, 179, 0);
     }
     nav>ul>a>li{
         display: inline-block;
