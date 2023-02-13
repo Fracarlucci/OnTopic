@@ -12,7 +12,6 @@ function createList(ul, response) {
             const span = document.createElement("span");
             const row =" " + element.nome + " " + element.cognome;
 
-            a.setAttribute("href", "profilo.php?id=" + element.id);
             span.appendChild(document.createTextNode(element.username));
             li.appendChild(span);
 
@@ -20,8 +19,10 @@ function createList(ul, response) {
                 li.appendChild(document.createTextNode(" " + element.dataOra));
                 const p = li.appendChild(document.createElement("p"));
                 p.appendChild(document.createTextNode(element.testo));
+                a.setAttribute("href", "profilo.php?id=" + element.userId);
             } else {
                li.appendChild(document.createTextNode(row));
+               a.setAttribute("href", "profilo.php?id=" + element.id);
             }
             a.appendChild(li);
             ul.appendChild(a);
