@@ -5,6 +5,7 @@ const username = document.getElementById("username");
 const email = document.getElementById("email");
 const nome = document.getElementById("nome");
 const cognome = document.getElementById("cognome");
+const oldImage = document.getElementById("img").getAttribute("src").split("/")[2]
 
 inputImg.addEventListener("change", event => {
     if(inputImg.files[0] == null) {
@@ -34,6 +35,7 @@ document.getElementById("modifyPostForm").addEventListener("submit", (event) => 
         formDataImage.append('image', newImg);
 
         axios.post('./api/uploadImage.php', formDataImage).then(responseUpload => {
+            console.log(responseUpload.data)
             if (!responseUpload.data["uploadEseguito"]) {
                 console.log(responseUpload.data["erroreUpload"]);
             } else {
@@ -46,7 +48,7 @@ document.getElementById("modifyPostForm").addEventListener("submit", (event) => 
 
                 //delete old user image
                 const formDataDelete = new FormData()
-                formDataDelete.append("image", responseUpload.data["fileName"])
+                formDataDelete.append("image", oldImage)
                 axios.post('./api/deleteUserImage.php', formDataDelete)
             }
         });
