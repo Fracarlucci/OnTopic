@@ -12,7 +12,5 @@ $templateParams["contenuto"] = "aggiungi-post.php";
 $currDay = date('Y-m-d');
 $templateParams["temaDelGiorno"] = $dbh->getThemeOfTheDay($currDay);
 
-$templateParams["photoPost"] = null;
-
 require 'template/base.php';
 ?>

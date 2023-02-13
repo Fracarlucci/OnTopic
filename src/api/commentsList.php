@@ -5,6 +5,7 @@
 
     $postId = $_POST["postId"];
 
+    //ritorna i commenti di un determinato post
     $result = $dbh->getCommentsByPostId($postId);
 
     if(empty($result)){

@@ -11,6 +11,7 @@
         header('Location: ./../index.php');
     }
 
+    //rimuove un mi piace ad un post se già presente, o ne aggiunge uno
     $idPost = $_POST["postId"];
     $remove = false;
     if(isset($_POST["remove"])) {

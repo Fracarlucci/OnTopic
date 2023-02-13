@@ -2,14 +2,15 @@
    include '../db/database.php';
    include '../utils/functions.php';
 
-   sec_session_start(); // usiamo la nostra funzione per avviare una sessione php sicura
+   sec_session_start();
 
    $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
    $result["logineseguito"] = false;
 
+   //effettua il login
    if(isset($_POST['username'], $_POST['password'])) { 
       $username = $_POST['username'];
-      $password = $_POST['password']; // Recupero la password criptata.
+      $password = $_POST['password'];
       if(login($username, $password, $dbh) == true) {
          // Login eseguito
          $result["logineseguito"] = true;
