@@ -1,4 +1,3 @@
-const params = new URLSearchParams(window.location.search)
 const postId = params.get("postId");
 const noImgLabel = document.getElementById("noImg");
 const postImg = document.getElementById("img");
