@@ -2,7 +2,7 @@
 require_once 'base-with-posts.php';
 
 //redirect if not auth
-if(!$templateParams["isAuth"]){
+if(!$templateParams["isAuth"] || !isset($_GET["postId"])){
     header('Location: index.php');
 }
 

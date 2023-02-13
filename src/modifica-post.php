@@ -2,7 +2,7 @@
 require_once 'base-without-posts.php';
 
 //redirect if not auth
-if(!$templateParams["isAuth"] || !isOwner($loggedUserId, $_GET["postId"], $dbh)){
+if(!$templateParams["isAuth"] || !isset($_GET["postId"]) || !isOwner($loggedUserId, $_GET["postId"], $dbh)){
     header('Location: index.php');
 }
 
