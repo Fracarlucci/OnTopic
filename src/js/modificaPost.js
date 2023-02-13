@@ -45,7 +45,7 @@ inputImg.addEventListener("change", event => {
         postImg.style.display = "block";
         removeImgButton.style.display = "block";
         noImgLabel.style.display = "none";
-        var output = document.getElementById('img');
+        let output = document.getElementById('img');
         output.src = URL.createObjectURL(event.target.files[0]);
         output.onload = function() {
             URL.revokeObjectURL(output.src)

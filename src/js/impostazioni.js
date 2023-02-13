@@ -11,7 +11,7 @@ inputImg.addEventListener("change", event => {
     if(inputImg.files[0] == null) {
         alert("l'immagine di profilo non può essere rimossa");
     } else {
-        var output = document.getElementById('img');
+        let output = document.getElementById('img');
         output.src = URL.createObjectURL(event.target.files[0]);
         output.onload = function() {
             URL.revokeObjectURL(output.src)
