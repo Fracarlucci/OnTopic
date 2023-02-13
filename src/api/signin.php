@@ -2,11 +2,12 @@
    include '../db/database.php';
    include '../utils/functions.php';
 
-   sec_session_start(); // usiamo la nostra funzione per avviare una sessione php sicura
+   sec_session_start();
 
    $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
    $result["signinEseguito"] = false;
 
+   //inserisco l'utente nel db se non esiste già (username univoco)
    if(isset($_POST['username'], $_POST['password'], $_POST["name"], $_POST["surname"], $_POST["email"], $_POST["image"])) { 
       //eseguo l'hash della password e genero il sale
       $salt = hash('sha512', uniqid(mt_rand(1, mt_getrandmax()), true));

@@ -13,6 +13,7 @@
 
     $postId = $_POST["postId"];
     
+    //disabilita un particolare post
     $result = $dbh->deletePostById($postId);
     
     header('Content-Type: application/json');

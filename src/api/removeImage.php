@@ -10,6 +10,7 @@
 
    $postId = $_POST["postId"];
 
+   //elimina una determinata immagine dal file system (img post)
    $dbh->removePostImage($postId);
 
    header('Content-Type: application/json');

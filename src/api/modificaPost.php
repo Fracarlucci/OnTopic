@@ -11,6 +11,7 @@
     $postId = $_POST["postId"];
     $testo = $_POST["testo"];
     
+    //modifica un post già esistente
     if(isset($_POST["immagine"])) {
         $immagine = $_POST["immagine"];
         $dbh->updatePostWithImg($postId, $testo, $immagine);

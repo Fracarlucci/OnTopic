@@ -14,6 +14,7 @@
 
     $notificationId = $_POST["id"];
     
+    //disabilita la visualizzazione di una particolare notifica
     $result = $dbh->deleteNotificationById($notificationId);
     
     header('Content-Type: application/json');

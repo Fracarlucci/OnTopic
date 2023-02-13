@@ -5,6 +5,7 @@
    $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
    $result["notificationStatus"] = false;
 
+   //inserisce la notifica sul db per visualizzarla nel sito, invia la notifica email al destinatario
    if(isset($_POST["type"], $_POST["sender"], $_POST["receiver"])) { 
          //get sender username and receiver email
          $sender = $dbh->getUserById($_POST["sender"])[0];

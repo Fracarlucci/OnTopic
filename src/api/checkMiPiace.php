@@ -8,6 +8,7 @@
 
     $idPost = $_POST["postId"];
 
+    //controllo se l'utente loggato abbia o meno messo mi piace al post
     $liked = $dbh->getLikesByPostIdAndUserId($idPost, $_SESSION["user_id"]);
 
     if(empty($liked)){

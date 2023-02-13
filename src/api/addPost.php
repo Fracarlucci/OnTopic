@@ -14,6 +14,7 @@
     $tema = $dbh->getThemeOfTheDay($currDay);
     $topicId = $dbh->getThemeId($tema[0]["nome"]);
 
+    //inserisce nuovo post (con immagine nullable)
     if(isset($_POST['image'])) {
         if(isset($testo)){
             $dbh->insertPost($testo, $immagine, $topicId[0]["id"], $userId);

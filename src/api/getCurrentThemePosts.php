@@ -9,6 +9,7 @@
     $templateParams["isAuth"] = true;
     $templateParams["post"] = "../template/post-template.php";
 
+    //ritorna i post di un determinato tema (in base alla data nei cookie)
     if(isset($_COOKIE['date'])) {
         $date = $_COOKIE['date'];
         $templateParams["temaDelGiorno"] = $dbh->getThemeOfTheDay($date);

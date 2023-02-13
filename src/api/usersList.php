@@ -6,6 +6,7 @@
     $userId = $_POST["userId"];
     $type = $_POST["listType"];
 
+    //ritorna la lista dei seguiti o dei seguaci (in base al body della req)
     if($type == "Seguaci"){
         $result = $dbh->getSeguaciById($userId);
     } else if($type == "Seguiti"){

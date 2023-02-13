@@ -11,9 +11,10 @@
         header('Location: ./../index.php');
     }
 
+    //inserisce un commento ad un post in base all'id
     $input = $_POST["input"];
     $postId = $_POST["postId"];
-    $result["status"] = $dbh->insertComment($input, $postId, $_SESSION["user_id"]);  // $postId, _SESSION["userId"]
+    $result["status"] = $dbh->insertComment($input, $postId, $_SESSION["user_id"]);
    
     $result["senderId"] = $_SESSION["user_id"];
     $result["receiverId"] = $dbh->getPostById($postId)[0]["userId"];
