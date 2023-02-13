@@ -34,7 +34,9 @@
 <?php 
     }else{
 ?>
-    <h2 class="noPost">Nessun post per questo tema</h2>
+    <div class="d-flex justify-content-center">
+        <h2 class="noPost">Nessun post per questo tema</h2>
+    </div>
 <?php 
     }
 ?>

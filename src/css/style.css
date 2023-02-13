@@ -3,6 +3,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: rgb(131, 130, 130);
 }
 
 body header img {
@@ -44,9 +45,8 @@ h1 {
 h2 {
     color: #000;
     display: inline-block;
-    text-align: left;
     font-size: 120%;
-    margin: 0 5%;
+    text-align: center;
 }
 
 h3 {
@@ -108,6 +108,7 @@ span{
 
 #loginButton, #sendPostButton, #updateButton, #removeImgButton {
     background-color: rgb(231, 177, 52);
+    color: rgb(33, 37, 41);;
     border: none;
 }
 
