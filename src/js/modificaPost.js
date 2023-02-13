@@ -1,4 +1,3 @@
-//get post id to change by query param
 const params = new URLSearchParams(window.location.search);
 const postId = params.get("postId");
 const noImgLabel = document.getElementById("noImg");
@@ -49,7 +48,7 @@ inputImg.addEventListener("change", event => {
         postImg.style.display = "block";
         removeImgButton.style.display = "block";
         noImgLabel.style.display = "none";
-        var output = document.getElementById('img');
+        let output = document.getElementById('img');
         output.src = URL.createObjectURL(event.target.files[0]);
         output.onload = function() {
             URL.revokeObjectURL(output.src)
@@ -90,14 +89,14 @@ document.getElementById("modifyPostForm").addEventListener("submit", (event) => 
 
                 axios.post('./api/modificaPost.php', formData).then(() => {
                     alert("Post modificato con successo!");
-                    //window.location.href = "./profilo.php?id=" + userId;
+                    window.location.href = "./profilo.php?id=" + userId;
                 });
             }
         });
     } else {
         axios.post('./api/modificaPost.php', formData).then(() => {
             alert("Post modificato con successo!");
-            //window.location.href = "./profilo.php?id=" + userId;
+            window.location.href = "./profilo.php?id=" + userId;
         });
     }
 });
