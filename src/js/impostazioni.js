@@ -5,19 +5,6 @@ const username = document.getElementById("username");
 const email = document.getElementById("email");
 const nome = document.getElementById("nome");
 const cognome = document.getElementById("cognome");
-const formData = new FormData();
-formData.append('userId', userId)
-
-axios.post("./api/getUser.php", formData).then(response => {
-    console.log(response.data);
-    img.setAttribute("src", "./img/" + response.data[0].imgProfilo);
-    document.getElementById("image").appendChild(img);
-
-    username.value = response.data[0].username;
-    email.value = response.data[0].email;
-    nome.value = response.data[0].nome;
-    cognome.value = response.data[0].cognome;
-});
 
 inputImg.addEventListener("change", event => {
     if(inputImg.files[0] == null) {
@@ -31,7 +18,8 @@ inputImg.addEventListener("change", event => {
     }
 });
 
-document.getElementById("salva").addEventListener("click", () => {
+document.getElementById("modifyPostForm").addEventListener("submit", (event) => {
+    event.preventDefault()
     const formData = new FormData();
     const newImg = inputImg.files[0];
 
@@ -41,7 +29,7 @@ document.getElementById("salva").addEventListener("click", () => {
     formData.append('nome', nome.value);
     formData.append('cognome', cognome.value);
 
-    if(newImg != null) {
+    if(newImg !== undefined) {
         const formDataImage = new FormData();
         formDataImage.append('image', newImg);
 
@@ -55,10 +43,15 @@ document.getElementById("salva").addEventListener("click", () => {
                     alert("Impostazioni salvate con successo!");
                     window.location.href = "./profilo.php?id=" + userId;
                 });
+
+                //delete old user image
+                const formDataDelete = new FormData()
+                formDataDelete.append("image", responseUpload.data["fileName"])
+                axios.post('./api/deleteUserImage.php', formDataDelete)
             }
         });
     } else {
-        axios.post('./api/options.php', formData).then(() => {
+        axios.post('./api/options.php', formData).then((response) => {
             alert("Impostazioni salvate con successo!");
             window.location.href = "./profilo.php?id=" + userId;
         });
