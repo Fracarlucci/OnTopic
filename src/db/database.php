@@ -204,6 +204,7 @@ class DatabaseHelper{
             SELECT u.id as userId, u.username, u.imgProfilo, t.id, t.nome, p.id, p.dataora, p.testo, p.immagine, p.mipiace, p.commenti
             FROM post p INNER JOIN utente u ON p.idUtente = u.id INNER JOIN tema t ON p.idTema = t.id 
             WHERE t.nome = ?
+            AND p.abilitato = 1
         ";
         if($n > 0){
             $query .= " LIMIT ?";
@@ -222,7 +223,7 @@ class DatabaseHelper{
     /* restituisce il tema del giorno passato come parametro*/
     public function getThemeOfTheDay($date){
         $query = "
-            SELECT nome
+            SELECT nome, id
             FROM tema
             WHERE tema.Data = ?
         ";
