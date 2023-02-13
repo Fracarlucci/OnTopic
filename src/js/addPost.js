@@ -46,7 +46,7 @@ function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
 }
 
 //const photoElem = document.querySelector("#photoElem");
-let imgInput = document.getElementById('photoElem');    
+let imgInput = document.getElementById('photoElem');
 imgInput.addEventListener('change', function (e) {
     if (e.target.files) {
         var camera = document.getElementById("cameraIcon");

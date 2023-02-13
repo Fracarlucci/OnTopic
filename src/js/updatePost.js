@@ -14,6 +14,18 @@ function updateCurrentPost(){
     xhrPost.send();
 }
 
+let updateLeftTitle = document.getElementById("prevDay");
+updateLeftTitle.addEventListener("click", function() {
+    updateCurrentTitle();
+    updateTema();
+});
+
+let updateRightTitle = document.getElementById("nextDay");
+updateRightTitle.addEventListener("click", function() {
+    updateCurrentTitle();
+    updateTema();
+});
+
 function updateCurrentTitle(){
     xhrTitle.onreadystatechange = function(){
         document.getElementById("topic").innerHTML = this.response;
