@@ -32,8 +32,8 @@
         endif;
         ?>
     </head>
-    <body class="bg-secondary">
-        <header class="bg-dark py-2">
+    <body id="body" class="bg-secondary">
+        <header id="menuLink" class="bg-dark py-2">
 
             <!-- Logo -->
             <div id="logoMobile" class="text-center">
@@ -57,7 +57,7 @@
                                         <a text href="#"><img src="./img/OnTopic_logo.png" alt="OnTopic"/></a>
                                     </div>
                                     <!-- Bell icon -->
-                                    <a data-bs-toggle="offcanvas" href="#notificationsDrawer" role="button" aria-controls="notificationsDrawer">
+                                    <a title="bell icon" data-bs-toggle="offcanvas" href="#notificationsDrawer" role="button" aria-controls="notificationsDrawer">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-bell-fill" id="bell" viewBox="0 0 16 16">
                                             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
                                         </svg>
@@ -122,7 +122,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 21 21">
                             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
                         </svg>
-                        <h2>Notifiche</h2>
+                        <h3>Notifiche</h3>
                         <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
                             <nav>
                                 <ul class="notification">
@@ -145,7 +145,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 21 21">
                             <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
                         </svg>
-                        <h2>Seguiti</h2>
+                        <h3>Seguiti</h3>
                         <div class="bg-light border border-dark px-2 py-3 my-1 rounded">
                             <nav>
                                 <ul class="follow">
@@ -186,7 +186,7 @@
                     <div class="row">
                         <div class="col-3"></div>
                         <div class="addIcon col-6 d-flex justify-content-center">
-                            <a href="aggiunta-post.php">
+                            <a title="aggiungi post" href="aggiunta-post.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle" id="addPost" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>

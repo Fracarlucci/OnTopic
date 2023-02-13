@@ -4,14 +4,14 @@
     <section class="bg-light border border-dark my-4 px-4 pt-3 pb-1 rounded">
         <header>
             <div id="topic" class="col-12 px-2 topic">
-                <h1 id="title"><?php 
+                <h2 id="title"><?php 
                         if(isset($templateParams["temaDelGiorno"][0])){
                             echo $templateParams["temaDelGiorno"][0]["nome"];
                         }else{
                             echo "";
                         }
                     ?>
-                </h1>
+                </h2>
             </div>
         </header>
         <!-- Divider -->

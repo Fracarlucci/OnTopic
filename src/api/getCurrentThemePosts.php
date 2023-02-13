@@ -34,7 +34,7 @@
 <?php 
     }else{
 ?>
-    <h1 class="noPost">Nessun post per questo tema</h1>
+    <h2 class="noPost">Nessun post per questo tema</h2>
 <?php 
     }
 ?>
