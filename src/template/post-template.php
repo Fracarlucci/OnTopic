@@ -46,8 +46,8 @@
     
     <footer class="my-1">
         <div class="d-flex justify-content-end">
-            <!-- Comment icon -->
             <?php if($templateParams["isAuth"]): ?>
+            <!-- Comment icon -->
             <div class="mx-1">
                 <button class="comment" type="button" data-bs-toggle="modal" data-bs-target="#comments-modal" data-postid=<?php echo $post["id"]; ?>>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
@@ -55,7 +55,6 @@
                     </svg>
                 </button>
             </div>
-            <?php endif; ?>
             <!-- Heart icon -->
             <div class="mx-1">
                 <button class="heart" type="button" data-postid=<?php echo $post["id"]; ?>>
@@ -67,6 +66,7 @@
             <div class="mx-1">
                 <p id="like" data-postid=<?php echo $post["id"]; ?>><?php echo $post["mipiace"]; ?></p>
             </div>
+            <?php endif; ?>
         </div>
     </footer>
 </section>
