@@ -66,15 +66,15 @@
                             </div>
 
                             <!-- Link -->
-                                <div id="link" class="d-flex justify-content-center col-6">
-                                    <nav>
-                                        <ul class="menu">
-                                            <a href="index.php"><li class="menuButton <?php isActive("index.php");?> col">Home</li></a>
-                                            <a href="tema.php"><li class="menuButton <?php isActive("tema.php");?> col">Tema</li></a>
-                                            <a href="cerca.php"><li class="menuButton <?php isActive("cerca.php");?> col">Cerca</li></a>
-                                        </ul>
-                                    </nav>
-                                </div>
+                            <div id="link" class="d-flex justify-content-center col-6">
+                                <nav>
+                                    <ul class="menu">
+                                        <a href="index.php"><li class="menuButton <?php isActive("index.php");?> col">Home</li></a>
+                                        <a href="tema.php"><li class="menuButton <?php isActive("tema.php");?> col">Tema</li></a>
+                                        <a href="cerca.php"><li class="menuButton <?php isActive("cerca.php");?> col">Cerca</li></a>
+                                    </ul>
+                                </nav>
+                            </div>
                             
                             <?php 
                                     if($templateParams["isAuth"]): ?>
@@ -198,15 +198,12 @@
                     </div>
                 </div>
             <?php else: ?>
-                <div class="text-center addIcon">
-                    <button type="button" class="btn btn-outline-light" href="#">Iscriviti per pubblicare i tui pensieri!</button>
-                </div>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-3"></div>
                         <div class="col-6 d-flex justify-content-center">
-                            <button type="button" id="addButtonDesktop" class="btn btn-outline-light">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#signin-modal">
+                            <button type="button" id="addButtonDesktop" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#signin-modal">
+                                <a href="#">
                                     Iscriviti per pubblicare i tuoi pensieri!
                                 </a>    
                             </button>

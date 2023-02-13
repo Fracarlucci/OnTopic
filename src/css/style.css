@@ -271,9 +271,18 @@ span {
 .modal-dialog-comment{
     overflow-y: initial !important
 }
+
 .modal-body-comment{
     height: 60vh;
     overflow-y: auto;
+}
+
+nav>ul>a>li.menuButton:hover{
+    background-color: rgb(255, 179, 0);
+}
+
+#addButtonDesktop:hover a{
+    color:#000;
 }
 
 #logout{
@@ -295,10 +304,7 @@ span {
     }
     #addButtonDesktop {
         display: inline-block;
-        width: 100%;
-    }
-    nav>ul>a>li.menuButtonSelected, nav>ul>a>li.menuButton:hover{
-        background-color: rgb(255, 179, 0);
+        width: 70%;
     }
     nav>ul>a>li{
         display: inline-block;
@@ -325,12 +331,6 @@ span {
     }
     #sharePost{
         display: none;
-    }
-    #addButtonDesktop{
-        display: none;
-    }
-    nav>ul>a>li.menuButtonSelected, nav>ul>a>li.menuButton:hover{
-        background-color: rgb(255, 179, 0);
     }
     nav>ul>a>li{
         display: inline-block;
