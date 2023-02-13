@@ -49,7 +49,7 @@ document.querySelector("#addPostForm").addEventListener("submit", function (even
         axios.post('./api/uploadImage.php', formDataImage).then((responseUpload) => {
             if (!responseUpload.data["uploadEseguito"]) {
                 alert("Qualcosa è andato storto :/");
-                window.location.href = "./aggiuntaPost.php";
+                window.location.href = "./aggiunta-post.php";
             }else{
                 formData.append('image', responseUpload.data["fileName"]);
                 axios.post('./api/addPost.php', formData).then((response) => {
@@ -61,7 +61,7 @@ document.querySelector("#addPostForm").addEventListener("submit", function (even
     }else{
         if(text.length === 0){
             alert("Parametri assenti!");
-            window.location.href = "./aggiuntaPost.php";
+            window.location.href = "./aggiunta-post.php";
         }else{
             axios.post('./api/addPost.php', formData).then((response) => {
                 alert("Post aggiunto con successo!");

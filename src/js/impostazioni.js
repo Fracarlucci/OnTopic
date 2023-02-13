@@ -34,6 +34,11 @@ document.getElementById("modifyPostForm").addEventListener("submit", (event) => 
         const formDataImage = new FormData();
         formDataImage.append('image', newImg);
 
+        //delete old user image
+        const formDataDelete = new FormData()
+        formDataDelete.append("image", oldImage)
+        axios.post('./api/deleteUserImage.php', formDataDelete)
+
         axios.post('./api/uploadImage.php', formDataImage).then(responseUpload => {
             console.log(responseUpload.data)
             if (!responseUpload.data["uploadEseguito"]) {
@@ -45,11 +50,6 @@ document.getElementById("modifyPostForm").addEventListener("submit", (event) => 
                     alert("Impostazioni salvate con successo!");
                     window.location.href = "./profilo.php?id=" + userId;
                 });
-
-                //delete old user image
-                const formDataDelete = new FormData()
-                formDataDelete.append("image", oldImage)
-                axios.post('./api/deleteUserImage.php', formDataDelete)
             }
         });
     } else {

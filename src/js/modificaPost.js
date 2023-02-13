@@ -2,6 +2,7 @@ const params = new URLSearchParams(window.location.search);
 const postId = params.get("postId");
 const noImgLabel = document.getElementById("noImg");
 const postImg = document.getElementById("img");
+let oldImageName = ""
 const inputImg = document.getElementById("upload-image");
 const removeImgButton = document.getElementById("removeImgButton");
 let removeOldImg = false;
@@ -16,6 +17,7 @@ axios.post('./api/getPost.php', formData).then(response => {
             noImgLabel.style.display = "none";
             img.setAttribute("src", "./img/" + response.data[0].immagine);
             document.getElementById("image").appendChild(img);
+            oldImageName = document.getElementById("img").getAttribute("src").split("/")[2]
 
             removeImgButton.addEventListener("click", () => {
                 removeOldImg = true;
@@ -54,7 +56,8 @@ inputImg.addEventListener("change", event => {
     }
 });
 
-document.getElementById("updateButton").addEventListener("click", () => {
+document.getElementById("modifyPostForm").addEventListener("submit", (event) => {
+    event.preventDefault()
     const formData = new FormData();
     const newImg = inputImg.files[0];
 
@@ -62,12 +65,21 @@ document.getElementById("updateButton").addEventListener("click", () => {
 
     if(removeOldImg) {
         axios.post('./api/removeImage.php', formData);
+        //delete post image from file system
+        const formDataDelete = new FormData()
+        formDataDelete.append("image", oldImageName)
+        axios.post('./api/deleteUserImage.php', formDataDelete)
     }
     formData.append('testo', document.getElementById("textElem").value);               
 
     if(newImg != null) {
         const formDataImage = new FormData();
         formDataImage.append('image', newImg);
+
+        //delete post image from file system
+        const formDataDelete = new FormData()
+        formDataDelete.append("image", oldImageName)
+        axios.post('./api/deleteUserImage.php', formDataDelete)
 
         axios.post('./api/uploadImage.php', formDataImage).then(responseUpload => {
             if (!responseUpload.data["uploadEseguito"]) {
