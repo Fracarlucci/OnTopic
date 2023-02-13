@@ -11,6 +11,7 @@
         header('Location: ./../index.php');
     }
 
+    //rimuove il follow se già presente, o aggiunge il follow ad un particolare utente (da parte dell'utente loggato)
     $userId = $_POST["userId"];
     $remove = false;
     if(isset($_POST["remove"])) {
@@ -18,9 +19,9 @@
     }
 
     if($remove){
-        $dbh->unfollowUser($_SESSION["user_id"], $userId);   // ($_SESSION["id"], $userId)
+        $dbh->unfollowUser($_SESSION["user_id"], $userId);
     } else {
-        $dbh->followUser($_SESSION["user_id"], $userId);     // ($_SESSION["id"], $userId)
+        $dbh->followUser($_SESSION["user_id"], $userId); 
     }
     $result["seguaci"] = count($dbh->getSeguaciById($userId));
     $result["senderId"] = $_SESSION["user_id"];

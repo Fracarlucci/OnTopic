@@ -10,6 +10,7 @@
     $topicId = $dbh->getThemeId($_POST['tema']);
     $testo = $_POST['testo'];
 
+    //inserisce nuovo post (con immagine nullable)
     if(isset($_POST['image'])) {
         $immagine = $_POST['image'];
         if(isset($testo)){

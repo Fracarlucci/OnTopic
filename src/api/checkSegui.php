@@ -8,6 +8,7 @@
 
     $userId = $_POST["userId"];
 
+    //controllo il follow dell'utente loggato ad un particolare utente
     $followed = $dbh->checkFollow($_SESSION["user_id"], $userId);  // ($_SESSION["id"], $userId)
 
     if(empty($followed)){

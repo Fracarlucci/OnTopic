@@ -3,6 +3,7 @@
 
    $result["uploadEseguito"] = false;
 
+   //carico img nel filesystem
    if(isset($_FILES['image'])) { 
     $uploadResult = uploadImage("../img/", $_FILES["image"]);
     if($uploadResult[0]) {
