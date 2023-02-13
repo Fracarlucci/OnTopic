@@ -8,6 +8,7 @@
     $loggedUserId = $_SESSION["user_id"];
     $templateParams["isAuth"] = true;
     $templateParams["post"] = "../template/post-template.php";
+    $currDay = date('Y-m-d');
 
     //ritorna i post di un determinato tema (in base alla data nei cookie)
     if(isset($_COOKIE['date'])) {
@@ -19,14 +20,19 @@
         $tema = $templateParams["temaDelGiorno"][0]["nome"];
         $templateParams["postOTD"] = $dbh->getPostsByTheme($tema);
     }
-
+    $currentDay = strtotime($currDay);
+    $selectedDay = strtotime($date);
     if(isset($templateParams["postOTD"][0])){
         foreach($templateParams["postOTD"] as $post):
             require $templateParams["post"];
         endforeach;
-    }else{
+    }else if($selectedDay > $currentDay){
 ?>
     <h1 class="noPost">Coming soon...</h1>
+<?php 
+    }else{
+?>
+    <h1 class="noPost">Nessun post per questo tema</h1>
 <?php 
     }
 ?>
