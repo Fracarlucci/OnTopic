@@ -11,7 +11,7 @@ function login() {
     formData.append('password', document.querySelector("#login-input-password").value)
     axios.post('./api/login.php', formData).then(response => {
         if (response.data["logineseguito"]) {
-            document.querySelector("#login-form > p").innerText = "Login eseguito con seuccesso!"
+            document.querySelector("#login-form > p").innerText = "Login eseguito con successo!"
             setTimeout(() => document.location.href = "", 2000);
         } else {
             document.querySelector("#login-form > p").innerText = response.data["errorelogin"]
