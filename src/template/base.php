@@ -37,7 +37,7 @@
 
             <!-- Logo -->
             <div id="logoMobile" class="text-center">
-                <a href="#"><img src="./img/OnTopic_logo.png" alt="OnTopic"/></a>
+                <a href="./index.php"><img src="./img/OnTopic_logo.png" alt="OnTopic"/></a>
             </div>
 
             <!-- Divider -->
@@ -54,7 +54,7 @@
                                 <li>
                                     <!-- Logo Desktop-->
                                     <div id="logoDesktop" class="text-left">
-                                        <a text href="#"><img src="./img/OnTopic_logo.png" alt="OnTopic"/></a>
+                                        <a text href="./index.php"><img src="./img/OnTopic_logo.png" alt="OnTopic"/></a>
                                     </div>
                                     <!-- Bell icon -->
                                     <a title="bell icon" data-bs-toggle="offcanvas" href="#notificationsDrawer" role="button" aria-controls="notificationsDrawer">

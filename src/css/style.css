@@ -66,16 +66,12 @@ a{
     color: #fff;
 }
 
-aside a{
-    color: #000;
-}
-
 aside>svg{
     margin-left: 3%;
     color: #000;
 }
 
-section a{
+section a, aside a{
     color: #000;
 }
 
@@ -165,11 +161,7 @@ span{
     color: red;
 }
 
-.topic{
-    text-align: center;
-}
-
-.noPost {
+.topic, .noPost{
     text-align: center;
 }
 
@@ -197,7 +189,7 @@ span{
 
 #seguiButton, #sendComment, .modalButton{
     background-color: rgb(231, 177, 52);
-    color: white;
+    color: black;
     border: none;
     padding: 3% 15%;
     border-radius: 5px;
