@@ -46,8 +46,7 @@ function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
 }
 
 //const photoElem = document.querySelector("#photoElem");
-let imgInput = document.getElementById('photoElem');
-    
+let imgInput = document.getElementById('photoElem');    
 imgInput.addEventListener('change', function (e) {
     if (e.target.files) {
         var camera = document.getElementById("cameraIcon");
@@ -84,10 +83,11 @@ document.querySelector("#addPostForm").addEventListener("submit", function (even
     
     const formData = new FormData();
     const formDataImage = new FormData();
-
+    const text = document.getElementById("textElem").value;
     const topic = document.getElementById('title').innerText;
+
     formData.append('tema', topic);
-    formData.append('testo', document.getElementById("textElem").value);
+    formData.append('testo', text);
     
     img = document.getElementById("photoElem").files[0];
     if(img != null) {
@@ -100,13 +100,18 @@ document.querySelector("#addPostForm").addEventListener("submit", function (even
                 axios.post('./api/addPost.php', formData).then(() => {
                     alert("Post aggiunto con successo!");
                 });
-            }       
+            }    
         });
     }else{
-        axios.post('./api/addPost.php', formData).then(() => {
-            alert("Post aggiunto con successo!");
-        });
+        if(text.length === 0){
+            alert("Parametri assenti!");
+        }else{
+            axios.post('./api/addPost.php', formData).then(() => {
+                alert("Post aggiunto con successo!");
+            });
+        }
     }
-
+    
+    window.location.href = "./aggiunta-post.php";
     event.target.reset()
 });

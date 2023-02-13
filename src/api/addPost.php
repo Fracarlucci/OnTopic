@@ -7,19 +7,21 @@
     $dbh = new DatabaseHelper("localhost", "root", "", "ontopic", 3306);
 
     $userId = $_SESSION["user_id"];
-    $topicId = $dbh->getThemeId($_POST['tema']);
     $testo = $_POST['testo'];
+    $immagine = $_POST['image'];
+
+    $currDay = date('Y-m-d');
+    $tema = $dbh->getThemeOfTheDay($currDay);
+    $topicId = $dbh->getThemeId($tema[0]["nome"]);
 
     if(isset($_POST['image'])) {
-        $immagine = $_POST['image'];
         if(isset($testo)){
-            $dbh->insertPost($testo, $immagine, $topicId, $userId);
+            $dbh->insertPost($testo, $immagine, $topicId[0]["id"], $userId);
         }else{
-            $dbh->insertPost(null, $immagine, $topicId, $userId);    
+            $dbh->insertPost(null, $immagine, $topicId[0]["id"], $userId);    
         }
-    }else{
-        $dbh->insertPost($testo, null, $topicId, $userId);
+    }else if($testo != null){
+        $dbh->insertPost($testo, null, $topicId[0]["id"], $userId);
     }
-    array_push($templateParams["js"], "js/addPost.js");
-
+    
 ?>
