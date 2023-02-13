@@ -1,5 +1,4 @@
 <script src="./js/addPost.js" defer></script>
-<?php require_once './aggiunta-post.php' ?>
 
 <div id="slider container" class="m-2 py-2 slider">
     <section class="bg-light border border-dark my-4 px-4 pt-3 pb-1 rounded">
