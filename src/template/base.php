@@ -32,7 +32,7 @@
         endif;
         ?>
     </head>
-    <body id="body" class="bg-secondary">
+    <body id="body">
         <header id="menuLink" class="bg-dark py-2">
 
             <!-- Logo -->
