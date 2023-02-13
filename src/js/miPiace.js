@@ -1,7 +1,6 @@
+let heart = document.querySelectorAll(".heart");
 
 const callBackFunctionLike = () => {
-    let heart = document.querySelectorAll(".heart");
-
     heart.forEach(element => {
         const postId = element.dataset.postid;
         const formData = new FormData();
@@ -16,6 +15,12 @@ const callBackFunctionLike = () => {
         });
     });
 }
+
+heart.forEach((element) => element.addEventListener("click", function() {
+    const postId = element.getAttribute("data-postid");
+    miPiace(this, postId);
+}));
+
     
 function miPiace(button, postId){
     const formData = new FormData();

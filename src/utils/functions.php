@@ -183,4 +183,9 @@
         return  mail($to, $subject, $messages[$type], $headers);
     }
 
+    function isOwner($userId, $postId, $dbh) {
+        $post = $dbh->getPostById($postId);
+        return $post[0]["userId"] == $userId;
+    }
+
 ?>

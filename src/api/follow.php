@@ -18,9 +18,9 @@
     }
 
     if($remove){
-        $dbh->unfollowUser($_SESSION["user_id"], $userId);   // ($_SESSION["id"], $userId)
+        $dbh->unfollowUser($_SESSION["user_id"], $userId);
     } else {
-        $dbh->followUser($_SESSION["user_id"], $userId);     // ($_SESSION["id"], $userId)
+        $dbh->followUser($_SESSION["user_id"], $userId);
     }
     $result["seguaci"] = count($dbh->getSeguaciById($userId));
     $result["senderId"] = $_SESSION["user_id"];
