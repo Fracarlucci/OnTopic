@@ -2,7 +2,7 @@
     <form action="#" id="searchForm">
         <div class="row">
             <div class="d-flex justify-content-center col-11">
-                <input type="text" id="searchBar" placeholder="Cerca..." required/>
+                <input type="text" id="searchBar" aria-label="Cerca" placeholder="Cerca..." required/>
             </div>
             <div class="d-flex justify-content-center col-1">
                 <button id="searchButton" type="submit">

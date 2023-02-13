@@ -21,14 +21,14 @@
         <form id="addPostForm" action="#" method="post">
             <!-- Post image -->
             <div id="addImage" class="d-flex justify-content-center">
-                <i id="cameraIcon" class="fa fa-camera fa-5x" aria-hidden="true"></i>
+                <span id="cameraIcon" class="fa fa-camera fa-5x" aria-hidden="true"></span>
                 <img id="img" class="img-fluid" alt="Post image">
             </div>
             <div class="d-flex justify-content-center m-2">
                 <button type="button" id="removeImgButton" class="btn btn-primary">Rimuovi immagine</button>
             </div> 
             <div class="fil d-flex justify-content-center">
-                <input type="file" id="photoElem" accept="image/*"/>
+                <input aria-label="immagine del post" type="file" id="photoElem" accept="image/*"/>
             </div>
 
             <!-- Divider -->
@@ -37,7 +37,7 @@
             </div>
 
             <!-- Add text -->
-            <textarea id="textElem" class="w-100 rounded" rows="5" placeholder="Scrivi qui il testo!"></textarea>
+            <textarea aria-label="testo del post" id="textElem" class="w-100 rounded" rows="5" placeholder="Scrivi qui il testo!"></textarea>
 
             <!-- Divider -->
             <div class="d-flex justify-content-center col-12">

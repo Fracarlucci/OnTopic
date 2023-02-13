@@ -10,13 +10,13 @@
             <!-- Username -->
             <div class="d-flex col-3 prova">
                 <a href="profilo.php?id=<?php echo $post["userId"] ?>">
-                    <h2><?php echo $post["username"]; ?></h2>
+                    <h3><?php echo $post["username"]; ?></h3>
                 </a>
             </div>
             <!-- Theme -->
             <div class="d-flex justify-content-center col-4">
                 <a href="tema.php">
-                    <h2 class="tema"><?php echo $post["nome"]; ?></h2>
+                    <h3 class="tema"><?php echo $post["nome"]; ?></h3>
                 </a>
             </div>
             <!-- Dots icon -->

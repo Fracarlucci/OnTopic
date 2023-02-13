@@ -14,8 +14,7 @@
                 <img src="./img/<?php echo $templateParams["utente"][0]["imgProfilo"] ?>" id="img" class="img-fluid w-25" alt="Profile image">
             </div>
             <div class="d-flex justify-content-center">
-                <label for="upload-image" class="form-label"></label>
-                <input type="file" class="mt-1" id="upload-image" accept="image/*"/>
+                <input type="file" class="mt-1" id="upload-image" aria-label="Cambia immagine" accept="image/*"/>
             </div>
             <label for="username" class="mt-2">Username</label>
             <input type="text" class="form-control mt-1" id="username" value="<?php echo $templateParams["utente"][0]["username"] ?>" required />
