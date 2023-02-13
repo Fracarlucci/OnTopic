@@ -202,7 +202,7 @@
                     <div class="row">
                         <div class="col-3"></div>
                         <div class="col-6 d-flex justify-content-center">
-                            <button type="button" id="addButtonDesktop" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#signin-modal">
+                            <button type="button" id="signButton" class="btnSign btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#signin-modal">
                                 <a href="#">
                                     Iscriviti per pubblicare i tuoi pensieri!
                                 </a>    

@@ -329,6 +329,9 @@ nav>ul>a>li.menuButton:hover{
     aside{
         display: none;
     }
+    #addButtonDesktop{
+        display: none;
+    }
     #sharePost{
         display: none;
     }
