@@ -157,6 +157,30 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function updateUserWithImg($userId, $username, $email, $nome, $cognome, $imgProfilo) {
+        $query = "
+            UPDATE utente
+            SET username = ?, nome = ?, cognome = ?, email = ?, imgProfilo = ?
+            WHERE id = ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sssssi',$username,$nome,$cognome,$email,$imgProfilo,$userId);
+        $stmt->execute();
+    }
+
+    public function updateUserWithoutImg($userId, $username, $email, $nome, $cognome) {
+        $query = "
+            UPDATE utente
+            SET username = ?, nome = ?, cognome = ?, email = ?
+            WHERE id = ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssssi',$username,$nome,$cognome,$email,$userId);
+        $stmt->execute();
+    }
+
     /**
      * Post CRUD
      */

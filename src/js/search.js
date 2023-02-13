@@ -1,4 +1,4 @@
-document.getElementById("searchForm").addEventListener("keyup", event => {
+document.getElementById("searchForm").addEventListener("click", event => {
     const input = document.getElementById("searchBar").value;
     event.preventDefault();
     if(input != "") {

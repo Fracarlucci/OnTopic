@@ -173,6 +173,10 @@
         <?php require_once("./components/signin-modal/signin-modal.php") ?>
         <!-- Notifications Drawer -->
         <?php require_once("./components/notifications-drawer/notifications-drawer.php") ?>
+        <!-- Comments Modal -->
+        <?php require_once './components/comments-modal/comments-modal.php'; ?>
+        <!-- Post Settings Modal -->
+        <?php require_once './components/postSettings-modal/postSettings-modal.php'; ?>
 
         <footer class="bg-dark py-2">
 

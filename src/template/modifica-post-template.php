@@ -1,9 +1,11 @@
 <div id="slider container" class="m-2 py-2 slider">
     <section class="bg-light border border-dark my-4 px-4 pt-3 pb-1 rounded">
         <div class="container">
-            <div class="topic">
-                <h1 id="title"></h1>
-            </div>
+            <header>
+                <div class="topic">
+                    <h1 id="title"></h1>
+                </div>
+            </header>
             <!-- Divider -->
             <div class="d-flex justify-content-center col-12">
                 <hr class="#000" width="90%" />

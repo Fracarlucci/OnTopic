@@ -19,7 +19,5 @@ if ($templateParams["isAuth"]) {
     $templateParams["js"] = array("utils/functions.js");
 }
 
-require_once './components/comments-modal/comments-modal.php';
-require_once './components/postSettings-modal/postSettings-modal.php';
 require_once './utils/functions.php';
 ?>
