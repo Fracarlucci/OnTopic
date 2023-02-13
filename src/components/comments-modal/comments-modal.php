@@ -14,7 +14,8 @@
                     <form action="#" id="commentForm" class="m-0">
                         <div class="row">
                             <div class="d-flex col-10 justify-content p-0">
-                                <input class="w-100" type="text" id="commentText" placeholder="Scrivi un commento..." required/>
+                                <label for="commentText"></label> 
+                                <input id="commentText" class="w-100" type="text" placeholder="Scrivi un commento..." required/>
                             </div>
                             <input type="hidden" id="postHidden" value=""/>
                             <div class="d-flex col-2 justify-content-center p-0">
