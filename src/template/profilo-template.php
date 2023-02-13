@@ -32,7 +32,7 @@
                         <div class="col-6 mb-1">
                             <h1 id="profileName"><?php echo $templateParams["utenteProfilo"][0]["username"]; ?></h1>
                         </div>
-                        <?php if($templateParams["utente"][0]["id"] != $templateParams["utenteProfilo"][0]["id"]): ?>
+                        <?php if($loggedUserId != $templateParams["utenteProfilo"][0]["id"]): ?>
                             <div class="col-6 align-self-center">
                                 <button id="seguiButton" type="button">Segui</button>
                             </div>

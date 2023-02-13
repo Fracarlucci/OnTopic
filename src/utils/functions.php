@@ -1,7 +1,10 @@
 <?php 
 
     function isActive($pagename){
-        if(basename($_SERVER['PHP_SELF'])==$pagename){
+        if(basename($_SERVER['PHP_SELF']) == $pagename){
+            if($pagename == "profilo.php"){
+                return true;
+            }
             echo "active";
         }
     }

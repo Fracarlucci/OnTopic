@@ -8,7 +8,8 @@
 
     $userId = $_SESSION["user_id"];
     $testo = $_POST['testo'];
-    $immagine = $_POST['image'];
+
+    $response["userId"] = $userId;
 
     $currDay = date('Y-m-d');
     $tema = $dbh->getThemeOfTheDay($currDay);
@@ -16,13 +17,17 @@
 
     //inserisce nuovo post (con immagine nullable)
     if(isset($_POST['image'])) {
+        $immagine = $_POST['image'];
         if(isset($testo)){
             $dbh->insertPost($testo, $immagine, $topicId[0]["id"], $userId);
         }else{
             $dbh->insertPost(null, $immagine, $topicId[0]["id"], $userId);    
         }
-    }else if($testo != null){
+    } else if($testo != null) {
         $dbh->insertPost($testo, null, $topicId[0]["id"], $userId);
     }
+
+    header('Content-Type: application/json');
+    echo json_encode($response["userId"]);
     
 ?>

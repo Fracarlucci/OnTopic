@@ -137,12 +137,12 @@ footer p {
     padding: 0%;
 }
 
-#loginButton, #sendPostButton {
+#loginButton, #sendPostButton, #updateButton, #removeImgButton {
     background-color: rgb(231, 177, 52);
     border: none;
 }
 
-#loginButton:hover, #sendPostButton:hover {
+#loginButton:hover, #sendPostButton:hover, #updateButton:hover, #removeImgButton:hover {
     background-color: rgb(255, 179, 0);
 }
 
